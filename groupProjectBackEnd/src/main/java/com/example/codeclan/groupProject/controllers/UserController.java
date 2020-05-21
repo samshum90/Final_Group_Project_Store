@@ -23,7 +23,7 @@ public class UserController {
             @RequestParam(name = "email", required = false) String email
     ){
         if (userName != null){
-            return new ResponseEntity<>(userRepository.findByUsername(userName), HttpStatus.OK);
+            return new ResponseEntity<>(userRepository.findByUserName(userName), HttpStatus.OK);
         }
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
     }
