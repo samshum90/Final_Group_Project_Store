@@ -1,6 +1,7 @@
 ### Store
 
 A store owner has approached us to create a web app to have greater market access.
+
 For a prototype we built the Code Clan store.
 
 #### MVP
