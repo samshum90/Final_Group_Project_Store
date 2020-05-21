@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c54cea7a-b010-4cf1-a4b9-411c3f69b691" name="Default Changelist" comment="changed folder name for real">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/AuthenticationBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/BasicAuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/SpringSecurityConfigurationBasicAuth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,10 +42,16 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.GroupProjectApplication">
     <configuration name="GroupProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -131,22 +140,22 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="170" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1590069497272" />
-    <state width="1238" height="212" key="GridCell.Tab.0.bottom" timestamp="1590075659019">
+    <state width="1238" height="212" key="GridCell.Tab.0.bottom" timestamp="1590078991157">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590075659019" />
-    <state width="1238" height="212" key="GridCell.Tab.0.center" timestamp="1590075659013">
+    <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590078991157" />
+    <state width="1238" height="212" key="GridCell.Tab.0.center" timestamp="1590078991156">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1590075659013" />
-    <state width="1238" height="212" key="GridCell.Tab.0.left" timestamp="1590075659012">
+    <state width="1238" height="212" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1590078991156" />
+    <state width="1238" height="212" key="GridCell.Tab.0.left" timestamp="1590078991155">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1590075659012" />
-    <state width="1238" height="212" key="GridCell.Tab.0.right" timestamp="1590075659016">
+    <state width="1238" height="212" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1590078991155" />
+    <state width="1238" height="212" key="GridCell.Tab.0.right" timestamp="1590078991156">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1590075659016" />
+    <state width="1238" height="212" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1590078991156" />
     <state x="141" y="0" key="SettingsEditor" timestamp="1590064174490">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
