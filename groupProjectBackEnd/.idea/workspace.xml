@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c54cea7a-b010-4cf1-a4b9-411c3f69b691" name="Default Changelist" comment="changed folder name for real">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/AuthenticationBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/BasicAuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/SpringSecurityConfigurationBasicAuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/components/CorsFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
