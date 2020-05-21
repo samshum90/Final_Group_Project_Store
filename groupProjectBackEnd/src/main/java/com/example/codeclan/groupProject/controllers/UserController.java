@@ -5,13 +5,12 @@ import com.example.codeclan.groupProject.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/users")
 public class UserController {
 
     @Autowired
@@ -25,6 +24,14 @@ public class UserController {
         if (userName != null){
             return new ResponseEntity<>(userRepository.findByUserName(userName), HttpStatus.OK);
         }
+        if(email != null){
+            return new ResponseEntity<>(userRepository.findByEmail(email), HttpStatus.OK);
+        }
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity getUser(@PathVariable String id){
+        return new ResponseEntity<>(userRepository.findByIdIs(id), HttpStatus.OK);
     }
 }

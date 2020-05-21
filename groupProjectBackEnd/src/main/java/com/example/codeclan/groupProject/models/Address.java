@@ -1,21 +1,27 @@
 package com.example.codeclan.groupProject.models;
 
-public abstract class Address {
+public class Address {
 
-    private int id;
+
     private String title;
+    private String firstName;
+    private String lastName;
     private String firstLine;
     private String secondLine;
     private String townCity;
     private String county;
     private String postCode;
 
-    public int getId() {
-        return id;
-    }
+    public Address( String title, String firstName, String lastName, String firstLine, String secondLine, String townCity, String county, String postCode) {
 
-    public void setId(int id) {
-        this.id = id;
+        this.title = title;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.firstLine = firstLine;
+        this.secondLine = secondLine;
+        this.townCity = townCity;
+        this.county = county;
+        this.postCode = postCode;
     }
 
     public String getTitle() {
@@ -24,6 +30,22 @@ public abstract class Address {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getFirstLine() {

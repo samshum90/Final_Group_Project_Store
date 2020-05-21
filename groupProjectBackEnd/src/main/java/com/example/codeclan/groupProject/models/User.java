@@ -30,8 +30,12 @@ public class User {
     @Override
     public String toString() {
         return String.format(
-                "Stock[id=%s, admin='%s', userName='%s', email='%s', address='%s', orders='%s']",
+                "User[id=%s, admin='%s', userName='%s', password='%s', email='%s', address='%s', orders='%s']",
                 id, admin, userName, password, email, address, orders);
+    }
+
+    public String getId() {
+        return id;
     }
 
     public Boolean getAdmin() {
