@@ -3,12 +3,11 @@ package com.example.codeclan.groupProject;
 import com.example.codeclan.groupProject.models.Address;
 import com.example.codeclan.groupProject.models.User;
 import com.example.codeclan.groupProject.repositories.UserRepository;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class GroupProjectApplicationTests {

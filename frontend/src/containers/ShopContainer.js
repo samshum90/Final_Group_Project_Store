@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
-
+import Request from '../helpers/request';
 import SearchBar from '../components/SearchBar'
 import StoreItemList from '../components/StoreItemList'
 
 class ShopContainer extends Component {
   constructor(props){
     super(props)
-    this.state = {  }
+    this.state = { 
+        users:[]
+     }
+  }
+
+  componentDidMount() {
+    const url = "http://localhost:8080/"
+    const request = new Request();
+
+    request.get(url)
+    
+    .then((data) => {
+      this.setState({users: data})
+    })
   }
   
   render() { 

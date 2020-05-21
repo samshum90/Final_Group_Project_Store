@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin( maxAge = 3600)
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {
@@ -16,6 +17,7 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+    @CrossOrigin( maxAge = 3600)
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers(
             @RequestParam(name = "userName", required = false) String userName,

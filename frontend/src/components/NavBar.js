@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import AdminContainer from '../containers/AdminContainer'
 import ShopContainer from '../containers/ShopContainer'
+import './NavBar.css'
 
 const routes = [
     {
@@ -24,7 +25,7 @@ function NavBar () {
   return (
     <Router>
       <div>
-        <nav className="navBar">
+        <nav className="nav-bar">
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -33,8 +34,18 @@ function NavBar () {
               <Link to="/admin">Admin</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/account">Account</Link>
             </li>
+            <li>
+              <Link to="/orders">Orders</Link>
+            </li>
+            <li>
+              <Link to="/log-out">Log Out</Link>
+            </li>
+            <li>
+              <Link to="/cart">Cart</Link>
+            </li>
+
           </ul>
         </nav>
 
@@ -51,16 +62,19 @@ function NavBar () {
         <nav className="footer">
             <ul>
                 <li>
-                    <Link to="/admin">About</Link>
+                    <Link to="/about">About</Link>
                 </li>
                 <li>
-                    <Link to="/contactUS">Contact Us</Link>
+                    <Link to="/contact-us">Contact Us</Link>
                 </li>
                 <li>
                     <Link to="/where">Where to find us</Link>
                 </li>
                 <li>
-                    <Link to="/customerService">Customer Service</Link>
+                    <Link to="/customer-service">Customer Service</Link>
+                </li>
+                <li>
+                    <Link to="/">Home</Link>
                 </li>
             </ul>
         </nav>
