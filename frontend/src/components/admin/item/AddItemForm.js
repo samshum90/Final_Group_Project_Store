@@ -58,7 +58,7 @@ handleSubmit = (event) => {
   }
   this.props.onFormSubmit(newItem);
   console.log('newItem: ', newItem)
-
+  this.siteContainer.getItems();
 }
 
 

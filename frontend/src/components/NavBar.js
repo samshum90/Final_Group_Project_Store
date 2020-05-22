@@ -9,26 +9,16 @@ import AdminContainer from '../containers/AdminContainer'
 import ShopContainer from '../containers/ShopContainer'
 import './NavBar.css'
 
-const routes = [
-    {
-      path: "/",
-      exact: true,
-      main: () => <ShopContainer />
-    },
-    {
-      path: "/admin",
-      main: () => <AdminContainer />
-    },
-  ];
-
-function NavBar () {
+const NavBar = (props) => {
+  console.log(props) //this props has info
   return (
-    <Router>
+    
+    <Router >
       <div>
         <nav className="nav-bar">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Shop</Link>
             </li>
             <li>
               <Link to="/admin">Admin</Link>
@@ -49,15 +39,10 @@ function NavBar () {
           </ul>
         </nav>
 
-        <Switch>
-            {routes.map((route, index) => (
-                                <Route
-                                key={index}
-                                path={route.path}
-                                exact={route.exact}
-                                children={<route.main />}
-                                />
-            ))}
+        <Switch >
+          <Route exact path="/" component={() => <ShopContainer items={props.items} />} />
+          <Route exact path="/admin" component={() => <AdminContainer items={props.items} />} />
+
         </Switch>
         <nav className="footer">
             <ul>
