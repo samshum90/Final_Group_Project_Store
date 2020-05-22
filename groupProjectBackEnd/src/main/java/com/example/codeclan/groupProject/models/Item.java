@@ -42,7 +42,7 @@ public class Item {
     @Override
     public String toString() {
         return String.format(
-                "Item[id=%s, highlighted='%s',name='%s', brand='%s', type='%s', maxSellPrice='%s', " +
+                "Item[id=%s, highlighted='%s', name='%s', brand='%s', type='%s', maxSellPrice='%s', " +
                         "currentSellPrice='%s', buyPrice='%s', imageUrl='%s', description='%s', " +
                         "stock='%s', option='%s']",
                 id, highlighted, name, brand, type, maxSellPrice, currentSellPrice,
@@ -127,5 +127,9 @@ public class Item {
 
     public String getId() {
         return id;
+    }
+
+    public boolean getHighlighted() {
+        return highlighted;
     }
 }
