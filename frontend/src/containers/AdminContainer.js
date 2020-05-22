@@ -15,8 +15,11 @@ class AdminContainer extends Component {
     }
   }
   handlePost(item){
+    console.log('pre post: ', item)
     const request = new Request();
-    request.post('/items', item).then(() => {
+    
+    request.post('http://localhost:8080/items', item).then(() => {
+      console.log(item)
       window.location = '/items'
     })
   }
