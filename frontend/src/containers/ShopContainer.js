@@ -12,11 +12,9 @@ class ShopContainer extends Component {
 
   
   render() { 
-
     return (  
       <div>
         {/* // navbar */}
-        <h1>I am container</h1>
         <SearchBar />
         <StoreItemList />
         {/* // footer */}

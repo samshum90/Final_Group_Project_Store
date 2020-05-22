@@ -2,20 +2,19 @@ import React from 'react';
 import ItemDetail from './ItemDetail'
 
 const ItemList = (props) => {
-        console.log(props)
-        console.log(props.items);
+
 	if (props.items.length === 0){
 		
 	  return (<p>Loading...</p>)
 	}
 
-	const items = props.items.map((item, index) => {
-        
+	const items = props.items.map(item => {
 	  return (
-	    <li key={item.id}>
-	    <ItemDetail item={item} />
+	    
+            
+	    <ItemDetail item={item} key={item.id}/>
 	
-	    </li>
+	    
       )
       
 	})

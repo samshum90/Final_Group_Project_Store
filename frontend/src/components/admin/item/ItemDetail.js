@@ -1,11 +1,11 @@
 import React  from 'react';
 
 const ItemDetail = (props) => {
-    console.log(props)
+    console.log("il", props)
     return (
-        <>
-    {props.name}
-    </>
+    <li>
+        {props.item.name}
+    </li>
     )
 }
 

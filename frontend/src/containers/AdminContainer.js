@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import AddItemForm from '../components/admin/item/AddItemForm'
 import Request from '../helpers/request'
-import ItemList from '../components/admin/item/ItemDetail'
+import ItemList from '../components/admin/item/ItemList'
 
 class AdminContainer extends Component {
   constructor(props){
@@ -29,19 +29,8 @@ class AdminContainer extends Component {
   }
   render() { 
     console.log(this.props);
-    const routes = [
-      {
-        path: "/items",
-        exact: true,
-        main: () => <ItemList items={this.props.items}/>
-      },
-      {
-        path: "/addItem",
-        exact: true,
-        main: () => <AddItemForm onFormSubmit= {this.handlePost}/>
-      },
-    ];
     return ( 
+      <>
       <Router>
       <div>
         <nav className="admin-nav-bar">
@@ -56,17 +45,13 @@ class AdminContainer extends Component {
         </nav>
 
         <Switch>
-            {routes.map((route, index) => (
-                                <Route
-                                key={index}
-                                path={route.path}
-                                exact={route.exact}
-                                children={<route.main />}
-                                />
-            ))}
+        <Route exact path="/items" component={() => <ItemList items={this.props.items} />} />
+          <Route exact path="/addItem" component={() => <AddItemForm />} />
+
         </Switch>
       </div>
     </Router>
+    </>
      );
   }
 }

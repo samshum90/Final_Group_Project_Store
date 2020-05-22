@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar'
 import Request from '../helpers/request';
-// import Footer from '../components/Footer'
+import Footer from '../components/Footer'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import AdminContainer from '../containers/AdminContainer'
+import ShopContainer from '../containers/ShopContainer'
 
 class SiteContainer extends Component {
   constructor(props){
@@ -29,18 +36,17 @@ class SiteContainer extends Component {
   render(){
 
     return ( 
-      // <Router>
+      <Router>
     <>
-    <h1>I am the site wrapper</h1> 
-      <NavBar items={this.state.items}/>
-      {/* <Switch >
+      <NavBar />
+      <Switch >
           <Route exact path="/" component={() => <ShopContainer items={this.state.items} />} />
           <Route exact path="/admin" component={() => <AdminContainer items={this.state.items} />} />
 
-        </Switch> */}
-
-      {/* <Footer /> */}
+        </Switch>
+      <Footer />
     </>
+   </Router>
     );
 
   }
