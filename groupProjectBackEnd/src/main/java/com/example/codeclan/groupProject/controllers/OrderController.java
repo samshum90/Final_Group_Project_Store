@@ -40,13 +40,13 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<Order> postUsers(@RequestBody Order order){
+    public ResponseEntity<Order> postOrders(@RequestBody Order order){
         orderRepository.save(order);
         return new ResponseEntity<>(order, HttpStatus.CREATED);
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Order> putUsers(@RequestBody Order order, @PathVariable String id) {
+    public ResponseEntity<Order> putOrders(@RequestBody Order order, @PathVariable String id) {
         if (order.getId() != id){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -55,7 +55,7 @@ public class OrderController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<List<Order>> deleteUsers(@PathVariable String id){
+    public ResponseEntity<List<Order>> deleteOrders(@PathVariable String id){
         orderRepository.deleteById(id);
         return new ResponseEntity<>(orderRepository.findAll(), HttpStatus.OK);
     }

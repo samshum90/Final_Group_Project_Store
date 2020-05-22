@@ -15,6 +15,7 @@ public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerA
         http
                 .authorizeRequests()
                 .antMatchers("/items").permitAll()
+                .antMatchers("/items/{id}").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();

@@ -29,10 +29,12 @@ public class ItemController {
         }
         boolean highlightedBoolean;
         if(highlighted != null){
-            if(highlighted.toLowerCase() == "true"){
+            if(highlighted.toLowerCase().equals("true")){
                 highlightedBoolean = true;
-            }else{
+            }else if(highlighted.toLowerCase().equals("false")) {
                 highlightedBoolean = false;
+            }else{
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
             return new ResponseEntity<>(itemRepository.findByHighlighted(highlightedBoolean), HttpStatus.OK);
         }
@@ -51,7 +53,7 @@ public class ItemController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Item> putCourses(@RequestBody Item item, @PathVariable String id) {
+    public ResponseEntity<Item> putItems(@RequestBody Item item, @PathVariable String id) {
         if (item.getId() != id){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -60,7 +62,7 @@ public class ItemController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<List<Item>> deleteCourses(@PathVariable String id){
+    public ResponseEntity<List<Item>> deleteItems(@PathVariable String id){
         itemRepository.deleteById(id);
         return new ResponseEntity<>(itemRepository.findAll(), HttpStatus.OK);
     }
