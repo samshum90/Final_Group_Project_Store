@@ -4,7 +4,7 @@ import {
     Link
   } from "react-router-dom";
 
-const Footer = () => {
+function Footer () {
   return ( 
     <div>
         <h5>Copyright the boooois</h5> 
@@ -15,7 +15,7 @@ const Footer = () => {
                     <Link to="/admin">About</Link>
                 </li>
                 <li>
-                    <Link to="/contactUS">Contact Us</Link>
+                    <Link to="/">Contact Us</Link>
                 </li>
                 <li>
                     <Link to="/where">Where to find us</Link>

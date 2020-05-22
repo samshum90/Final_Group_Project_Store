@@ -1,0 +1,14 @@
+.nav-bar{
+    text-decoration: none;
+    height: 10vh;
+    background-color: var(--lightBlue);
+}
+
+.nav-bar ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-bar ul li{
+    list-style: none;
+}

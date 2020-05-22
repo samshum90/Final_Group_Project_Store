@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from '../components/NavBar'
-import Footer from '../components/Footer'
+// import Footer from '../components/Footer'
 
 const SiteContainer = () => {
 
@@ -8,7 +8,7 @@ const SiteContainer = () => {
   <>
   <h1>I am the site wrapper</h1> 
     <NavBar />
-    <Footer />
+    {/* <Footer /> */}
   </>
   );
 }
