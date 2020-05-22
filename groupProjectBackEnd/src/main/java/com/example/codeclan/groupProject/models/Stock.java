@@ -72,4 +72,8 @@ public class Stock {
     public void setProfitMargin(int profitMargin) {
         this.profitMargin = profitMargin;
     }
+
+    public String getId() {
+        return id;
+    }
 }

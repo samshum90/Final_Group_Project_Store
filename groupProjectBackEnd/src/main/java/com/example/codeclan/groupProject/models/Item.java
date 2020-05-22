@@ -13,18 +13,22 @@ public class Item {
     private String name;
     private String brand;
     private String type;
-    private int salePrice;
+    private int maxSellPrice;
+    private int currentSellPrice;
     private int buyPrice;
     private String imageUrl;
     private String description;
     private HashMap<String, String> option;
     private Stock stock;
+    private boolean highlighted;
 
-    public Item(String name, String brand, String type, int salePrice, int buyPrice, String imageUrl, String description, Stock stock) {
+    public Item(boolean highlighted,String name, String brand, String type, int maxSellPrice, int buyPrice, String imageUrl, String description, Stock stock) {
+        this.highlighted = highlighted;
         this.name = name;
         this.brand = brand;
         this.type = type;
-        this.salePrice = salePrice;
+        this.maxSellPrice = maxSellPrice;
+        this.currentSellPrice = maxSellPrice -1;
         this.buyPrice = buyPrice;
         this.imageUrl = imageUrl;
         this.description = description;
@@ -38,8 +42,11 @@ public class Item {
     @Override
     public String toString() {
         return String.format(
-                "Item[id=%s, name='%s', brand='%s', type='%s', salePrice='%s', buyPrice='%s', imageUrl='%s', description='%s', stock='%s', option='%s']",
-                id, name, brand, type, salePrice, buyPrice, imageUrl, description, stock, option);
+                "Item[id=%s, highlighted='%s',name='%s', brand='%s', type='%s', maxSellPrice='%s', " +
+                        "currentSellPrice='%s', buyPrice='%s', imageUrl='%s', description='%s', " +
+                        "stock='%s', option='%s']",
+                id, highlighted, name, brand, type, maxSellPrice, currentSellPrice,
+                buyPrice, imageUrl, description, stock, option);
     }
 
     public HashMap<String, String> getOption() {
@@ -74,12 +81,16 @@ public class Item {
         this.type = type;
     }
 
-    public int getSalePrice() {
-        return salePrice;
+    public int getMaxSellPrice() {
+        return maxSellPrice;
     }
 
-    public void setSalePrice(int salePrice) {
-        this.salePrice = salePrice;
+    public int getCurrentSellPrice() {
+        return currentSellPrice;
+    }
+
+    public void setCurrentSellPrice(int currentSellPrice) {
+        this.currentSellPrice = currentSellPrice;
     }
 
     public int getBuyPrice() {
@@ -112,5 +123,9 @@ public class Item {
 
     public void setStock(Stock stock) {
         this.stock = stock;
+    }
+
+    public String getId() {
+        return id;
     }
 }

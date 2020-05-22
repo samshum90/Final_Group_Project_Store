@@ -11,9 +11,11 @@ public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerA
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.cors();
         http
                 .authorizeRequests()
-                .antMatchers("/users").permitAll()
+                .antMatchers("/items").permitAll()
+                .antMatchers("/items/{id}").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();
