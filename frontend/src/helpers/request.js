@@ -5,7 +5,7 @@ class Request {
 
     get(url) {
       const username = "user"
-      const password = "39121875-562c-4eac-a4f2-3a9bd2867235"
+      const password = "b35eefda-9778-479a-b8b9-c8bba3e82348"
 
       AuthenticationService.executeBasicAuthenticationService(username, password)
       .then(() => {
@@ -14,13 +14,12 @@ class Request {
           // this.setState({ showSuccessMessage: false })
           // this.setState({ hasLoginFailed: true })
       })
-
-
       
-      return fetch(url +"/users", {mode:"no-cors"} )
+      return fetch(url +"users", {mode:"no-cors"})
       .then((res) => res.json())
       .catch(err => console.log(err))
-    }
+      
+      }
 
     delete(url) {
       return fetch(url, {

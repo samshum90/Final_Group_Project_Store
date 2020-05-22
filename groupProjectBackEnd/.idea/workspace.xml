@@ -2,44 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c54cea7a-b010-4cf1-a4b9-411c3f69b691" name="Default Changelist" comment="changed folder name for real">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/serviceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/setupTests.js" beforeDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/components/CorsFilter.java" afterDir="false" />
->>>>>>> development
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/AuthenticationBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/BasicAuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/SpringSecurityConfigurationBasicAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/SpringSecurityConfigurationBasicAuth.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -52,9 +29,6 @@
         <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
-  </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1cDLLkUl1BFdwSd7DhLCKHRIL05" />
   <component name="ProjectLevelVcsManager">
@@ -106,7 +80,6 @@
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
@@ -167,49 +140,22 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="170" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1590069497272" />
-<<<<<<< HEAD
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590081440723">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590075659019" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1360.768@0.0.1440.900" timestamp="1590081440723" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590078516895" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590081440719">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1590075659013" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1360.768@0.0.1440.900" timestamp="1590081440719" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590078516889" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590081440717">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1590075659012" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1360.768@0.0.1440.900" timestamp="1590081440717" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590078516885" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590081440721">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1590075659016" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1360.768@0.0.1440.900" timestamp="1590081440721" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590078516893" />
-=======
-    <state width="1238" height="212" key="GridCell.Tab.0.bottom" timestamp="1590078991157">
+    <state width="1238" height="144" key="GridCell.Tab.0.bottom" timestamp="1590138181552">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590078991157" />
-    <state width="1238" height="212" key="GridCell.Tab.0.center" timestamp="1590078991156">
+    <state width="1238" height="144" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590138181552" />
+    <state width="1238" height="144" key="GridCell.Tab.0.center" timestamp="1590138181550">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1590078991156" />
-    <state width="1238" height="212" key="GridCell.Tab.0.left" timestamp="1590078991155">
+    <state width="1238" height="144" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1590138181550" />
+    <state width="1238" height="144" key="GridCell.Tab.0.left" timestamp="1590138181548">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1590078991155" />
-    <state width="1238" height="212" key="GridCell.Tab.0.right" timestamp="1590078991156">
+    <state width="1238" height="144" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1590138181548" />
+    <state width="1238" height="144" key="GridCell.Tab.0.right" timestamp="1590138181551">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="212" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1590078991156" />
->>>>>>> development
+    <state width="1238" height="144" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1590138181551" />
     <state x="141" y="0" key="SettingsEditor" timestamp="1590064174490">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
