@@ -89,6 +89,7 @@ class GroupProjectApplicationTests {
 		System.out.println(item);
 		System.out.println(item2);
 		System.out.println(itemRepository.findByBrand("brand").get(0).getMaxSellPrice());
+		System.out.println(itemRepository.findByBrand("brand").get(0).getHighlighted());
 	}
 
 

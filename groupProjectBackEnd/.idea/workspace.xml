@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c54cea7a-b010-4cf1-a4b9-411c3f69b691" name="Default Changelist" comment="changed folder name for real">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/StockController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/repositories/StockRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/SpringSecurityConfigurationBasicAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/SpringSecurityConfigurationBasicAuth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Stock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/models/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/models/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/models/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/models/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/models/Stock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/models/Stock.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +56,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GroupProjectApplicationTests">
+  <component name="RunManager" selected="Application.GroupProjectApplication">
     <configuration name="GroupProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplication" />
       <module name="groupProjectBackEnd" />
@@ -107,11 +101,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GroupProjectApplicationTests.itemIsSaved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="groupProjectBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.codeclan.groupProject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplicationTests" />
+      <option name="METHOD_NAME" value="itemIsSaved" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupProjectApplicationTests.userIsSaved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="groupProjectBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.codeclan.groupProject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplicationTests" />
+      <option name="METHOD_NAME" value="userIsSaved" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GroupProjectApplicationTests" />
         <item itemvalue="Application.GroupProjectApplication" />
+        <item itemvalue="JUnit.GroupProjectApplicationTests" />
+        <item itemvalue="JUnit.GroupProjectApplicationTests.itemIsSaved" />
         <item itemvalue="JUnit.GroupProjectApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.GroupProjectApplicationTests.userIsSaved" />
       </list>
     </recent_temporary>
   </component>
@@ -158,50 +186,58 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="128" y="0" key="#Project_Structure/0.0.1280.800@0.0.1280.800" timestamp="1590058540849" />
-    <state x="453" y="91" key="#com.intellij.ide.util.MemberChooser" timestamp="1590150487005">
+    <state x="453" y="91" key="#com.intellij.ide.util.MemberChooser" timestamp="1590155203580">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="453" y="91" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1590150487005" />
+    <state x="453" y="91" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1590155203580" />
     <state x="170" y="0" key="CommitChangelistDialog2" timestamp="1590069497272">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="170" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1590069497272" />
-    <state width="1238" height="144" key="GridCell.Tab.0.bottom" timestamp="1590151766050">
+    <state width="1238" height="264" key="GridCell.Tab.0.bottom" timestamp="1590158251334">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="144" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590151766050" />
+    <state width="1238" height="264" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590158251334" />
     <state width="1238" height="144" key="GridCell.Tab.0.bottom/0.23.1280.704@0.23.1280.704" timestamp="1590145606060" />
-    <state width="1238" height="144" key="GridCell.Tab.0.center" timestamp="1590151766047">
+    <state width="1238" height="264" key="GridCell.Tab.0.center" timestamp="1590158251320">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="144" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1590151766047" />
+    <state width="1238" height="264" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1590158251320" />
     <state width="1238" height="144" key="GridCell.Tab.0.center/0.23.1280.704@0.23.1280.704" timestamp="1590145606056" />
-    <state width="1238" height="144" key="GridCell.Tab.0.left" timestamp="1590151766045">
+    <state width="1238" height="264" key="GridCell.Tab.0.left" timestamp="1590158251318">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="144" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1590151766045" />
+    <state width="1238" height="264" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1590158251318" />
     <state width="1238" height="144" key="GridCell.Tab.0.left/0.23.1280.704@0.23.1280.704" timestamp="1590145606055" />
-    <state width="1238" height="144" key="GridCell.Tab.0.right" timestamp="1590151766048">
+    <state width="1238" height="264" key="GridCell.Tab.0.right" timestamp="1590158251331">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="144" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1590151766048" />
+    <state width="1238" height="264" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1590158251331" />
     <state width="1238" height="144" key="GridCell.Tab.0.right/0.23.1280.704@0.23.1280.704" timestamp="1590145606058" />
-    <state width="1238" height="264" key="GridCell.Tab.1.bottom" timestamp="1590150985998">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1238" height="264" key="GridCell.Tab.1.bottom" timestamp="1590158294936">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state width="1238" height="264" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590150985998" />
-    <state width="1238" height="264" key="GridCell.Tab.1.center" timestamp="1590150985996">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1238" height="264" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590158250951" />
+    <state width="1238" height="264" key="GridCell.Tab.1.bottom/0.23.1280.704@0.23.1280.704" timestamp="1590158294936" />
+    <state width="1238" height="264" key="GridCell.Tab.1.bottom/0.23.1280.706@0.23.1280.706" timestamp="1590158027673" />
+    <state width="1238" height="264" key="GridCell.Tab.1.center" timestamp="1590158294934">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state width="1238" height="264" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1590150985996" />
-    <state width="1238" height="264" key="GridCell.Tab.1.left" timestamp="1590150985995">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1238" height="264" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1590158250947" />
+    <state width="1238" height="264" key="GridCell.Tab.1.center/0.23.1280.704@0.23.1280.704" timestamp="1590158294934" />
+    <state width="1238" height="264" key="GridCell.Tab.1.center/0.23.1280.706@0.23.1280.706" timestamp="1590158027664" />
+    <state width="1238" height="264" key="GridCell.Tab.1.left" timestamp="1590158294932">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state width="1238" height="264" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1590150985995" />
-    <state width="1238" height="264" key="GridCell.Tab.1.right" timestamp="1590150985997">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1238" height="264" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1590158250943" />
+    <state width="1238" height="264" key="GridCell.Tab.1.left/0.23.1280.704@0.23.1280.704" timestamp="1590158294932" />
+    <state width="1238" height="264" key="GridCell.Tab.1.left/0.23.1280.706@0.23.1280.706" timestamp="1590158027662" />
+    <state width="1238" height="264" key="GridCell.Tab.1.right" timestamp="1590158294935">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state width="1238" height="264" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1590150985997" />
+    <state width="1238" height="264" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1590158250949" />
+    <state width="1238" height="264" key="GridCell.Tab.1.right/0.23.1280.704@0.23.1280.704" timestamp="1590158294935" />
+    <state width="1238" height="264" key="GridCell.Tab.1.right/0.23.1280.706@0.23.1280.706" timestamp="1590158027671" />
     <state x="141" y="0" key="SettingsEditor" timestamp="1590064174490">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

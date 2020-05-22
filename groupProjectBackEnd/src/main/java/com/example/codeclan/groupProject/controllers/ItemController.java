@@ -18,7 +18,6 @@ public class ItemController {
     @Autowired
     ItemRepository itemRepository;
 
-
     @GetMapping
     public ResponseEntity<List<Item>> getAllItems(
             @RequestParam(name = "brand", required = false) String brand,
@@ -48,6 +47,7 @@ public class ItemController {
 
     @PostMapping
     public ResponseEntity<Item> postItems(@RequestBody Item item){
+        System.out.println(item);
         itemRepository.save(item);
         return new ResponseEntity<>(item, HttpStatus.CREATED);
     }
