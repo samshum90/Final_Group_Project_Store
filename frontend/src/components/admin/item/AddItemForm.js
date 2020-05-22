@@ -5,6 +5,7 @@ class AddItemForm extends Component {
     super(props);
   this.state = {  
     name: '',
+    brand:'',
     type: '',
     salePrice: 0,
     buyPrice: 0,
