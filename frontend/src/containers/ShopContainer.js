@@ -7,19 +7,19 @@ class ShopContainer extends Component {
   constructor(props){
     super(props)
     this.state = { 
-        users:[]
+        items:[]
      }
   }
 
   componentDidMount() {
-    const url = "http://localhost:8080/users"
+    const url = "http://localhost:8080/items"
     const request = new Request();
 
     request.get(url)
     
     .then((data) => {
       console.log(data);
-      this.setState({users: data})
+      this.setState({items: data})
     })
   }
   

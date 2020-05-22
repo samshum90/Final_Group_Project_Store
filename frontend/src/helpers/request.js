@@ -18,13 +18,8 @@ class Request {
     }
 
     get(url){
-      const username = "user"
-      const password = "82eb7dc9-3850-4f4e-9d80-639b9a5184b8"
 
-      return fetch(url, 
-        {headers:
-        {"Authorization": 'Basic ' + window.btoa(username + ":" + password)
-      }})
+      return fetch(url)
       .then((res) => res.json())
       .catch(err => console.log(err))
     }

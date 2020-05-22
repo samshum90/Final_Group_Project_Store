@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin( maxAge = 3600)
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {
@@ -17,7 +16,6 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    @CrossOrigin( maxAge = 3600)
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers(
             @RequestParam(name = "userName", required = false) String userName,
@@ -34,6 +32,27 @@ public class UserController {
 
     @GetMapping("{id}")
     public ResponseEntity getUser(@PathVariable String id){
-        return new ResponseEntity<>(userRepository.findByIdIs(id), HttpStatus.OK);
+        return new ResponseEntity<>(userRepository.findById(id), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<User> postUsers(@RequestBody User user){
+        userRepository.save(user);
+        return new ResponseEntity<>(user, HttpStatus.CREATED);
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<User> putUsers(@RequestBody User user, @PathVariable String id) {
+        if (user.getId() != id){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        userRepository.save(user);
+        return new ResponseEntity<>(user, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<List<User>> deleteUsers(@PathVariable String id){
+        userRepository.deleteById(id);
+        return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
     }
 }
