@@ -12,12 +12,13 @@ class ShopContainer extends Component {
   }
 
   componentDidMount() {
-    const url = "http://localhost:8080/"
+    const url = "http://localhost:8080/users"
     const request = new Request();
 
     request.get(url)
     
     .then((data) => {
+      console.log(data);
       this.setState({users: data})
     })
   }

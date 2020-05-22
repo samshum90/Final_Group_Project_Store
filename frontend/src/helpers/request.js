@@ -3,9 +3,9 @@ import AuthenticationService from '../service/AuthenticationService';
 class Request {
 
 
-    get(url) {
+    login(url) {
       const username = "user"
-      const password = "b35eefda-9778-479a-b8b9-c8bba3e82348"
+      const password = "e0821b18-aab5-4683-b543-38d48956524d"
 
       AuthenticationService.executeBasicAuthenticationService(username, password)
       .then(() => {
@@ -15,11 +15,19 @@ class Request {
           // this.setState({ hasLoginFailed: true })
       })
       
-      return fetch(url +"users", {mode:"no-cors"})
+    }
+
+    get(url){
+      const username = "user"
+      const password = "82eb7dc9-3850-4f4e-9d80-639b9a5184b8"
+
+      return fetch(url, 
+        {headers:
+        {"Authorization": 'Basic ' + window.btoa(username + ":" + password)
+      }})
       .then((res) => res.json())
       .catch(err => console.log(err))
-      
-      }
+    }
 
     delete(url) {
       return fetch(url, {

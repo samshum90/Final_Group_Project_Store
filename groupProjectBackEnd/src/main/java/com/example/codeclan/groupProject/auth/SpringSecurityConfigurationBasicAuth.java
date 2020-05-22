@@ -13,6 +13,7 @@ public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerA
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
+                .antMatchers("/users").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();
