@@ -8,12 +8,13 @@ public class User {
 
     @Id
     private String id;
+
     private Boolean admin;
     private String userName;
     private String password;
     private String email;
     private Address address;
-    private ArrayList<Order> orders;
+    private ArrayList<String> orders;
 
     public User() {
     }
@@ -78,7 +79,11 @@ public class User {
         this.address = address;
     }
 
-    public ArrayList<Order> getOrders() {
+    public ArrayList<String> getOrders() {
         return orders;
+    }
+
+    public void addOrder(String newOrder){
+        this.orders.add(newOrder);
     }
 }
