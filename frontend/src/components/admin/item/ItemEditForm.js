@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Form, Container } from 'semantic-ui-react';
+import { Dimmer, Loader, Button, Form, Container } from 'semantic-ui-react';
+import Request from '../../../helpers/request';
 
 const options = [
 	{ key: 'b', text: 'Books', value: 'books' },
@@ -10,10 +11,11 @@ const options = [
 	{ key: 'r', text: 'Courses', value: 'courses' },
 ];
 
-class AddItemForm extends Component {
+class ItemEditFrom extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			id: '',
 			name: '',
 			brand: '',
 			type: '',
@@ -25,7 +27,21 @@ class AddItemForm extends Component {
 		};
 	}
 
+	componentDidMount() {
+		var itemId = /[^/]*$/.exec(window.location.href)[0];
+		const url = 'http://localhost:8080/items/' + itemId;
+		const request = new Request();
+		request
+			.get(url)
+			.then((data) => {
+				this.setState(data);
+			})
+
+			.catch((err) => console.log(err));
+	}
+
 	handleNameChange = (event) => {
+		this.name = this.setState({ name: event.target.value });
 		this.setState({ name: event.target.value });
 	};
 
@@ -40,6 +56,7 @@ class AddItemForm extends Component {
 	handleMaxSellPriceChange = (event) => {
 		this.setState({ maxSellPrice: event.target.value });
 	};
+
 	handleCurrentSellPriceChange = (event) => {
 		this.setState({ currentSellPrice: event.target.value });
 	};
@@ -58,7 +75,8 @@ class AddItemForm extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		const newItem = {
+		const editItem = {
+			id: this.state.id,
 			name: this.state.name,
 			brand: this.state.brand,
 			type: this.state.type,
@@ -68,10 +86,24 @@ class AddItemForm extends Component {
 			imgUrl: this.state.imgUrl,
 			description: this.state.description,
 		};
-		this.props.onFormSubmit(newItem);
+		const url = 'http://localhost:8080/items/' + this.state.id;
+		const request = new Request();
+		request.patch(url, editItem).then((window.location = '/admin/items'));
 	};
 
 	render() {
+		if (!this.state.name) {
+			return (
+				<Dimmer active inverted>
+					<Loader inverted content="Loading" />
+				</Dimmer>
+			);
+		}
+
+		if (this.state.noItemFound) {
+			return (window.location = '/*');
+		}
+
 		return (
 			<Container fluid className="item-container">
 				<Form onSubmit={this.handleSubmit}>
@@ -160,7 +192,7 @@ class AddItemForm extends Component {
 					</Form.Field>
 
 					<Button primary type="submit">
-						Add item
+						Update item
 					</Button>
 				</Form>
 			</Container>
@@ -168,4 +200,4 @@ class AddItemForm extends Component {
 	}
 }
 
-export default AddItemForm;
+export default ItemEditFrom;

@@ -66,11 +66,11 @@ class GroupProjectApplicationTests {
 
 		String description = "This is a description of an Item";
 		item = new Item(false, "first item", "brand", "item",
-				10, 5, "image.jpg", description, tempStock);
+				10, 5, "/images/007-1024x682.jpg", description, tempStock);
 		item = itemRepository.save(item);
 
 		item2 = new Item(true, "second item", "2brand", "item",
-				10, 5, "image.jpg", description, tempStock2);
+				10, 5, "/images/black-pull-1024x683.jpg", description, tempStock2);
 		item2 = itemRepository.save(item2);
 
 		tempStock.setTotalBought(1);
