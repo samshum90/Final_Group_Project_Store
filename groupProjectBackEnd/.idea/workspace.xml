@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c54cea7a-b010-4cf1-a4b9-411c3f69b691" name="Default Changelist" comment="changed folder name for real">
+    <list default="true" id="5ffca808-b866-49b1-ae5f-db8a615b09a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/models/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/models/Order.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" afterDir="false" />
+=======
+>>>>>>> 45cb8261b30701b9c018d019137dee3fa9dcaf5a
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -32,33 +32,24 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1cDLLkUl1BFdwSd7DhLCKHRIL05" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
+  <component name="ProjectId" id="1cGow03aXWLxhjjTxDYRNf4Iuk1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject" />
-    </key>
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RunManager" selected="JUnit.GroupProjectApplicationTests">
     <configuration name="GroupProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplication" />
-      <module name="groupProjectBackEnd" />
+      <module name="groupProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
@@ -70,7 +61,7 @@
       </method>
     </configuration>
     <configuration name="GroupProjectApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="groupProjectBackEnd" />
+      <module name="groupProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
@@ -82,63 +73,26 @@
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GroupProjectApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="groupProjectBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.codeclan.groupProject" />
-      <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GroupProjectApplicationTests.itemIsSaved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="groupProjectBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.codeclan.groupProject" />
-      <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplicationTests" />
-      <option name="METHOD_NAME" value="itemIsSaved" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GroupProjectApplicationTests.userIsSaved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="groupProjectBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.codeclan.groupProject" />
-      <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplicationTests" />
-      <option name="METHOD_NAME" value="userIsSaved" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.GroupProjectApplicationTests" />
+<<<<<<< HEAD
         <item itemvalue="Application.GroupProjectApplication" />
         <item itemvalue="JUnit.GroupProjectApplicationTests.itemIsSaved" />
         <item itemvalue="JUnit.GroupProjectApplicationTests.contextLoads" />
         <item itemvalue="JUnit.GroupProjectApplicationTests.userIsSaved" />
+=======
+>>>>>>> 45cb8261b30701b9c018d019137dee3fa9dcaf5a
       </list>
     </recent_temporary>
   </component>
@@ -147,36 +101,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c54cea7a-b010-4cf1-a4b9-411c3f69b691" name="Default Changelist" comment="" />
-      <created>1590058163201</created>
+      <changelist id="5ffca808-b866-49b1-ae5f-db8a615b09a3" name="Default Changelist" comment="" />
+      <created>1590164525898</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1590058163201</updated>
+      <updated>1590164525898</updated>
     </task>
-    <task id="LOCAL-00001" summary="changed folder name for real">
-      <created>1590058194809</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1590058194809</updated>
-    </task>
-    <task id="LOCAL-00002" summary="working on backend connections">
-      <created>1590069497726</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1590069497726</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="changed folder name for real" />
-    <MESSAGE value="working on backend connections" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on backend connections" />
-  </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="530" y="293" key="#Custom_Plugin_Repositories" timestamp="1590064022214">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -243,16 +177,31 @@
     <state width="1238" height="264" key="GridCell.Tab.1.right/0.23.1280.706@0.23.1280.706" timestamp="1590158027671" />
     <state x="141" y="0" key="SettingsEditor" timestamp="1590064174490">
       <screen x="0" y="0" width="1280" height="800" />
+=======
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590229915785">
+      <screen x="0" y="23" width="1440" height="793" />
     </state>
-    <state x="141" y="0" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1590064174490" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1590069510848">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590165581833" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590197404710" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.793@0.23.1440.793" timestamp="1590229915785" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590229915783">
+      <screen x="0" y="23" width="1440" height="793" />
+>>>>>>> 45cb8261b30701b9c018d019137dee3fa9dcaf5a
     </state>
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1590069510848" />
-    <state x="305" y="32" width="670" height="769" key="search.everywhere.popup" timestamp="1590072110847">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590165581827" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590197404709" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.793@0.23.1440.793" timestamp="1590229915783" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590229915779">
+      <screen x="0" y="23" width="1440" height="793" />
     </state>
-    <state x="305" y="32" width="670" height="769" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1590072110847" />
-    <state x="305" y="51" width="670" height="676" key="search.everywhere.popup/0.23.1280.704@0.23.1280.704" timestamp="1590064524545" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590165581824" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590197404708" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.793@0.23.1440.793" timestamp="1590229915779" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590229915784">
+      <screen x="0" y="23" width="1440" height="793" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590165581831" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590197404710" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.793@0.23.1440.793" timestamp="1590229915784" />
   </component>
 </project>

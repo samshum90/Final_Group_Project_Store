@@ -1,37 +1,20 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import AdminContainer from '../containers/AdminContainer'
-import ShopContainer from '../containers/ShopContainer'
+import {Link} from "react-router-dom";
 import './NavBar.css'
+import Logo from '../assets/icons/CodeClan_Logo.png'
+import { Icon } from 'semantic-ui-react'
 
-const routes = [
-    {
-      path: "/",
-      exact: true,
-      main: () => <ShopContainer />
-    },
-    {
-      path: "/admin",
-      main: () => <AdminContainer />
-    },
-  ];
-
-function NavBar () {
+const NavBar = ( ) => {
   return (
-    <Router>
-      <div>
-        <nav className="nav-bar">
+      <nav className="nav-bar">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">
+              <img src={Logo} alt="Code Clan Logo" />
+              </Link>
             </li>
             <li>
-              <Link to="/admin">Admin</Link>
+              <Link to="/admin/items">Admin</Link>
             </li>
             <li>
               <Link to="/account">Account</Link>
@@ -43,45 +26,10 @@ function NavBar () {
               <Link to="/log-out">Log Out</Link>
             </li>
             <li>
-              <Link to="/cart">Cart</Link>
+              <Link to="/cart"><Icon name='shopping cart' size='large' /></Link>
             </li>
-
           </ul>
         </nav>
-
-        <Switch>
-            {routes.map((route, index) => (
-                                <Route
-                                key={index}
-                                path={route.path}
-                                exact={route.exact}
-                                children={<route.main />}
-                                />
-            ))}
-        </Switch>
-        <nav className="footer">
-            <ul>
-                <li>
-                    <Link to="/about">About</Link>
-                </li>
-                <li>
-                    <Link to="/contact-us">Contact Us</Link>
-                </li>
-                <li>
-                    <Link to="/where">Where to find us</Link>
-                </li>
-                <li>
-                    <Link to="/customer-service">Customer Service</Link>
-                </li>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-        </nav>
-
-
-      </div>
-    </Router>
   );
 }
 

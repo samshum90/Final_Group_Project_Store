@@ -1,5 +1,26 @@
+  * {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
 :root {
   --lightBlue: #4DA2CD;
+  --darkBlue: #242F3E;
+  --paleYellow: #E6C372;
+  --blueGrey: #EEF0F2;
 }
+
+.footer-container{
+  background-color: var(--blueGrey);
+  padding: 30px;
+}
+
+.main-container{
+  padding: 20px 0px;
+  background-color: var(--blueGrey);
+
+}
+
 
 

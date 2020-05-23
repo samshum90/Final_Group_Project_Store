@@ -1,0 +1,44 @@
+.footer{
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none;
+    background-color: var(--darkBlue);
+    width: 100vw;
+}
+    
+.footer ul{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 30px;
+}
+    
+.footer ul li{
+    list-style: none;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.footer ul li a{
+    color: white;
+}
+
+.footer ul li a:Hover{
+    color: var(--paleYellow);
+}
+
+.footer ul li:nth-last-child(1){
+    margin-left: auto;
+}
+
+.footer ul li a img{
+    height: 40px;
+}
+
+
+
+
+
