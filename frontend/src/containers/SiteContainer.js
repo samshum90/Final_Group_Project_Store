@@ -10,11 +10,6 @@ import Footer from '../components/footer/Footer';
 import AdminContainer from '../containers/AdminContainer';
 import ShopContainer from '../containers/ShopContainer';
 
-import About from '../components/footer/About';
-import ContactUs  from '../components/footer/ContactUs';
-import WhereToFindUs  from '../components/footer/WhereToFindUs';
-import CustomerService from '../components/footer/CustomerService';
-
 class SiteContainer extends Component {
   constructor(props){
     super(props)
@@ -50,10 +45,10 @@ class SiteContainer extends Component {
           <Route path="/account" component={() =><ShopContainer items={this.state.items}/>} />
           <Route path="/orders" component={() =><ShopContainer items={this.state.items}/>} />
 
-          <Route path="/about" component={() => <About />} />
-          <Route path="/contact-us" component={() => <ContactUs />} />
-          <Route path="/where" component={() => <WhereToFindUs />} />
-          <Route path="/customer-service" component={() => <CustomerService />} />
+          <Route path="/about" component={() => <ShopContainer items={this.state.items} />} />
+          <Route path="/contact-us" component={() => <ShopContainer items={this.state.items} />} />
+          <Route path="/where" component={() => <ShopContainer items={this.state.items} />} />
+          <Route path="/customer-service" component={() => <ShopContainer items={this.state.items} />} />
 
 
         </Switch>

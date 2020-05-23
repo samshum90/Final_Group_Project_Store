@@ -1,8 +1,12 @@
 import React from 'react';
+import { Container} from 'semantic-ui-react'
+
 
 const ContactUs =() =>{
     return(
-        <h1>Contact us here</h1>
+        <Container fluid className="footer-container">
+            <h1>Contact us here</h1>
+        </Container>
     )
 
 

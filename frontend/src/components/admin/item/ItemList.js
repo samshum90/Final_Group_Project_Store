@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimmer, Loader } from 'semantic-ui-react'
+import { Dimmer, Loader, Container } from 'semantic-ui-react'
 import ItemDetail from './ItemDetail'
 
 const ItemList = (props) => {
@@ -20,9 +20,11 @@ const ItemList = (props) => {
 	})
 
 	return (
-	  <ul className="admin-item-list">
-	    {items}
-	  </ul>
+	<Container fluid className="main-container">
+		<ul className="admin-item-list">
+			{items}
+		</ul>
+	  </Container>
 	)
 }
  export default ItemList;

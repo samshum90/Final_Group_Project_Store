@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimmer, Loader } from 'semantic-ui-react'
+import { Dimmer, Loader, Container } from 'semantic-ui-react'
 import OrderDetail from './OrderDetail'
 
 const OrderList = (props) => {
@@ -18,8 +18,8 @@ const OrderList = (props) => {
 	const orders = props.orders.map(order => {
 	  return (
 	    
-            
-	    <OrderDetail item={order} key={order.id}/>
+           
+	    	<OrderDetail item={order} key={order.id}/>
 	
 	    
       )
@@ -27,9 +27,11 @@ const OrderList = (props) => {
 	})
 
 	return (
-	  <ul className="admin-order-list">
-	    {orders}
-	  </ul>
+		<Container fluid className="main-container">
+			<ul className="admin-order-list">
+				{orders}
+			</ul>
+		</Container>
 	)
 }
  export default OrderList;

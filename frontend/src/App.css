@@ -11,6 +11,16 @@
   --blueGrey: #EEF0F2;
 }
 
+.footer-container{
+  background-color: var(--blueGrey);
+  padding: 30px;
+}
+
+.main-container{
+  padding: 20px 0px;
+  background-color: var(--blueGrey);
+
+}
 
 
 

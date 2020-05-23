@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimmer, Loader, Grid } from 'semantic-ui-react'
+import { Dimmer, Loader, Grid, Container } from 'semantic-ui-react';
 import StoreItem from './StoreItem';
 import './StoreItem.css';
 
@@ -20,11 +20,12 @@ const StoreItemList = (props) => {
       })
   
       return (
-        <div className="store-item">
+        <Container fluid className="main-container">
             <Grid relaxed container columns={5}>
                 {StoreItems}
             </Grid>
-        </div>
+       </Container>
+
       )
 }
 export default StoreItemList;
