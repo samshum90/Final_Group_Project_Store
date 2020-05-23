@@ -100,6 +100,8 @@ class GroupProjectApplicationTests {
 
 		orderBasket.addItem(item);
 		orderBasket = orderRepository.save(orderBasket);
+		orderBasket.addItem(item2);
+		orderBasket = orderRepository.save(orderBasket);
 		user.addOrder(orderBasket.getId());
 		user = userRepository.save(user);
 

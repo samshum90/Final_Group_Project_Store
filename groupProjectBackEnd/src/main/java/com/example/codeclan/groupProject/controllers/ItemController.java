@@ -5,6 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1da12d83ac0f73d473eff2ac9a1fa3b26b635b4a
 import java.util.HashMap;
 import java.util.List;
 @RestController
