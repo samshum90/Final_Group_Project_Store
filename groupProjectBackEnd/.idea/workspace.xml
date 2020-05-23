@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ffca808-b866-49b1-ae5f-db8a615b09a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Footer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/SearchBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/StoreItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/StoreItemList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/admin/item/AddItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/admin/item/AddItemForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/admin/item/ItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/admin/item/ItemList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/containers/AdminContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/AdminContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/SpringSecurityConfigurationBasicAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/SpringSecurityConfigurationBasicAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/models/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/models/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

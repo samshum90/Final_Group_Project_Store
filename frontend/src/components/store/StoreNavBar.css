@@ -1,0 +1,30 @@
+.store-nav-bar{
+    text-decoration: none;
+    background-color: var(--darkBlue);
+    width: 100vw;
+    border-bottom: solid 2vh var(--paleYellow);
+}
+
+.store-nav-bar ul{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 70px;
+}
+
+.store-nav-bar ul li{
+    list-style: none;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.store-nav-bar ul li h3{
+    color: white;
+}
+
+.store-nav-bar ul li p{
+    margin: 0;
+    color: white;
+}

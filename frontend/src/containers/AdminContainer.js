@@ -3,11 +3,12 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
-import AddItemForm from '../components/admin/item/AddItemForm'
-import Request from '../helpers/request'
-import ItemList from '../components/admin/item/ItemList'
+import Request from '../helpers/request';
+import AdminNavBar from '../components/admin/AdminNavBar';
+import AddItemForm from '../components/admin/item/AddItemForm';
+import ItemList from '../components/admin/item/ItemList';
+import OrderList from '../components/admin/order/OrderList';
 
 class AdminContainer extends Component {
   constructor(props){
@@ -30,28 +31,17 @@ class AdminContainer extends Component {
   render() { 
     console.log(this.props);
     return ( 
-      <>
       <Router>
-      <div>
-        <nav className="admin-nav-bar">
-          <ul>
-            <li>
-              <Link to="/items">Show Items</Link>
-            </li>
-            <li>
-              <Link to="/addItem">Add Item</Link>
-            </li>
-          </ul>
-        </nav>
+        <div>
+          <AdminNavBar />
+          <Switch>
+            <Route path="/new" component={() => <AddItemForm />} />
+            <Route path="/admin/items" component={() => <ItemList items={this.props.items} />} />
+            <Route path="/orders" component={() => <OrderList orders={this.state.orders} />} />
 
-        <Switch>
-        <Route exact path="/items" component={() => <ItemList items={this.props.items} />} />
-          <Route exact path="/addItem" component={() => <AddItemForm />} />
-
-        </Switch>
+          </Switch>
       </div>
     </Router>
-    </>
      );
   }
 }

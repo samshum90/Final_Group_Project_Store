@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import SearchBar from '../components/SearchBar'
-import StoreItemList from '../components/StoreItemList'
+import { Switch, Route }from "react-router-dom";
+import StoreNavBar from '../components/store/StoreNavBar'
+import StoreItemList from '../components/store/StoreItemList'
+import UserDetail from '../components/user/UserDetail'
+import UserOrderList from '../components/user/UserOrderList'
 
 class ShopContainer extends Component {
   constructor(props){
     super(props)
     this.state = { 
+      user: null
 
      }
   }
@@ -13,12 +17,18 @@ class ShopContainer extends Component {
   
   render() { 
     return (  
-      <div>
-        {/* // navbar */}
-        <SearchBar />
-        <StoreItemList />
-        {/* // footer */}
-      </div>
+
+    <>
+          <StoreNavBar />
+          <Switch >
+            <Route exact path="/" component={() =><StoreItemList items={this.props.items}/>} />
+            <Route path="/account" component={() =><UserDetail />} />
+            <Route path="/orders" component={() =><UserOrderList />} />
+            {/* <Route path="/cart" component={() =>< />} /> */}
+          </Switch>
+
+    </>
+
     );
   }
 }

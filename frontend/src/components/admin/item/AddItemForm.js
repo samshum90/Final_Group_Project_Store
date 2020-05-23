@@ -10,7 +10,7 @@ class AddItemForm extends Component {
     maxSellPrice: 0,
     currentSellPrice: 0,
     buyPrice: 0,
-    img: '',
+    imgUrl: '',
     description: ''
   }
 
@@ -31,13 +31,16 @@ handleTypeChange = (event) => {
 handleMaxSellPriceChange = (event) => {
   this.setState({maxSellPrice: event.target.value})
 }
+handleCurrentSellPriceChange = (event) => {
+  this.setState({currentSellPrice: event.target.value})
+}
 
 handleBuyPriceChange = (event) => {
   this.setState({buyPrice: event.target.value})
 }
 
-handleImgChange = (event) => {
-  this.setState({img: event.target.value})
+handleImgUrlChange = (event) => {
+  this.setState({imgUrl: event.target.value})
 }
 
 handleDescriptionChange = (event) => {
@@ -53,7 +56,7 @@ handleSubmit = (event) => {
     maxSellPrice: this.state.maxSellPrice,
     currentSellPrice: this.state.currentSellPrice,
     buyPrice: this.state.buyPrice,
-    img: this.state.img,
+    imgUrl: this.state.imgUrl,
     description: this.state.description
   }
   this.props.onFormSubmit(newItem);
@@ -90,12 +93,20 @@ render() {
       onChange={this.handleTypeChange}
       ></input>
 
-      <label htmlFor="max-sale-price">List Price: </label>
+      <label htmlFor="max-sell-price">Recommended Retail Price: </label>
       <input 
       type="number" 
       id="sale-price"
       value={this.state.maxSellPrice}
       onChange={this.handleMaxSellPriceChange}
+      ></input>
+
+      <label htmlFor="current-sell-price">Current Price: </label>
+      <input 
+      type="number" 
+      id="current-sell-price"
+      value={this.state.currentSellPrice}
+      onChange={this.handleCurrentSellPriceChange}
       ></input>
 
       <label htmlFor="buy-price">Unit Cost: </label>
@@ -110,8 +121,8 @@ render() {
       <input 
       type="text" 
       id="image-url"
-      value={this.state.img}
-      onChange={this.handleImgChange}
+      value={this.state.imgUrl}
+      onChange={this.handleImgUrlChange}
       ></input> 
 
       <label htmlFor="description">Description: </label>
