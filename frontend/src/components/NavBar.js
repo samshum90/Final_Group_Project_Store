@@ -9,7 +9,7 @@ const NavBar = ( ) => {
       <nav className="nav-bar">
           <ul>
             <li>
-              <Link to="/store">
+              <Link to="/">
               <img src={Logo} alt="Code Clan Logo" />
               </Link>
             </li>
