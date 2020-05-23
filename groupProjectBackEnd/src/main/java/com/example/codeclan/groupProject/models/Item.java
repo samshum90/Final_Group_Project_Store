@@ -3,6 +3,8 @@ package com.example.codeclan.groupProject.models;
 
 import org.springframework.data.annotation.Id;
 
+import javax.swing.text.html.Option;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Item {
@@ -16,13 +18,14 @@ public class Item {
     private int maxSellPrice;
     private int currentSellPrice;
     private int buyPrice;
-    private String imageUrl;
+    private String imgUrl;
     private String description;
+    private ArrayList<HashMap> options;
     private HashMap<String, String> option;
     private Stock stock;
     private boolean highlighted;
 
-    public Item(boolean highlighted,String name, String brand, String type, int maxSellPrice, int buyPrice, String imageUrl, String description, Stock stock) {
+    public Item(boolean highlighted,String name, String brand, String type, int maxSellPrice, int buyPrice, String imgUrl, String description, Stock stock) {
         this.highlighted = highlighted;
         this.name = name;
         this.brand = brand;
@@ -30,10 +33,11 @@ public class Item {
         this.maxSellPrice = maxSellPrice;
         this.currentSellPrice = maxSellPrice -1;
         this.buyPrice = buyPrice;
-        this.imageUrl = imageUrl;
+        this.imgUrl = imgUrl;
         this.description = description;
         this.stock = stock;
         this.option = new HashMap<>();
+        this.options = new ArrayList<>();
     }
 
     public Item() {
@@ -43,18 +47,18 @@ public class Item {
     public String toString() {
         return String.format(
                 "Item[id=%s, highlighted='%s', name='%s', brand='%s', type='%s', maxSellPrice='%s', " +
-                        "currentSellPrice='%s', buyPrice='%s', imageUrl='%s', description='%s', " +
-                        "stock='%s', option='%s']",
+                        "currentSellPrice='%s', buyPrice='%s', imgUrl='%s', description='%s', " +
+                        "stock='%s', options='%s']",
                 id, highlighted, name, brand, type, maxSellPrice, currentSellPrice,
-                buyPrice, imageUrl, description, stock, option);
+                buyPrice, imgUrl, description, stock, options);
     }
 
-    public HashMap<String, String> getOption() {
-        return option;
+    public ArrayList<HashMap> getOptions(){
+        return options;
     }
 
     public void setOption(HashMap<String, String> option) {
-        this.option = option;
+        this.options.add(option);
     }
 
     public String getName() {
@@ -101,12 +105,12 @@ public class Item {
         this.buyPrice = buyPrice;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public String getDescription() {

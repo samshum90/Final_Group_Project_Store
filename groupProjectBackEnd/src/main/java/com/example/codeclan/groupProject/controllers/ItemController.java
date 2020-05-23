@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -42,6 +43,11 @@ public class ItemController {
 
     @GetMapping("{id}")
     public ResponseEntity getItem(@PathVariable String id){
+        if (!itemRepository.findById(id).isPresent()){
+            HashMap<String , String> noItem = new HashMap<>();
+            noItem.put("noItemFound", "0");
+            return new ResponseEntity<>(noItem, HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>(itemRepository.findById(id), HttpStatus.OK);
     }
 
@@ -58,7 +64,7 @@ public class ItemController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         itemRepository.save(item);
-        return new ResponseEntity<>(item, HttpStatus.CREATED);
+        return new ResponseEntity<Item>(item, HttpStatus.CREATED);
     }
 
     @DeleteMapping("{id}")
