@@ -1,45 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ffca808-b866-49b1-ae5f-db8a615b09a3" name="Default Changelist" comment="">
+
+    <list default="true" id="870936e8-aa72-45bb-8672-227330e3c94d" name="Default Changelist" comment="">
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
-  </component>
-  <component name="ProjectId" id="1cGow03aXWLxhjjTxDYRNf4Iuk1" />
+  <component name="ProjectId" id="1cJ2tmgq9UDAXJQYVi0imMDiLwC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
-  <component name="RunManager" selected="Application.GroupProjectApplication">
+  <component name="RunManager" selected="JUnit.GroupProjectApplicationTests">
     <configuration name="GroupProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplication" />
-      <module name="groupProject" />
+      <module name="groupProjectBackEnd" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
@@ -51,7 +42,7 @@
       </method>
     </configuration>
     <configuration name="GroupProjectApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="groupProject" />
+      <module name="groupProjectBackEnd" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
@@ -63,20 +54,12 @@
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GroupProjectApplication" />
         <item itemvalue="JUnit.GroupProjectApplicationTests" />
+        <item itemvalue="Application.GroupProjectApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -85,15 +68,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5ffca808-b866-49b1-ae5f-db8a615b09a3" name="Default Changelist" comment="" />
-      <created>1590164525898</created>
+      <changelist id="870936e8-aa72-45bb-8672-227330e3c94d" name="Default Changelist" comment="" />
+      <created>1590232593193</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1590164525898</updated>
+      <updated>1590232593193</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590237542774">
       <screen x="0" y="23" width="1440" height="793" />
     </state>
@@ -122,5 +106,27 @@
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590197404710" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590237542773" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.793@0.23.1440.793" timestamp="1590229915784" />
+=======
+    <state width="1638" height="290" key="GridCell.Tab.0.bottom" timestamp="1590254648659">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="290" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1590254648659" />
+    <state width="1638" height="290" key="GridCell.Tab.0.bottom/0.23.1680.975@0.23.1680.975" timestamp="1590254003352" />
+    <state width="1638" height="290" key="GridCell.Tab.0.center" timestamp="1590254648657">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="290" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1590254648657" />
+    <state width="1638" height="290" key="GridCell.Tab.0.center/0.23.1680.975@0.23.1680.975" timestamp="1590254003349" />
+    <state width="1638" height="290" key="GridCell.Tab.0.left" timestamp="1590254648655">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="290" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1590254648655" />
+    <state width="1638" height="290" key="GridCell.Tab.0.left/0.23.1680.975@0.23.1680.975" timestamp="1590254003346" />
+    <state width="1638" height="290" key="GridCell.Tab.0.right" timestamp="1590254648658">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="290" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1590254648658" />
+    <state width="1638" height="290" key="GridCell.Tab.0.right/0.23.1680.975@0.23.1680.975" timestamp="1590254003350" />
+>>>>>>> 015e29950198055485a97e7a7f3563597d66054e
   </component>
 </project>
