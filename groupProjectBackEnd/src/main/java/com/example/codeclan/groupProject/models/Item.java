@@ -3,7 +3,6 @@ package com.example.codeclan.groupProject.models;
 
 import org.springframework.data.annotation.Id;
 
-import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -48,15 +47,9 @@ public class Item {
         return String.format(
                 "Item[id=%s, highlighted='%s', name='%s', brand='%s', type='%s', maxSellPrice='%s', " +
                         "currentSellPrice='%s', buyPrice='%s', imgUrl='%s', description='%s', " +
-<<<<<<< HEAD
-                        "stock='%s', option='%s']",
-                id, highlighted, name, brand, type, maxSellPrice, currentSellPrice,
-                buyPrice, imgUrl, description, stock, option);
-=======
                         "stock='%s', options='%s']",
                 id, highlighted, name, brand, type, maxSellPrice, currentSellPrice,
                 buyPrice, imgUrl, description, stock, options);
->>>>>>> 1da12d83ac0f73d473eff2ac9a1fa3b26b635b4a
     }
 
     public ArrayList<HashMap> getOptions(){
