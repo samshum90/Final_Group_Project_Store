@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ffca808-b866-49b1-ae5f-db8a615b09a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/Footer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/NavBar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/NavBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/SearchBar.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/StoreItem.js" beforeDir="false" />
@@ -12,6 +14,7 @@
       <change beforePath="$PROJECT_DIR$/../frontend/src/containers/AdminContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/AdminContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
