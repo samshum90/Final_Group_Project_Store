@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.HashMap;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -53,7 +52,6 @@ class GroupProjectApplicationTests {
 
 		assertEquals(1, userRepository.findByUserName("username").size());
 		assertEquals(1, userRepository.findByEmail("email.com").size());
-		System.out.println((user.getAddress().getTitle()));
 //		assertEquals(user, userRepository.findByIdIs(user.getId()));
 
 		stockRepository.deleteAll();
@@ -88,11 +86,6 @@ class GroupProjectApplicationTests {
 		item = itemRepository.save(item);
 		assertEquals(1, itemRepository.findByBrand("brand").size());
 		assertEquals(1, itemRepository.findByHighlighted(false).size());
-		System.out.println(item);
-		System.out.println(item2);
-		System.out.println(itemRepository.findByBrand("brand").get(0).getMaxSellPrice());
-		System.out.println(itemRepository.findByBrand("brand").get(0).getHighlighted());
-
 
 		orderRepository.deleteAll();
 		orderBasket = new Order(user, "basket", "23/05/2020 12:00:00");
@@ -104,6 +97,12 @@ class GroupProjectApplicationTests {
 		orderBasket = orderRepository.save(orderBasket);
 		user.addOrder(orderBasket.getId());
 		user = userRepository.save(user);
+
+		User user2 = new User();
+		userRepository.save(user2);
+
+		System.out.println(user.getId());
+		System.out.println(user2.getId());
 
 		assertEquals(1, orderRepository.findByUserId(user.getId()).size());
 		assertEquals(item.getId(), orderRepository.findByStatus("basket").get(0).getItems().get(0).getId());
