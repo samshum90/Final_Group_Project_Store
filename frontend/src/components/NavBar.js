@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 import Logo from '../assets/icons/CodeClan_Logo.png';
 import { Icon } from 'semantic-ui-react';
+import LoginButton from './LoginButton'
 
 const NavBar = () => {
 	return (
@@ -23,7 +24,7 @@ const NavBar = () => {
 					<Link to="/orders">Orders</Link>
 				</li>
 				<li>
-					<Link to="/log-in">Log In</Link>
+					<LoginButton />
 				</li>
 				<li>
 					<Link to="/cart">

@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GroupProjectApplicationTests {
 
 	User user;
+	User user2;
 	Address address;
 	Item item;
 	Item item2;
@@ -47,6 +48,13 @@ class GroupProjectApplicationTests {
 		user = new User(false,"username","password", "email.com", address );
 
 		user = userRepository.save(user);
+
+
+		address = new Address("Mr", "User", "Name", "123 Fake Street",
+				"Fake Building", "TownsVille", "Edinburgh", "EH01 0AB" );
+		user2 = new User(false,"admin","admin", "@email.com", address );
+
+		user2 = userRepository.save(user2);
 
 
 

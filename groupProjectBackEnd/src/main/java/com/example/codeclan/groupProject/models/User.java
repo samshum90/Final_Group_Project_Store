@@ -1,7 +1,5 @@
 package com.example.codeclan.groupProject.models;
 
-
-import com.sun.istack.NotNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,6 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.GeneratedValue;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -20,7 +19,7 @@ public class User implements UserDetails {
     String id;
 
     private Boolean admin;
-    @NotNull
+   @NotNull
     private String userName;
     @NotNull
 //    @JsonIgnore

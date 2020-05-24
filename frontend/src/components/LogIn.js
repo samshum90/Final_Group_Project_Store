@@ -34,9 +34,10 @@ class LogIn extends Component {
             .then((data) => {
 				console.log(data.data.token)
 				AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, this.state.password)
+				console.log(sessionStorage)
 				this.setState({ showSuccessMessage: true })
                 this.setState({ hasLoginFailed: false })
-                // this.props.history.push(`/`)
+                .then(this.props.history.push("/"))
             }).catch(() => {
                 this.setState({ showSuccessMessage: false })
                 this.setState({ hasLoginFailed: true })

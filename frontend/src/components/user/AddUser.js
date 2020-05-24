@@ -52,7 +52,7 @@ class AddUser extends Component {
 			
 		};
 		this.props.onFormSubmit(newUser);
-		console.log(newUser)
+		this.props.history.push(`/log-in`)
 	};
 
 
