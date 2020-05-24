@@ -1,5 +1,6 @@
 package com.example.codeclan.groupProject.models;
 
+import com.sun.istack.internal.NotNull;
 import org.springframework.data.annotation.Id;
 
 import java.util.ArrayList;
@@ -10,8 +11,11 @@ public class User {
     private String id;
 
     private Boolean admin;
+    @NotNull
     private String userName;
+    @NotNull
     private String password;
+    @NotNull
     private String email;
     private Address address;
     private ArrayList<String> orders;
