@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce4b0f4e-afcf-40a5-89eb-58e62d21e0d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/LogIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/LogIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/store/StoreItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/store/StoreItemList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" afterDir="false" />
+    <list default="true" id="32c603db-8463-4bc7-a532-3379d20a983c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +27,7 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1cJsNZ8bTDeOBUguvH7knHk5bMX" />
+  <component name="ProjectId" id="1cMVZibYIvxZmumW1xGSf1ZDEQb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
-  <component name="RunManager" selected="JUnit.GroupProjectApplicationTests">
+  <component name="RunManager">
     <configuration name="GroupProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplication" />
       <module name="groupProject" />
@@ -55,33 +52,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GroupProjectApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="groupProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.codeclan.groupProject" />
-      <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BSP.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GroupProjectApplication" />
-        <item itemvalue="JUnit.GroupProjectApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -90,38 +63,30 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ce4b0f4e-afcf-40a5-89eb-58e62d21e0d1" name="Default Changelist" comment="" />
-      <created>1590257990978</created>
+      <changelist id="32c603db-8463-4bc7-a532-3379d20a983c" name="Default Changelist" comment="" />
+      <created>1590338506542</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1590257990978</updated>
+      <updated>1590338506542</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590336524416">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590339766257">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590336524416" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590265903624" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.795@0.23.1440.795" timestamp="1590266258584" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590336524411">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590339766257" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590339766253">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590336524411" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590265903623" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.795@0.23.1440.795" timestamp="1590266258582" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590336524410">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590339766253" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590339766249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590336524410" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590265903622" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.795@0.23.1440.795" timestamp="1590266258581" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590336524415">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590339766249" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590339766255">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590336524415" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590265903623" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.795@0.23.1440.795" timestamp="1590266258583" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590339766255" />
   </component>
 </project>

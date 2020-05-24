@@ -1,9 +1,8 @@
 import axios from 'axios'
 
-const ADMIN = 'in28minutes'
-const PASSWORD = 'dummy'
+
 const API_URL = 'http://localhost:8080'
-const ADMIN_API_URL = `${API_URL}/admin/${ADMIN}`
+// const ADMIN_API_URL = `${API_URL}/admin/${ADMIN}`
 
 
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
@@ -12,10 +11,10 @@ axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded'
 
 class AuthenticationService {
 
-    executeBasicAuthenticationService(username, password) {
-        return axios.get(`${API_URL}/basicauth`,
-            { headers: { authorization: this.createBasicAuthToken(username, password) } })
-    }
+    // executeBasicAuthenticationService(username, password) {
+    //     return axios.get(`${API_URL}/basicauth`,
+    //         { headers: { authorization: this.createBasicAuthToken(username, password) } })
+    // }
 
     executeJwtAuthenticationService(username, password) {
         console.log(username);
@@ -25,17 +24,17 @@ class AuthenticationService {
         })
     }
 
-    createBasicAuthToken(username, password) {
-        return 'Basic ' + window.btoa(username + ":" + password)
-    }
+    // createBasicAuthToken(username, password) {
+    //     return 'Basic ' + window.btoa(username + ":" + password)
+    // }
 
-    registerSuccessfulLogin(username, password) {
-        // let basicAuthHeader = 'Basic ' +  window.btoa(username + ":" + password)
-        console.log('registerSuccessfulLogin')
-        sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
-        console.log(sessionStorage)
-        this.setupAxiosInterceptors(this.createBasicAuthToken(username, password))
-    }
+    // registerSuccessfulLogin(username, password) {
+    //     // let basicAuthHeader = 'Basic ' +  window.btoa(username + ":" + password)
+    //     console.log('registerSuccessfulLogin')
+    //     sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
+    //     console.log(sessionStorage)
+    //     this.setupAxiosInterceptors(this.createBasicAuthToken(username, password))
+    // }
 
     registerSuccessfulLoginForJwt(username, token) {
         sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)

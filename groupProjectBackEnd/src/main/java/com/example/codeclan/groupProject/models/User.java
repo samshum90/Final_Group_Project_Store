@@ -1,17 +1,18 @@
 package com.example.codeclan.groupProject.models;
 
-import com.sun.istack.internal.NotNull;
-import org.springframework.data.annotation.Id;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 
 public class User {
 
     public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
-    private @Id String id;
+    private @Id
+    String id;
 
     private Boolean admin;
     @NotNull

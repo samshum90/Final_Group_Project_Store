@@ -19,8 +19,8 @@ class LogIn extends Component {
 		this.state = {
 			username:'',
 			password:'',
-			hasLoginFailed: false,
-      showSuccessMessage: false
+			hasLoginFailed: '',
+      		showSuccessMessage: false
 		}
 		this.handleUsernameChange = this.handleUsernameChange.bind(this)
 		this.handlePasswordChange = this.handlePasswordChange.bind(this)
@@ -33,16 +33,15 @@ class LogIn extends Component {
 			.executeJwtAuthenticationService(this.state.username, this.state.password)
             .then((data) => {
 				console.log(data.data.token)
-				AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password)
+				AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, this.state.password)
+				this.setState({ showSuccessMessage: true })
+                this.setState({ hasLoginFailed: false })
                 // this.props.history.push(`/`)
             }).catch(() => {
                 this.setState({ showSuccessMessage: false })
                 this.setState({ hasLoginFailed: true })
             })
 	}
-	
-
-
 
     handleUsernameChange(event) {
         this.setState(
