@@ -1,0 +1,31 @@
+#segment{
+    padding: 20px;
+    min-height: 45vh;
+}
+#segment h4{
+    margin-bottom: 0;
+    padding-left: 9px;
+}
+#segment h2{
+    margin-top: 5px;
+    padding-left: 9px;
+}
+#segment h3{
+    margin-top: 15px;
+    border-top: 1px solid var(--Grey);
+    padding: 9px;
+}
+
+#segment p{
+    border-bottom: 1px solid var(--Grey);
+    min-height: 15vh;
+}
+.rating{
+    padding-left: 9px;    
+}
+
+.button {
+
+    border-top: 1px solid var(--Grey);
+
+}

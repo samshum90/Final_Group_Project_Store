@@ -6,14 +6,21 @@ const StoreItem = (props) => {
 	return (
 		<Grid.Column>
 			<Card fluid>
-				<Image wrapped ui={false} src={props.item.imgUrl} />
+				<Image 
+					src={props.item.imgUrl} 
+					href={URL}
+				/>
 
 				<Card.Content>
 					<Card.Header>
 						<a href={URL}>{props.item.name} </a>
 					</Card.Header>
 					<Card.Meta>
-						<Rating icon="star" defaultRating={3} maxRating={4} />
+						<Rating 
+							icon="star" 
+							defaultRating={3} 
+							maxRating={5} 
+						/>
 					</Card.Meta>
 					<Card.Description>
 						Price: £{props.item.currentSellPrice}

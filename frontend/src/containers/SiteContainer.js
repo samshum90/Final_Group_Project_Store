@@ -77,10 +77,6 @@ class SiteContainer extends Component {
 							component={() => <ShopContainer items={this.state.items} />}
 						/>
 						<Route
-							path="/contact-us"
-							component={() => <ShopContainer items={this.state.items} />}
-						/>
-						<Route
 							path="/where"
 							component={() => <ShopContainer items={this.state.items} />}
 						/>

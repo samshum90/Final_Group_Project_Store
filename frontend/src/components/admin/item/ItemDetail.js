@@ -1,34 +1,66 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Request from '../../../helpers/request';
-import { Button } from 'semantic-ui-react';
+import { Button, Segment, Image, Grid, Confirm } from 'semantic-ui-react';
 
-const ItemDetail = (props) => {
-	const URL = '/admin/items/edit/' + props.item.id;
+class ItemDetail extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			open: false
+		};
+	}
+
+	open = () => this.setState({ open: true })
+	close = () => this.setState({ open: false })
+  
+	
+render(){
+	const URL = '/admin/items/edit/' + this.props.item.id;
+
+	const handleDelete = (event) => {
+		const url = 'http://localhost:8080/items/' + this.props.item.id;
+		this.setState({ open: false })
+		const request = new Request();
+		request.delete(url)
+		.then((window.location = '/admin/items'));
+	};
 
 	return (
-		<li>
-			{props.item.name} <img src={props.item.imgUrl} alt={props.item.name} />
-			RRP: £{props.item.maxSellPrice}, Current Price: £
-			{props.item.currentSellPrice}, Supplier Price: £{props.item.buyPrice}
-			<a href={URL}>
-				{' '}
-				<Button primary>Edit item</Button>
-			</a>
-			<button
-				className="ui red button"
-				onClick={handleDelete}
-				value={props.item.id}
-			>
-				Delete Item
-			</button>
-		</li>
+	<Grid.Column>
+		<Segment>
+			<Grid columns={2} >
+      			<Grid.Column>
+					<Image src={this.props.item.imgUrl} alt={this.props.item.name} size='medium'/>
+					</Grid.Column>
+				<Grid.Column>
+					<h3>{this.props.item.name}</h3>
+					<p>RRP: £{this.props.item.maxSellPrice} </p>
+					<p>Current Price: £ {this.props.item.currentSellPrice} </p>
+					<p>Supplier Price: £{this.props.item.buyPrice}</p>
+					<a href={URL}>
+						<Button primary compact>Edit item</Button>
+					</a>
+					<Button
+						negative
+						compact
+						value={this.props.item.id}
+						onClick={this.open}
+					>
+						Delete Item
+					</Button>
+					<Confirm
+          				open={this.state.open}
+						onCancel={this.close}
+          				onConfirm={handleDelete}
+        			/>
+				</Grid.Column>
+			</Grid>
+		</Segment>
+	</Grid.Column>
+	
 	);
+}
 };
 
-const handleDelete = (event) => {
-	const url = 'http://localhost:8080/items/' + event.target.value;
-	const request = new Request();
-	request.delete(url).then((window.location = '/admin/items'));
-};
 
 export default ItemDetail;

@@ -1,71 +1,94 @@
 import React, { Component } from 'react';
-import { Button, Form, Container } from 'semantic-ui-react';
+import { Button, Form, Container, Checkbox } from 'semantic-ui-react';
 
 class AddUser extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			username: '',
+			userName: '',
 			password: '',
 			email: '',
-			title: '',
-			firstName: '',
-			lastName: '',
 			address: {
+				title: '',
+				firstName: '',
+				lastName: '',
 				firstLine: '',
 				secondLine: '',
+				townCity:'',
 				county: '',
+				postCode: '',
 			},
-			postCode: '',
+			
 		};
+		this.onChange = this.onChange.bind(this);
 	}
 
 	handleChange = (e, { name, value }) => this.setState({ [name]: value });
 
+	onChange(e) { 
+		const { address } = { ...this.state };
+		const currentState = address;
+		const { name, value } = e.target;
+		currentState[name] = value;
+	  
+		this.setState({ address: currentState });
+	  }
 	handleSubmit = (event) => {
 		event.preventDefault();
 		const newUser = {
-			username: this.state.username,
+			userName: this.state.userName,
 			password: this.state.password,
 			email: this.state.email,
-			title: this.state.title,
-			firstName: this.state.firstName,
-			lastName: this.state.lastName,
 			address: {
-				firstLine: this.state.address.firstName,
-				secondLine: this.state.address.secondName,
-				county: this.state.country,
+				title: this.state.address.title,
+				firstName: this.state.address.firstName,
+				lastName: this.state.address.lastName,
+				firstLine: this.state.address.firstLine,
+				secondLine: this.state.address.secondLine,
+				townCity: this.state.address.townCity,
+				county: this.state.address.county,
+				postCode: this.state.address.postCode,
 			},
-			postCode: this.state.postCode,
+			
 		};
 		this.props.onFormSubmit(newUser);
+		console.log(newUser)
 	};
+
 
 	render() {
 		const {
-			username,
+			userName,
 			password,
 			email,
-			title,
-			firstName,
-			lastName,
-			address: { firstLine, secondLine, county },
-			postCode,
+			address: { 			
+				title,
+				firstName,
+				lastName,
+				firstLine, 
+				secondLine, 
+				townCity,
+				county,
+				postCode,
+			},
+			
 		} = this.state;
 		return (
 			<Container fluid className="item-container">
-				<Form onSubmit={this.handleSubmit}>
-					<Form.Group widths="equal">
+				<Form onSubmit={this.handleSubmit} className="form-container">
+				
 						<Form.Input
+							width={6}
 							required
 							label="Username:"
 							type="text"
-							name="username"
-							value={username}
+							name="userName"
+							value={userName}
 							onChange={this.handleChange}
 						/>
 
 						<Form.Input
+						width={6}
 							required
 							label="Password:"
 							type="password"
@@ -73,9 +96,10 @@ class AddUser extends Component {
 							value={password}
 							onChange={this.handleChange}
 						/>
-					</Form.Group>
+					
 
 					<Form.Input
+					width={6}
 						required
 						label="Email:"
 						type="email"
@@ -84,71 +108,94 @@ class AddUser extends Component {
 						onChange={this.handleChange}
 					/>
 
-					<Form.Group>
+	
 						<Form.Input
-							width={2}
+							width={6}
 							label="Title:"
 							type="text"
 							name="title"
 							value={title}
-							onChange={this.handleChange}
+							onChange={this.onChange}
 						/>
 
 						<Form.Input
 							required
-							width={7}
+							width={6}
 							label="First Name:"
 							type="text"
 							name="firstName"
 							value={firstName}
-							onChange={this.handleChange}
+							onChange={this.onChange}
 						/>
 
 						<Form.Input
+						centered
 							required
-							width={7}
+							width={6}
 							label="Last Name:"
 							type="text"
 							name="lastName"
 							value={lastName}
-							onChange={this.handleChange}
+							onChange={this.onChange}
 						/>
-					</Form.Group>
 
-					<label> Address</label>
+	
+				
+
+					<label> Address:</label>
+				
 					<Form.Input
+						width={6}
 						required
 						label="First Line:"
 						type="text"
-						name="firstName"
+						name="firstLine"
 						value={firstLine}
-						onChange={this.handleChange}
+						onChange={this.onChange}
 					/>
 
 					<Form.Input
+						width={6}
 						label="Second Line:"
 						type="text"
-						name="secondLing"
+						name="secondLine"
 						value={secondLine}
-						onChange={this.handleChange}
+						onChange={this.onChange}
+					/>
+
+			
+
+					<Form.Input
+						width={6}
+						label="City:"
+						type="text"
+						name="townCity"
+						value={townCity}
+						onChange={this.onChange}
 					/>
 
 					<Form.Input
+						width={6}
 						label="County:"
 						type="text"
 						name="county"
 						value={county}
-						onChange={this.handleChange}
+						onChange={this.onChange}
 					/>
 
 					<Form.Input
+						width={6}
 						required
 						label="Post Code:"
 						type="text"
 						name="postCode"
 						value={postCode}
-						onChange={this.handleChange}
+						onChange={this.onChange}
 					/>
+
+					<Form.Field required>
+      					<Checkbox label='I agree to the Terms and Conditions' />
+    				</Form.Field>
 					<Button primary type="submit">
 						Submit
 					</Button>

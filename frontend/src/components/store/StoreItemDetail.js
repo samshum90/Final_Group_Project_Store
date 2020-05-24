@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Dimmer, Loader } from 'semantic-ui-react';
+import { Dimmer, Loader, Container, Segment, Grid, Image, Rating, Button } from 'semantic-ui-react';
 import Request from '../../helpers/request';
+import './StoreItemDetail.css'
 
 class StoreItemDetail extends Component {
 	constructor(props) {
@@ -37,7 +38,50 @@ class StoreItemDetail extends Component {
 			return (window.location = '/*');
 		}
 
-		return <>{this.state.item.name}</>;
+		return (
+			<Container fluid className="item-container">
+				<Grid>
+					<Grid.Row>
+					<Grid.Column width={5}>
+						<Segment>
+							<Image 
+								src={this.state.item.imgUrl} 
+								alt={this.state.item.name} 
+								size='large' 
+							/>
+						</Segment>
+					</Grid.Column>
+					<Grid.Column width={11}>
+						<Segment.Group>
+							<Segment id='segment'>
+								<h4>{this.state.item.brand} </h4>
+								<h2>{this.state.item.name} </h2>
+								<Rating 
+									className='rating'
+									icon="star" 
+									defaultRating={3} 
+									maxRating={5} 
+									size='huge'
+								/>
+								<h3>Price:  £{this.state.item.currentSellPrice} </h3>
+								<p>{this.state.item.description}</p>
+
+								<Button primary compact 
+									className='button'
+									floated="right">
+									Add To Cart
+								</Button>
+
+							</Segment>
+				
+						</Segment.Group>
+					</Grid.Column>
+					</Grid.Row>
+				</Grid>
+
+			</Container>
+
+		)
 	}
 }
 

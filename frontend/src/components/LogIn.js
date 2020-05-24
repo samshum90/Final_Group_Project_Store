@@ -6,14 +6,21 @@ import {
 	Form,
 	Grid,
 	Segment,
+	Image,
 } from 'semantic-ui-react';
-import Crest from '../assets/icons/codeclan-crest.png';
+import Crest from '../assets/icons/Code-Clan-Crest.png';
 import { Link } from 'react-router-dom';
+import './LogIn.css'
 
 const LogIn = () => {
 	return (
-		<Container fluid className="main-container">
+	<Container fluid id="login-container">
+		<Segment.Group raised className="login-segment">
 			<Segment placeholder>
+			<Image src={Crest} alt="Code Clan Crest"  size='medium' centered  />
+			</Segment>
+
+			<Segment placeholder color='blue'>
 				<Grid columns={2} relaxed="very" stackable>
 					<Grid.Column>
 						<Form>
@@ -41,11 +48,11 @@ const LogIn = () => {
 					</Grid.Column>
 				</Grid>
 
-				<Divider vertical>
-					<img src={Crest} alt="Code Clan Crest" />
-				</Divider>
+				<Divider vertical />
+					
 			</Segment>
-		</Container>
+		</Segment.Group>
+	</Container>
 	);
 };
 

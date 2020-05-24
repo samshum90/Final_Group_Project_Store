@@ -11,9 +11,6 @@ function Footer () {
                     <Link to="/about">About</Link>
                 </li>
                 <li>
-                    <Link to="/contact-us">Contact Us</Link>
-                </li>
-                <li>
                     <Link to="/where">Where to find us</Link>
                 </li>
                 <li>

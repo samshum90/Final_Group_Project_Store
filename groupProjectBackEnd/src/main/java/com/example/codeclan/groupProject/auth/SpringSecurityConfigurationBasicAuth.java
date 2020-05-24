@@ -15,6 +15,8 @@ public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerA
         http
                 .csrf().disable()
                 .authorizeRequests()
+                .antMatchers(HttpMethod.GET,"/users").permitAll()
+                .antMatchers(HttpMethod.POST,"/users").permitAll()
                 .antMatchers(HttpMethod.PATCH,"/items/*").permitAll()
                 .antMatchers(HttpMethod.GET ,"/items").permitAll()
                 .antMatchers(HttpMethod.POST,"/items").permitAll()

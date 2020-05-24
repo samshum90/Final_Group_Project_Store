@@ -1,0 +1,12 @@
+#login-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px 50px;
+    background-color: var(--blueGrey);
+    
+}
+
+.login-segment{
+    width: 40vw;
+
+}

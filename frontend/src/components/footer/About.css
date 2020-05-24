@@ -1,0 +1,50 @@
+#title{
+    margin-top: 0;
+    font-weight: bolder;
+}
+
+.about-container{
+    font-family: Gilroy, Sans-serif;
+
+}
+.about-container h4{
+    font-size: 1.25rem;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+}
+.about-container p{
+    font-size: 1em;
+}
+.about-container address{
+    margin-bottom: 24px;
+    display: block;
+}
+
+.about-container a{
+    color: var(--paleYellow);
+    cursor: pointer;
+}
+
+.about-container a:hover{
+    color: white;
+}
+.about-container ul{
+    margin-top: 2em;
+}
+.about-container ul li{
+    list-style: none;
+    padding: 3px
+}
+
+.about-container ul li a{
+    color: white;
+    cursor: pointer;
+}
+
+.about-container ul li a:hover{
+    color: var(--paleYellow);
+}
