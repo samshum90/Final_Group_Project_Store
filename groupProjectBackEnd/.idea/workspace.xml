@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce4b0f4e-afcf-40a5-89eb-58e62d21e0d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/admin/item/ItemDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/admin/item/ItemDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/admin/item/ItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/admin/item/ItemList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/LogIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/LogIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/store/StoreItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/store/StoreItemList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/SpringSecurityConfigurationBasicAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/auth/SpringSecurityConfigurationBasicAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,24 +99,28 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590266258584">
-      <screen x="0" y="23" width="1440" height="795" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590336524416">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590336524416" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590265903624" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.795@0.23.1440.795" timestamp="1590266258584" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590266258582">
-      <screen x="0" y="23" width="1440" height="795" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590336524411">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590336524411" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590265903623" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.795@0.23.1440.795" timestamp="1590266258582" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590266258581">
-      <screen x="0" y="23" width="1440" height="795" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590336524410">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590336524410" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590265903622" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.795@0.23.1440.795" timestamp="1590266258581" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590266258583">
-      <screen x="0" y="23" width="1440" height="795" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590336524415">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590336524415" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590265903623" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.795@0.23.1440.795" timestamp="1590266258583" />
   </component>

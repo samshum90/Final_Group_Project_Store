@@ -4,9 +4,7 @@ import StoreItem from './StoreItem';
 import './StoreItem.css';
 
 const StoreItemList = (props) => {
-	if (props.items.noItemFound) {
-		return (window.location = '/admin/new');
-	}
+
 
 	if (!props.items || !props.items.length) {
 		console.log(props.items);
@@ -15,6 +13,10 @@ const StoreItemList = (props) => {
 				<Loader inverted content="Loading" />
 			</Dimmer>
 		);
+	}
+
+	if (props.items.noItemFound) {
+		return (window.location = '/admin/new');
 	}
 
 	const StoreItems = props.items.map((item) => {

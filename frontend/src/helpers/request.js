@@ -1,19 +1,6 @@
 import AuthenticationService from '../service/AuthenticationService';
 
 class Request {
-	login(url) {
-		const username = 'user';
-		const password = 'e0821b18-aab5-4683-b543-38d48956524d';
-
-		AuthenticationService.executeBasicAuthenticationService(username, password)
-			.then(() => {
-				AuthenticationService.registerSuccessfulLogin(username, password);
-			})
-			.catch(() => {
-				// this.setState({ showSuccessMessage: false })
-				// this.setState({ hasLoginFailed: true })
-			});
-	}
 
 	get(url) {
 		return fetch(url)

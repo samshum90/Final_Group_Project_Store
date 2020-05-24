@@ -11,6 +11,7 @@ class SiteContainer extends Component {
 		super(props);
 		this.state = {
 			items: [],
+			user: null,
 		};
 		this.getItems = this.getItems.bind(this);
 	}

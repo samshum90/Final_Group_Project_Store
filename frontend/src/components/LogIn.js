@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
 	Container,
 	Button,
@@ -11,9 +11,54 @@ import {
 import Crest from '../assets/icons/Code-Clan-Crest.png';
 import { Link } from 'react-router-dom';
 import './LogIn.css'
+import AuthenticationService from '../service/AuthenticationService'
 
-const LogIn = () => {
+class LogIn extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			username:'',
+			password:'',
+			hasLoginFailed: false,
+      showSuccessMessage: false
+		}
+		this.handleUsernameChange = this.handleUsernameChange.bind(this)
+		this.handlePasswordChange = this.handlePasswordChange.bind(this)
+   		this.loginClicked = this.loginClicked.bind(this)
+	}
+
+	loginClicked() {
+	
+	AuthenticationService
+			.executeJwtAuthenticationService(this.state.username, this.state.password)
+            .then((data) => {
+				console.log(data.data.token)
+				AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password)
+                // this.props.history.push(`/`)
+            }).catch(() => {
+                this.setState({ showSuccessMessage: false })
+                this.setState({ hasLoginFailed: true })
+            })
+	}
+	
+
+
+
+    handleUsernameChange(event) {
+        this.setState(
+            {username: event.target.value}
+        )
+		}
+		
+		handlePasswordChange(event) {
+        this.setState(
+            {password: event.target.value}
+        )
+    }
+
+	render(){
 	return (
+
 	<Container fluid id="login-container">
 		<Segment.Group raised className="login-segment">
 			<Segment placeholder>
@@ -27,18 +72,26 @@ const LogIn = () => {
 							<Form.Input
 								icon="user"
 								iconPosition="left"
-								label="Username"
+								label="Username:"
 								placeholder="Username"
+								value={this.state.username}
+								onChange={this.handleUsernameChange}
 							/>
 							<Form.Input
 								icon="lock"
 								iconPosition="left"
-								label="Password"
+								label="Password:"
 								type="password"
+								value={this.state.password}
+								onChange={this.handlePasswordChange}
 							/>
 
-							<Button content="Login" primary />
+							<Button content="Login" primary onClick={this.loginClicked} />
 						</Form>
+
+
+					{this.state.hasLoginFailed && <div>Invalid Credentials</div>}
+                    {this.state.showSuccessMessage && <div>Login Sucessful</div>}
 					</Grid.Column>
 
 					<Grid.Column verticalAlign="middle">
@@ -54,6 +107,7 @@ const LogIn = () => {
 		</Segment.Group>
 	</Container>
 	);
+	}
 };
 
 export default LogIn;
