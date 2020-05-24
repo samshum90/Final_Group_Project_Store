@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @CrossOrigin
@@ -37,14 +38,25 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> postUsers(@RequestBody User user){
+    public ResponseEntity postUsers(@RequestBody User user){
+        if(userRepository.findByUserName(user.getUserName()).contains(user)){
+            HashMap<String , String> userExists = new HashMap<>();
+            userExists.put("user name already used", user.getUserName());
+            return new ResponseEntity<>(userExists, HttpStatus.BAD_REQUEST);
+        }else if(userRepository.findByEmail(user.getEmail()).contains(user)){
+            HashMap<String , String> emailExists = new HashMap<>();
+            emailExists.put("email already used", user.getEmail());
+            return new ResponseEntity<>(emailExists, HttpStatus.BAD_REQUEST);
+        }
+        String passwordNew = ((Integer) user.getPassword().hashCode()).toString();
+        user.setPassword(passwordNew);
         userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
     @PutMapping("{id}")
     public ResponseEntity<User> putUsers(@RequestBody User user, @PathVariable String id) {
-        if (user.getId() != id){
+        if (!userRepository.findById(id).isPresent()){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         userRepository.save(user);
