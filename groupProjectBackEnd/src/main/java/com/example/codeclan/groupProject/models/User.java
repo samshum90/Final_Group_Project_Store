@@ -2,23 +2,31 @@ package com.example.codeclan.groupProject.models;
 
 import com.sun.istack.internal.NotNull;
 import org.springframework.data.annotation.Id;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
 
 public class User {
 
-    @Id
-    private String id;
+    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
+
+    private @Id String id;
 
     private Boolean admin;
     @NotNull
     private String userName;
     @NotNull
+//    @JsonIgnore
     private String password;
     @NotNull
     private String email;
     private Address address;
     private ArrayList<String> orders;
+
+    public void setPassword(String password) {
+        this.password = PASSWORD_ENCODER.encode(password);
+    }
 
     public User() {
     }
@@ -26,7 +34,7 @@ public class User {
     public User(Boolean admin, String userName, String password, String email, Address address) {
         this.admin = admin;
         this.userName = userName;
-        this.password = password;
+        this.setPassword(password);
         this.email = email;
         this.address = address;
         this.orders = new ArrayList<>();
@@ -61,10 +69,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEmail() {
