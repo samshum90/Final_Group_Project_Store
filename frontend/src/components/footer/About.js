@@ -83,7 +83,7 @@ const About =() =>{
                 <Grid.Column>
                     <a href='http://facebook.com/codeclanscotland/'>
                         <Button color='facebook' icon='facebook' />
-                        </a>
+                    </a>
                     <a href='https://twitter.com/CodeClanScot'>
                         <Button color='twitter' icon='twitter' />
                     </a>

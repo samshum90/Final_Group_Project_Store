@@ -22,8 +22,8 @@ const StoreItemList = (props) => {
 	});
 
 	return (
-		<Container fluid className="main-container">
-			<Grid relaxed container columns={5}>
+		<Container fluid className="item-container">
+			<Grid  columns={5}>
 				{StoreItems}
 			</Grid>
 		</Container>

@@ -4,16 +4,16 @@ import OrderDetail from './OrderDetail'
 
 const OrderList = (props) => {
 
-	if (props.orders.length === 0){
+	// if (props.orders.length === 0){
 		
-      return (
+    //   return (
       
-        <Dimmer active inverted>
-            <Loader inverted content='Loading' />
-        </Dimmer>
+    //     <Dimmer active inverted>
+    //         <Loader inverted content='Loading' />
+    //     </Dimmer>
         
-        )
-	}
+    //     )
+	// }
 
 	const orders = props.orders.map(order => {
 	  return (

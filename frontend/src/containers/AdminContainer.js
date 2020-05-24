@@ -41,7 +41,7 @@ class AdminContainer extends Component {
 							component={() => <ItemList items={this.props.items} />}
 						/>
 						<Route
-							path="/orders"
+							path="/admin/orders"
 							component={() => <OrderList orders={this.state.orders} />}
 						/>
 					</Switch>
