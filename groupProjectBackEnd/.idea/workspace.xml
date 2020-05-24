@@ -38,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GroupProjectApplication">
     <configuration name="GroupProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplication" />
       <module name="groupProject" />
@@ -52,9 +52,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GroupProjectApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="groupProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.codeclan.groupProject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.codeclan.groupProject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GroupProjectApplication" />
+        <item itemvalue="JUnit.GroupProjectApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -72,21 +96,33 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590339766257">
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1590348239100">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1590348239100" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590349173315">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590339766257" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590339766253">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590349173315" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590349173314">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590339766253" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590339766249">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590349173314" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590349173313">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590339766249" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590339766255">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590349173313" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590349173315">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590339766255" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590349173315" />
+    <state x="64" y="168" key="Maven.ArtifactSearchDialog" timestamp="1590348197690">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="64" y="168" key="Maven.ArtifactSearchDialog/0.0.1440.900@0.0.1440.900" timestamp="1590348197690" />
   </component>
 </project>

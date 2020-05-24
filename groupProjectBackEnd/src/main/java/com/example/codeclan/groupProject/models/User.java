@@ -1,13 +1,7 @@
 package com.example.codeclan.groupProject.models;
 
-<<<<<<< HEAD
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-=======
-import com.sun.istack.internal.NotNull;
+import com.sun.istack.NotNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +9,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.GeneratedValue;
->>>>>>> origin/backend
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -23,11 +16,7 @@ public class User implements UserDetails {
 
     public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
-<<<<<<< HEAD
-    private @Id
-=======
     private @Id @GeneratedValue
->>>>>>> origin/backend
     String id;
 
     private Boolean admin;
