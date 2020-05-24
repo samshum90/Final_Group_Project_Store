@@ -1,17 +1,33 @@
 package com.example.codeclan.groupProject.models;
 
+<<<<<<< HEAD
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
+=======
+import com.sun.istack.internal.NotNull;
+import org.springframework.data.annotation.Id;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-public class User {
+import javax.persistence.GeneratedValue;
+>>>>>>> origin/backend
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class User implements UserDetails {
 
     public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
+<<<<<<< HEAD
     private @Id
+=======
+    private @Id @GeneratedValue
+>>>>>>> origin/backend
     String id;
 
     private Boolean admin;
@@ -68,8 +84,38 @@ public class User {
         this.userName = userName;
     }
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.userName;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 
     public String getEmail() {
@@ -94,5 +140,9 @@ public class User {
 
     public void addOrder(String newOrder){
         this.orders.add(newOrder);
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
