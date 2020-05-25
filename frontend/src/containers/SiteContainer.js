@@ -51,9 +51,15 @@ class SiteContainer extends Component {
 		})
 	}
 
-	removeFromBasket = (item) => {
-		console.log('I was removed')
-	}
+	removeFromBasket = (id) => {
+		this.setState(state => {
+			  const basket = state.basket.filter(item => item.id !== id);
+			  return {
+				basket,
+			  };
+			});
+		  };
+	
 
 	
 	// handleClick = (event) => {

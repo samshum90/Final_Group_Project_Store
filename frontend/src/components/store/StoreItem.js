@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, Image, Rating, Grid, Button } from 'semantic-ui-react';
+import './StoreItem.css'
 
 const StoreItem = (props) => {
 	const URL = '/items/' + props.item.id;
 
 function handleClick(){
 	props.addToBasket(props.item)
-	console.log(props.item)
 }
 
 function checkStock(){
@@ -57,7 +57,11 @@ function checkStock(){
 
 	return (
 		<Grid.Column>
-			<Card fluid>
+			<Card 
+				raised
+				fluid 
+				id="card"
+			>
 				<Image 
 					src={props.item.imgUrl} 
 					href={URL}
@@ -80,7 +84,6 @@ function checkStock(){
 				</Card.Content>
 
 				<Card.Content extra>
-						
 					{checkStock()}
 				</Card.Content>
 			</Card>

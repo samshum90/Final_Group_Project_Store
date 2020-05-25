@@ -1,17 +1,20 @@
 import React  from 'react';
-import { Container, Segment, Grid, Button } from 'semantic-ui-react'
+import { Container, Segment, Grid, Button, Header } from 'semantic-ui-react'
 import CartItem from './CartItem'
+import './Cart.css'
 const Cart = (props) => {
 
     const items = props.basket.map(item => {
         return (
 
-            <CartItem item={item} key={item.id} />
+            <CartItem 
+              item={item} 
+              key={item.id} 
+              removeFromBasket={props.removeFromBasket}/>
         )
     })
 
     function basketTotalCost() {
-        // let total = 0
         if(!props.basket ){
           return 0
         }else{
@@ -34,29 +37,51 @@ const Cart = (props) => {
     
     
     return (
-        <Container fluid className="main-container">
-            <Grid>
-					<Grid.Row>
-					<Grid.Column width={11}>
-						<Segment>
-                            {items}
-                        </Segment>
-					</Grid.Column>
-					<Grid.Column width={5}>
-						<Segment.Group>
-							<Segment>
+        <Container fluid className="item-container">
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column width={13}>     
+                    <Segment.Group>
+                <Segment
+                   raised
+                   padded="very"
+                >
+                  <Header as='h2'>Basket</Header>
 
-                            <p>Items: {totalItems()}</p>
-                            <p>Total: £{basketTotalCost()}.00</p>
-
-                            <Button primary compact 
+                  <Grid fluid>
+                    <Grid.Column width={5}>
+                      
+                    </Grid.Column>
+                    
+                    <Grid.Column width={5}>
+                      <Header as='h3'>Items</Header>
+                    </Grid.Column>
+                    
+                    <Grid.Column width={2}>
+                      <Header as='h3'>Price</Header>
+                    </Grid.Column>
+                    
+                    <Grid.Column width={2}>
+                      <Header as='h3'>Quantity</Header>
+                    </Grid.Column>
+                    <Grid.Column width={2}>
+                    </Grid.Column>
+                  </Grid>
+                  {items}
+                </Segment>
+              </Segment.Group>
+            </Grid.Column>
+					<Grid.Column width={3}>
+						<Segment.Group >
+							<Segment className="checkout-segment">
+                <Header as='h3'>Items: {totalItems()}</Header>
+                <Header as='h3'>Total: £{basketTotalCost()}.00</Header>
+                <Button primary compact 
 									className='button'
 									floated="right">
-									Checkout
+									Proceed to Checkout
 								</Button>
-
 							</Segment>
-				
 						</Segment.Group>
 					</Grid.Column>
 					</Grid.Row>
