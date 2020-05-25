@@ -58,7 +58,7 @@ class GroupProjectApplicationTests {
 
 
 
-		assertEquals(1, userRepository.findByUserName("username").size());
+		assertEquals(1, userRepository.findByUsername("username").size());
 		assertEquals(1, userRepository.findByEmail("email.com").size());
 //		assertEquals(user, userRepository.findByIdIs(user.getId()));
 
