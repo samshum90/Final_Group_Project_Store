@@ -5,7 +5,7 @@ class AddUser extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			userName: '',
+			username: '',
 			password: '',
 			email: '',
 			address: {
@@ -36,7 +36,7 @@ class AddUser extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		const newUser = {
-			userName: this.state.userName,
+			username: this.state.username,
 			password: this.state.password,
 			email: this.state.email,
 			address: {
@@ -52,13 +52,13 @@ class AddUser extends Component {
 			
 		};
 		this.props.onFormSubmit(newUser);
-		this.props.history.push(`/log-in`)
+		
 	};
 
 
 	render() {
 		const {
-			userName,
+			username,
 			password,
 			email,
 			address: { 			
@@ -82,8 +82,8 @@ class AddUser extends Component {
 							required
 							label="Username:"
 							type="text"
-							name="userName"
-							value={userName}
+							name="username"
+							value={username}
 							onChange={this.handleChange}
 						/>
 
