@@ -13,6 +13,7 @@ import StoreItemDetail from '../components/store/StoreItemDetail';
 import NoMatch from '../components/NoMatch';
 import LogIn from '../components/LogIn';
 import AddUser from '../components/user/AddUser';
+import Cart from '../components/order/Cart'
 
 class ShopContainer extends Component {
 	constructor(props) {
@@ -35,7 +36,7 @@ class ShopContainer extends Component {
 	render() {
 		return (
 			<>
-				<StoreNavBar />
+				<StoreNavBar basket={this.props.basket}/>
 				<Switch>
 					<Route
 						exact
@@ -55,8 +56,8 @@ class ShopContainer extends Component {
 					/>
 
 					<Route
-						path="/orders"
-						render={() => <UserOrderList 
+						path="/cart"
+						render={() => <Cart
 						basket={this.props.basket}
 						removeFromBasket={this.props.removeFromBasket}
 						/>}
@@ -64,6 +65,8 @@ class ShopContainer extends Component {
 
 					<Route path="/account" component={() => <UserDetail />} />
 					
+					<Route path="/orders" component={() => <UserOrderList />} />
+
 					<Route  
 						path="/log-in" 
 						component={() => <LogIn 
@@ -74,7 +77,7 @@ class ShopContainer extends Component {
 					<Route 
 						path="/sign-up" 
 						component={() => <AddUser 
-						onFormSubmit={this.handlePost}
+							onFormSubmit={this.handlePost}
 						/>} 
 					/>
 					{/* <Route path="/cart" component={() =>< />} /> */}

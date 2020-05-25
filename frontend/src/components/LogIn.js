@@ -16,7 +16,6 @@ import AuthenticationService from '../service/AuthenticationService'
 class LogIn extends Component {
 	constructor(props){
 		super(props);
-		console.log(props);
 		this.state = {
 			username:'',
 			password:'',
@@ -38,13 +37,9 @@ class LogIn extends Component {
 				this.setState({ showSuccessMessage: true })
 				this.setState({ hasLoginFailed: false })
 				if(AuthenticationService.isUserLoggedIn()){
-					console.log("login.js", this.props);
-					// this.props.loggedIn(true);
 					this.props.checkLoginStatus();
 				}
-			
             }).catch(() => {
-
                 this.setState({ showSuccessMessage: false })
                 this.setState({ hasLoginFailed: true })
             })

@@ -19,6 +19,7 @@ class AdminContainer extends Component {
 		const url = 'http://localhost:8080/items';
 
 		request.post(url, item).then(() => {
+			console.log(item)
 			window.location = '/admin/items';
 		});
 	}

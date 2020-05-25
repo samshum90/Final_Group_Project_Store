@@ -88,7 +88,7 @@ class SiteContainer extends Component {
 								/>}
 						/>
 						<Route
-							path="/orders"
+							path="/cart"
 							render={() => <ShopContainer 
 								basket={this.state.basket}
 								removeFromBasket={this.removeFromBasket}

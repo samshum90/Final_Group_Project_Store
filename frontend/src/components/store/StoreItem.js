@@ -1,8 +1,6 @@
 import React from 'react';
 import { Card, Image, Rating, Grid, Button } from 'semantic-ui-react';
 
-
-
 const StoreItem = (props) => {
 	const URL = '/items/' + props.item.id;
 

@@ -4,12 +4,10 @@
     <list default="true" id="377fc907-2743-4ec2-bf3a-1dc6bf835d13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/LogIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/LogIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/LogInButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/LogInButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/user/AddUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/user/AddUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/ShopContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JWTWebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JWTWebSecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
