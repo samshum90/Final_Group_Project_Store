@@ -5,6 +5,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/footer/Footer';
 import AdminContainer from '../containers/AdminContainer';
 import ShopContainer from '../containers/ShopContainer';
+import AuthenticationService from '../service/AuthenticationService';
 
 class SiteContainer extends Component {
 	constructor(props) {
@@ -12,12 +13,17 @@ class SiteContainer extends Component {
 		this.state = {
 			items: [],
 			user: null,
+			loggedIn: false,
+			basket: []
 		};
 		this.getItems = this.getItems.bind(this);
+		// this.checkLoginStatus = this.checkLoginStatus.bind(this);
+
 	}
 
 	componentDidMount() {
 		this.getItems();
+		this.checkLoginStatus()
 	}
 	getItems() {
 		const url = 'http://localhost:8080/items';
@@ -28,24 +34,69 @@ class SiteContainer extends Component {
 		});
 	}
 
+	checkLoginStatus = ( ) => {
+		if(AuthenticationService.isUserLoggedIn()){
+			this.setState({loggedIn: true})
+		}else{
+			this.setState({loggedIn: false})
+		}
+	}
+
+	addToBasket = (item) => {
+		this.setState(state => {
+			const basket = [...state.basket, item];
+			return {
+				basket
+			  };
+		})
+	}
+
+	removeFromBasket = (item) => {
+		console.log('I was removed')
+	}
+
+	
+	// handleClick = (event) => {
+	// 		AuthenticationService.logout()
+	// 		this.setState({loggedIn: false})
+	// }
+
 	render() {
 		return (
 			<Router>
 				<>
-					<NavBar />
+					<NavBar 
+						checkLoginStatus={this.checkLoginStatus} 
+						loggedIn={this.state.loggedIn}
+					/> 
 					<Switch>
 						<Route
 							exact
 							path="/"
-							component={() => <ShopContainer items={this.state.items} />}
+							render={() => <ShopContainer 
+								items={this.state.items} 
+								basket={this.state.basket}
+								addToBasket={this.addToBasket}
+								/>}
 						/>
 						<Route
 							path="/items/:itemId"
-							component={() => <ShopContainer items={this.state.items} />}
+							render={() => <ShopContainer 
+								items={this.state.items} 
+								basket={this.state.basket}
+								addToBasket={this.addToBasket}
+								/>}
+						/>
+						<Route
+							path="/orders"
+							render={() => <ShopContainer 
+								basket={this.state.basket}
+								removeFromBasket={this.removeFromBasket}
+								/>}
 						/>
 						<Route
 							path="/admin/items/edit/:itemId"
-							component={() => <AdminContainer items={this.state.items} />}
+							render={() => <AdminContainer items={this.state.items} />}
 						/>
 						<Route
 							exact
@@ -65,8 +116,11 @@ class SiteContainer extends Component {
 							component={() => <ShopContainer items={this.state.items} />}
 						/>
 						<Route
-							path="/log-in"
-							component={() => <ShopContainer items={this.state.items} />}
+							path="/log-in" 
+							component={() => <ShopContainer 
+								checkLoginStatus={this.checkLoginStatus} 
+								loggedIn={this.state.loggedIn} items={this.state.items} 
+								/>}
 						/>
 						<Route
 							path="/sign-up"

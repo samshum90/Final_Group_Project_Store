@@ -16,11 +16,12 @@ import AuthenticationService from '../service/AuthenticationService'
 class LogIn extends Component {
 	constructor(props){
 		super(props);
+		console.log(props);
 		this.state = {
 			username:'',
 			password:'',
 			hasLoginFailed: '',
-      		showSuccessMessage: false
+			showSuccessMessage: ''  
 		}
 		this.handleUsernameChange = this.handleUsernameChange.bind(this)
 		this.handlePasswordChange = this.handlePasswordChange.bind(this)
@@ -31,14 +32,19 @@ class LogIn extends Component {
 	
 	AuthenticationService
 			.executeJwtAuthenticationService(this.state.username, this.state.password)
-            .then((data) => {
-				console.log(data.data.token)
+            .then(() => {
+
 				AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, this.state.password)
-				console.log(sessionStorage)
 				this.setState({ showSuccessMessage: true })
-                this.setState({ hasLoginFailed: false })
-                .then(this.props.history.push("/"))
+				this.setState({ hasLoginFailed: false })
+				if(AuthenticationService.isUserLoggedIn()){
+					console.log("login.js", this.props);
+					// this.props.loggedIn(true);
+					this.props.checkLoginStatus();
+				}
+			
             }).catch(() => {
+
                 this.setState({ showSuccessMessage: false })
                 this.setState({ hasLoginFailed: true })
             })

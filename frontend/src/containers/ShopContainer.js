@@ -18,7 +18,7 @@ class ShopContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
+			// loggedIn: this.props.loggedIn
 		};
 	}
 
@@ -40,14 +40,43 @@ class ShopContainer extends Component {
 					<Route
 						exact
 						path="/"
-						component={() => <StoreItemList items={this.props.items} />}
+						component={() => <StoreItemList 
+							items={this.props.items} 
+							basket={this.props.basket}
+							addToBasket={this.props.addToBasket}
+							/>}
 					/>
-					<Route path="/items/:itemId" component={() => <StoreItemDetail />} />
+					<Route 
+						path="/items/:itemId" 
+						component={() => <StoreItemDetail 
+							basket={this.props.basket}
+							addToBasket={this.props.addToBasket}
+							/>} 
+					/>
+
+					<Route
+						path="/orders"
+						render={() => <UserOrderList 
+						basket={this.props.basket}
+						removeFromBasket={this.props.removeFromBasket}
+						/>}
+					/>		
 
 					<Route path="/account" component={() => <UserDetail />} />
-					<Route path="/orders" component={() => <UserOrderList />} />
-					<Route path="/log-in" component={() => <LogIn />} />
-					<Route path="/sign-up" component={() => <AddUser onFormSubmit={this.handlePost}/>} />
+					
+					<Route  
+						path="/log-in" 
+						component={() => <LogIn 
+								checkLoginStatus = {this.props.checkLoginStatus} 
+								loggedIn={this.props.loggedIn}
+								/>} 
+					/>
+					<Route 
+						path="/sign-up" 
+						component={() => <AddUser 
+						onFormSubmit={this.handlePost}
+						/>} 
+					/>
 					{/* <Route path="/cart" component={() =>< />} /> */}
 
 					<Route path="/about" component={() => <About />} />
