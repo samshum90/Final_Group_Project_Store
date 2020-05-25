@@ -21,11 +21,11 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers(
-            @RequestParam(name = "userName", required = false) String userName,
+            @RequestParam(name = "username", required = false) String username,
             @RequestParam(name = "email", required = false) String email
     ){
-        if (userName != null){
-            return new ResponseEntity<>(userRepository.findByUserName(userName), HttpStatus.OK);
+        if (username != null){
+            return new ResponseEntity<>(userRepository.findByUsername(username), HttpStatus.OK);
         }
         if(email != null){
             return new ResponseEntity<>(userRepository.findByEmail(email), HttpStatus.OK);
@@ -40,11 +40,11 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity postUsers(@RequestBody User user){
-        if(userRepository.findByUserName(user.getUserName()).contains(user)){
+        if(userRepository.findByUsername(user.getUsername()).size() >0 ){
             HashMap<String , String> userExists = new HashMap<>();
-            userExists.put("user name already used", user.getUserName());
+            userExists.put("user name already used", user.getUsername());
             return new ResponseEntity<>(userExists, HttpStatus.BAD_REQUEST);
-        }else if(userRepository.findByEmail(user.getEmail()).contains(user)){
+        }else if(userRepository.findByEmail(user.getEmail()).size() > 0 ){
             HashMap<String , String> emailExists = new HashMap<>();
             emailExists.put("email already used", user.getEmail());
             return new ResponseEntity<>(emailExists, HttpStatus.BAD_REQUEST);

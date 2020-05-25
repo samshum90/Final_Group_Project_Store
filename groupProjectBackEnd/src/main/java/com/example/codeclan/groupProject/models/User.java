@@ -1,7 +1,9 @@
 package com.example.codeclan.groupProject.models;
 
+import net.minidev.json.annotate.JsonIgnore;
 import org.springframework.data.annotation.Id;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class User implements UserDetails {
 
@@ -19,15 +22,16 @@ public class User implements UserDetails {
     String id;
 
     private Boolean admin;
-   @NotNull
-    private String userName;
     @NotNull
-//    @JsonIgnore
+    private String username;
+    @NotNull
+    @JsonIgnore
     private String password;
     @NotNull
     private String email;
     private Address address;
     private ArrayList<String> orders;
+    private Collection<? extends GrantedAuthority> authorities;
 
     public void setPassword(String password) {
         this.password = PASSWORD_ENCODER.encode(password);
@@ -36,20 +40,24 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(Boolean admin, String userName, String password, String email, Address address) {
+    public User(Boolean admin, String username, String password, String email, Address address) {
         this.admin = admin;
-        this.userName = userName;
+        this.username = username;
         this.setPassword(password);
         this.email = email;
         this.address = address;
         this.orders = new ArrayList<>();
+        List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
+        authorities.add(new SimpleGrantedAuthority("admin"));
+
+        this.authorities = authorities;
     }
 
     @Override
     public String toString() {
         return String.format(
                 "User[id=%s, admin='%s', userName='%s', password='%s', email='%s', address='%s', orders='%s']",
-                id, admin, userName, password, email, address, orders);
+                id, admin, username, password, email, address, orders);
     }
 
     public String getId() {
@@ -64,17 +72,8 @@ public class User implements UserDetails {
         this.admin = admin;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -83,7 +82,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.userName;
+        return this.username;
     }
 
     @Override
@@ -104,6 +103,11 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return authorities;
     }
 
     public String getEmail() {

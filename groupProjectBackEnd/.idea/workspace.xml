@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="377fc907-2743-4ec2-bf3a-1dc6bf835d13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/src/helpers/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/helpers/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/service/AuthenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/service/AuthenticationService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JWTWebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JWTWebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtInMemoryUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtInMemoryUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/repositories/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
-  <component name="RunManager" selected="Application.GroupProjectApplication">
+  <component name="RunManager" selected="JUnit.GroupProjectApplicationTests">
     <configuration name="GroupProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplication" />
       <module name="groupProject" />
@@ -100,45 +103,65 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590357166896">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="161" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590409173939">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state x="161" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.800@0.0.1280.800" timestamp="1590409173939" />
+    <state width="1238" height="264" key="GridCell.Tab.0.bottom" timestamp="1590412353200">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="264" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590412353200" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590357166896" />
+    <state width="1238" height="264" key="GridCell.Tab.0.bottom/0.23.1280.704@0.23.1280.704" timestamp="1590412200629" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.793@0.23.1440.793" timestamp="1590353261448" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590357166895">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1238" height="264" key="GridCell.Tab.0.center" timestamp="1590412353196">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1238" height="264" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1590412353196" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590357166895" />
+    <state width="1238" height="264" key="GridCell.Tab.0.center/0.23.1280.704@0.23.1280.704" timestamp="1590412200619" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.793@0.23.1440.793" timestamp="1590353261447" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590357166894">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1238" height="264" key="GridCell.Tab.0.left" timestamp="1590412353184">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1238" height="264" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1590412353184" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590357166894" />
+    <state width="1238" height="264" key="GridCell.Tab.0.left/0.23.1280.704@0.23.1280.704" timestamp="1590412200611" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.793@0.23.1440.793" timestamp="1590353261445" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590357166896">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1238" height="264" key="GridCell.Tab.0.right" timestamp="1590412353198">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1238" height="264" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1590412353198" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590357166896" />
+    <state width="1238" height="264" key="GridCell.Tab.0.right/0.23.1280.704@0.23.1280.704" timestamp="1590412200624" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.793@0.23.1440.793" timestamp="1590353261447" />
-    <state width="1398" height="304" key="GridCell.Tab.1.bottom" timestamp="1590357106226">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1238" height="264" key="GridCell.Tab.1.bottom" timestamp="1590412369055">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
+    <state width="1238" height="264" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590412352793" />
     <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590357106226" />
+    <state width="1238" height="264" key="GridCell.Tab.1.bottom/0.23.1280.704@0.23.1280.704" timestamp="1590412369055" />
     <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.23.1440.793@0.23.1440.793" timestamp="1590356106801" />
-    <state width="1398" height="304" key="GridCell.Tab.1.center" timestamp="1590357106225">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1238" height="264" key="GridCell.Tab.1.center" timestamp="1590412369053">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
+    <state width="1238" height="264" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1590412352792" />
     <state width="1398" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1590357106225" />
+    <state width="1238" height="264" key="GridCell.Tab.1.center/0.23.1280.704@0.23.1280.704" timestamp="1590412369053" />
     <state width="1398" height="304" key="GridCell.Tab.1.center/0.23.1440.793@0.23.1440.793" timestamp="1590356106800" />
-    <state width="1398" height="304" key="GridCell.Tab.1.left" timestamp="1590357106225">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1238" height="264" key="GridCell.Tab.1.left" timestamp="1590412369052">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
+    <state width="1238" height="264" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1590412352790" />
     <state width="1398" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1590357106225" />
+    <state width="1238" height="264" key="GridCell.Tab.1.left/0.23.1280.704@0.23.1280.704" timestamp="1590412369052" />
     <state width="1398" height="304" key="GridCell.Tab.1.left/0.23.1440.793@0.23.1440.793" timestamp="1590356106799" />
-    <state width="1398" height="304" key="GridCell.Tab.1.right" timestamp="1590357106226">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1238" height="264" key="GridCell.Tab.1.right" timestamp="1590412369054">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
+    <state width="1238" height="264" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1590412352792" />
     <state width="1398" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1590357106226" />
+    <state width="1238" height="264" key="GridCell.Tab.1.right/0.23.1280.704@0.23.1280.704" timestamp="1590412369054" />
     <state width="1398" height="304" key="GridCell.Tab.1.right/0.23.1440.793@0.23.1440.793" timestamp="1590356106800" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1590356881969">
       <screen x="0" y="0" width="1440" height="900" />
@@ -149,21 +172,51 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtTokenAuthorizationOncePerRequestFilter.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtInMemoryUserDetailsService.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtTokenAuthorizationOncePerRequestFilter.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtTokenAuthorizationOncePerRequestFilter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/UserController.java</url>
           <line>42</line>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.3.2.RELEASE/spring-security-core-5.3.2.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class</url>
+          <line>60</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.3.2.RELEASE/spring-security-core-5.3.2.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class</url>
+          <line>58</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/User.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.3.2.RELEASE/spring-security-core-5.3.2.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class</url>
+          <line>79</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.3.2.RELEASE/spring-security-core-5.3.2.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class</url>
+          <line>82</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/User.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo typeName="com.example.codeclan.groupProject.jwt.JwtInMemoryUserDetailsService" fieldName="userRepository" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
