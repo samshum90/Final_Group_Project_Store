@@ -33,7 +33,6 @@ class LogIn extends Component {
 			.executeJwtAuthenticationService(this.state.username, this.state.password)
             .then(() => {
 
-				AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, this.state.password)
 				this.setState({ showSuccessMessage: true })
 				this.setState({ hasLoginFailed: false })
 				if(AuthenticationService.isUserLoggedIn()){

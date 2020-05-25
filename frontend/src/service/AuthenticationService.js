@@ -9,7 +9,15 @@ export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 
+
 class AuthenticationService {
+    constructor(){
+        this.state = {
+            counter: 0
+        }
+
+        // this.counterPlusone = this.counterPlusone.bind(this)
+    }
 
     // executeBasicAuthenticationService(username, password) {
     //     return axios.get(`${API_URL}/basicauth`,
@@ -29,13 +37,14 @@ class AuthenticationService {
 
 
     registerSuccessfulLoginForJwt(username, token) {
+
         sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
         this.setupAxiosInterceptors(this.createJWTToken(token))
         
     }
 
     createJWTToken(token) {
-        console.log(token);
+
         return 'Bearer ' + token
     }
 

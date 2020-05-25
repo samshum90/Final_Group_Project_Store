@@ -9,6 +9,52 @@ function handleClick(){
 	console.log(props.item)
 }
 
+function checkStock(){
+	const minusStock = props.item.stock.totalDamaged + props.item.stock.totalLost + props.item.stock.totalSold
+	const plusStock = props.item.stock.totalBought + props.item.stock.totalRefunded
+	const totalStock = plusStock - minusStock
+
+	if(totalStock <= 0){
+		return (
+			<Button 
+						color='red'
+						compact
+						disabled
+						floated="right"
+					>
+						Out of Stock
+					</Button>
+		)
+	}
+
+	if (totalStock >= 5){
+		return (
+			<Button 
+						primary
+						compact
+						floated="right"
+						onClick={handleClick}
+					>
+						Add To Cart
+					</Button>
+		)
+	}
+
+	if (totalStock <5 && totalStock > 0){
+		return (
+			<Button 
+						color='yellow'
+						compact
+						floated="right"
+						onClick={handleClick}
+					>
+						Low Stock<br />
+						Add to Cart
+					</Button>
+		)
+	}
+}
+
 	return (
 		<Grid.Column>
 			<Card fluid>
@@ -34,13 +80,8 @@ function handleClick(){
 				</Card.Content>
 
 				<Card.Content extra>
-					
 						
-					<Button 
-						onClick={handleClick}
-					>
-						Add To Cart
-					</Button>
+					{checkStock()}
 				</Card.Content>
 			</Card>
 		</Grid.Column>

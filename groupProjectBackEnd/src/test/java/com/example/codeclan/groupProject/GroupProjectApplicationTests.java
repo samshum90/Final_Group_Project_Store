@@ -21,6 +21,8 @@ class GroupProjectApplicationTests {
 	Address address;
 	Item item;
 	Item item2;
+	Item item3;
+	Item item4;
 	Order orderBasket;
 	Order newOrder;
 
@@ -66,9 +68,13 @@ class GroupProjectApplicationTests {
 		itemRepository.deleteAll();
 		Stock tempStock = new Stock();
 		Stock tempStock2 = new Stock();
+		Stock tempStock3 = new Stock();
+		Stock tempStock4 = new Stock();
 
 		tempStock = stockRepository.save(tempStock);
 		tempStock2 = stockRepository.save(tempStock2);
+		tempStock3 = stockRepository.save(tempStock3);
+		tempStock4 = stockRepository.save(tempStock4);
 
 		String description = "This is a description of an Item";
 		item = new Item(false, "first item", "brand", "item",
@@ -79,13 +85,27 @@ class GroupProjectApplicationTests {
 				10, 5, "/images/black-pull-1024x683.jpg", description, tempStock2);
 		item2 = itemRepository.save(item2);
 
+		item3 = new Item(false, "Campus T-shirt black", "Code Clan", "Clothing",
+				8, 15, "/images/campus-t-shirt-black-1024x683.jpg", description, tempStock3);
+		item3 = itemRepository.save(item3);
+
+		item4 = new Item(true, "Grey Beanie", "Code Clan", "Clothing",
+				10, 5, "/images/Grey-Beanie-1-1024x683.jpg", description, tempStock4);
+		item4 = itemRepository.save(item4);
+
 		tempStock.setTotalBought(1);
 		tempStock2.setTotalBought(1);
+		tempStock3.setTotalBought(0);
+		tempStock4.setTotalBought(50);
 
 		tempStock = stockRepository.save(tempStock);
 		tempStock2 = stockRepository.save(tempStock2);
+		tempStock3= stockRepository.save(tempStock3);
+		tempStock4 = stockRepository.save(tempStock4);
 		item = itemRepository.save(item);
 		item2 = itemRepository.save(item2);
+		item3 = itemRepository.save(item3);
+		item4 = itemRepository.save(item4);
 
 		HashMap<String, String> option1 = new HashMap<>();
 		option1.put("Size","Large");
@@ -93,7 +113,7 @@ class GroupProjectApplicationTests {
 		item.setOption(option1);
 		item = itemRepository.save(item);
 		assertEquals(1, itemRepository.findByBrand("brand").size());
-		assertEquals(1, itemRepository.findByHighlighted(false).size());
+		assertEquals(2, itemRepository.findByHighlighted(false).size());
 
 		orderRepository.deleteAll();
 		orderBasket = new Order(user, "basket", "23/05/2020 12:00:00");

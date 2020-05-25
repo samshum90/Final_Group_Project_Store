@@ -12,6 +12,18 @@ function accountButton() {
 	}
 }
 
+function adminButton(){
+	if(AuthenticationService.getLoggedInUserName() === 'admin'){
+		return 'Admin'
+	}
+}
+
+function ordersButton() {
+	if(AuthenticationService.isUserLoggedIn()){
+		return 'Orders'
+	}
+}
+
 const NavBar = (props) => {
 	
 	return (
@@ -23,13 +35,13 @@ const NavBar = (props) => {
 					</Link>
 				</li>
 				<li>
-					<Link to="/admin/items">Admin</Link>
+					<Link to="/admin/items">{adminButton()}</Link>
 				</li>
 				<li>
 					<Link to="/account">{accountButton()}</Link>
 				</li>
 				<li>
-					<Link to="/orders">Orders</Link>
+					<Link to="/orders">{ordersButton()}</Link>
 				</li>
 				<li>
 					<LogInButton 
