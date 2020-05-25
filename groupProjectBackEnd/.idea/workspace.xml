@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="377fc907-2743-4ec2-bf3a-1dc6bf835d13" name="Default Changelist" comment="" />
+    <list default="true" id="8963e1bc-578b-41a9-9ccb-6153590dc65e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/order/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/order/Cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/service/AuthenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/service/AuthenticationService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/controllers/UserController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +29,7 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1cMuDxU6lujxQ3HHMpLJkqX6vGP" />
+  <component name="ProjectId" id="1cPBSSRTRFpUnJS7WYu9abyfajA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RunManager" selected="Application.GroupProjectApplication">
     <configuration name="GroupProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -83,83 +89,30 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="377fc907-2743-4ec2-bf3a-1dc6bf835d13" name="Default Changelist" comment="" />
-      <created>1590350668328</created>
+      <changelist id="8963e1bc-578b-41a9-9ccb-6153590dc65e" name="Default Changelist" comment="" />
+      <created>1590420347520</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1590350668328</updated>
+      <updated>1590420347520</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590419489661">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590420486851">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590419489661" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590357166896" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.793@0.23.1440.793" timestamp="1590353261448" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590419489658">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590420486851" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590420486848">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590419489658" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590357166895" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.793@0.23.1440.793" timestamp="1590353261447" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590419489656">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590420486848" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590420486837">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590419489656" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590357166894" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.793@0.23.1440.793" timestamp="1590353261445" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590419489660">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590420486837" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590420486849">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590419489660" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590357166896" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.793@0.23.1440.793" timestamp="1590353261447" />
-    <state width="1398" height="304" key="GridCell.Tab.1.bottom" timestamp="1590357106226">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590357106226" />
-    <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.23.1440.793@0.23.1440.793" timestamp="1590356106801" />
-    <state width="1398" height="304" key="GridCell.Tab.1.center" timestamp="1590357106225">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1590357106225" />
-    <state width="1398" height="304" key="GridCell.Tab.1.center/0.23.1440.793@0.23.1440.793" timestamp="1590356106800" />
-    <state width="1398" height="304" key="GridCell.Tab.1.left" timestamp="1590357106225">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1590357106225" />
-    <state width="1398" height="304" key="GridCell.Tab.1.left/0.23.1440.793@0.23.1440.793" timestamp="1590356106799" />
-    <state width="1398" height="304" key="GridCell.Tab.1.right" timestamp="1590357106226">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1590357106226" />
-    <state width="1398" height="304" key="GridCell.Tab.1.right/0.23.1440.793@0.23.1440.793" timestamp="1590356106800" />
-    <state x="221" y="89" key="SettingsEditor" timestamp="1590356881969">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1590356881969" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtTokenAuthorizationOncePerRequestFilter.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtTokenAuthorizationOncePerRequestFilter.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtTokenAuthorizationOncePerRequestFilter.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590420486849" />
   </component>
 </project>

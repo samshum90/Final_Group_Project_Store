@@ -4,6 +4,13 @@ import './NavBar.css';
 import Logo from '../assets/icons/CodeClan_Logo.png';
 import { Icon } from 'semantic-ui-react';
 import LogInButton from './LogInButton'
+import AuthenticationService from '../service/AuthenticationService'
+
+function accountButton() {
+	if(AuthenticationService.isUserLoggedIn()){
+		return 'Account'
+	}
+}
 
 const NavBar = (props) => {
 	
@@ -19,7 +26,7 @@ const NavBar = (props) => {
 					<Link to="/admin/items">Admin</Link>
 				</li>
 				<li>
-					<Link to="/account">Account</Link>
+					<Link to="/account">{accountButton()}</Link>
 				</li>
 				<li>
 					<Link to="/orders">Orders</Link>

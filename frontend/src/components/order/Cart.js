@@ -9,6 +9,27 @@ const Cart = (props) => {
             <CartItem item={item} key={item.id} />
         )
     })
+
+    function basketTotalCost() {
+        // let total = 0
+        if(!props.basket ){
+          return 0
+        }else{
+        let tempArray = props.basket.map(item => 
+          item.currentSellPrice)
+        return tempArray.reduce(function (total, item) {
+          return total += item
+        }, 0)
+        }
+       }
+       
+       function totalItems(){
+        if(!props.basket ){
+          return 0
+        }else{
+          return props.basket.length
+        }
+    }
         
     
     
@@ -16,14 +37,17 @@ const Cart = (props) => {
         <Container fluid className="main-container">
             <Grid>
 					<Grid.Row>
-					<Grid.Column width={5}>
+					<Grid.Column width={11}>
 						<Segment>
                             {items}
                         </Segment>
 					</Grid.Column>
-					<Grid.Column width={11}>
+					<Grid.Column width={5}>
 						<Segment.Group>
-							<Segment id='segment'>
+							<Segment>
+
+                            <p>Items: {totalItems()}</p>
+                            <p>Total: £{basketTotalCost()}.00</p>
 
                             <Button primary compact 
 									className='button'

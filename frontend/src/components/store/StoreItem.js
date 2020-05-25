@@ -34,10 +34,9 @@ function handleClick(){
 				</Card.Content>
 
 				<Card.Content extra>
+					
+						
 					<Button 
-						primary 
-						compact 
-						floated="right"
 						onClick={handleClick}
 					>
 						Add To Cart
