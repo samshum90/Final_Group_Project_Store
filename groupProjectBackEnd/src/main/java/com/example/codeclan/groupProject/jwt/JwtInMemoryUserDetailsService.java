@@ -20,9 +20,13 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    User user = userRepository.findByUsername(username).get(0);
+    User user = null;
 
-    if (user.getId() == null) {
+    if(userRepository.findByUsername(username).size() > 0) {
+      user = userRepository.findByUsername(username).get(0);
+    }
+
+    if (user == null) {
       throw new UsernameNotFoundException(String.format("USER_NOT_FOUND '%s'.", username));
     }
 
