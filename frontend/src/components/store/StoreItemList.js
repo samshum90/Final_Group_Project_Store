@@ -20,7 +20,12 @@ const StoreItemList = (props) => {
 	}
 
 	const StoreItems = props.items.map((item) => {
-		return <StoreItem item={item} key={item.id} />;
+		return <StoreItem 
+			item={item} 
+			key={item.id} 
+			basket={props.basket}
+			addToBasket={props.addToBasket}
+			/>;
 	});
 
 	return (

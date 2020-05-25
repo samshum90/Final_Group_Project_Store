@@ -1,8 +1,16 @@
 import React from 'react';
 import { Card, Image, Rating, Grid, Button } from 'semantic-ui-react';
 
+
+
 const StoreItem = (props) => {
 	const URL = '/items/' + props.item.id;
+
+function handleClick(){
+	props.addToBasket(props.item)
+	console.log(props.item)
+}
+
 	return (
 		<Grid.Column>
 			<Card fluid>
@@ -28,7 +36,12 @@ const StoreItem = (props) => {
 				</Card.Content>
 
 				<Card.Content extra>
-					<Button primary compact floated="right">
+					<Button 
+						primary 
+						compact 
+						floated="right"
+						onClick={handleClick}
+					>
 						Add To Cart
 					</Button>
 				</Card.Content>

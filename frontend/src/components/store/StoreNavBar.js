@@ -2,13 +2,14 @@ import React from 'react';
 // import {Link} from "react-router-dom";
 import SearchBar from './SearchBar';
 import './StoreNavBar.css';
+import AuthenticationService from '../../service/AuthenticationService'
 
 const StoreNavBar = ( ) => {
     return (
       <nav className="store-nav-bar">
           <ul>
               <li>
-                <h3>Welcome</h3>
+                <h3>Welcome {AuthenticationService.getLoggedInUserName()}</h3>
               </li>
               <li>
                 <SearchBar />

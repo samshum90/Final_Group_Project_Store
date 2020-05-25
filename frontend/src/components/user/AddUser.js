@@ -129,7 +129,6 @@ class AddUser extends Component {
 						/>
 
 						<Form.Input
-						centered
 							required
 							width={6}
 							label="Last Name:"
