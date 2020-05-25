@@ -56,7 +56,7 @@ public class User implements UserDetails {
     @Override
     public String toString() {
         return String.format(
-                "User[id=%s, admin='%s', userName='%s', password='%s', email='%s', address='%s', orders='%s']",
+                "User[id=%s, admin='%s', username='%s', password='%s', email='%s', address='%s', orders='%s']",
                 id, admin, username, password, email, address, orders);
     }
 

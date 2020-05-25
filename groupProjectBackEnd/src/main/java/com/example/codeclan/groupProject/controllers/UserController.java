@@ -49,8 +49,7 @@ public class UserController {
             emailExists.put("email already used", user.getEmail());
             return new ResponseEntity<>(emailExists, HttpStatus.BAD_REQUEST);
         }
-        String passwordNew = ((Integer) user.getPassword().hashCode()).toString();
-        user.setPassword(passwordNew);
+
         userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
