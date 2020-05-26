@@ -1,6 +1,7 @@
 package com.example.codeclan.groupProject.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.data.annotation.Id;
 
@@ -11,8 +12,7 @@ public class Order {
     @Id
     private String id;
 
-    @JsonBackReference
-    private User user;
+    private String user;
 
     private ArrayList<Item> items;
 
@@ -20,7 +20,7 @@ public class Order {
 
     private String date;
 
-    public Order(User user, String status, String date) {
+    public Order(String user, String status, String date) {
         this.user = user;
         this.items = new ArrayList<>();
         this.status = status;
@@ -38,7 +38,7 @@ public class Order {
     public Order() {
     }
 
-    public User getUser() {
+    public String getUser() {
         return user;
     }
 

@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { 
+	 BrowserRouter as Router,
+	 Switch, 
+	 Route,
+	 Redirect,
+	 useHistory,
+	 useLocation 
+	} from 'react-router-dom';
 import Request from '../helpers/request';
 import NavBar from '../components/NavBar';
 import Footer from '../components/footer/Footer';
@@ -12,9 +19,11 @@ class SiteContainer extends Component {
 		super(props);
 		this.state = {
 			items: [],
+			filteredItems: [],
 			user: null,
 			loggedIn: false,
-			basket: []
+			basket: [],
+			input: ''
 		};
 		this.getItems = this.getItems.bind(this);
 		// this.checkLoginStatus = this.checkLoginStatus.bind(this);
@@ -25,12 +34,17 @@ class SiteContainer extends Component {
 		this.getItems();
 		this.checkLoginStatus()
 	}
+
+	sendSearch = (input) => {
+    this.setState({input: input.input})
+  }
+
 	getItems() {
 		const url = 'http://localhost:8080/items';
 		const request = new Request();
 
 		request.get(url).then((data) => {
-			this.setState({ items: data });
+			this.setState({ items: data, filteredItems: data });
 		});
 	}
 
@@ -59,7 +73,17 @@ class SiteContainer extends Component {
 			  };
 			});
 		  };
+
 	
+		PrivateRoute = ({component: Component, ...rest}) => {
+			return (
+				<Route {...rest} render={props => (
+					AuthenticationService.isUserLoggedIn() ?
+						<Component {...props} />
+					: <Redirect to="/log-in" />
+				)} />
+			);
+		};
 
 	
 	// handleClick = (event) => {
@@ -80,9 +104,10 @@ class SiteContainer extends Component {
 							exact
 							path="/"
 							render={() => <ShopContainer 
-								items={this.state.items} 
+								items={this.state.filteredItems} 
 								basket={this.state.basket}
 								addToBasket={this.addToBasket}
+								sendSearch={this.sendSearch}
 								/>}
 						/>
 						<Route
@@ -100,27 +125,33 @@ class SiteContainer extends Component {
 								removeFromBasket={this.removeFromBasket}
 								/>}
 						/>
-						<Route
+						<this.PrivateRoute
 							path="/admin/items/edit/:itemId"
-							render={() => <AdminContainer items={this.state.items} />}
+							component={() => <AdminContainer items={this.state.items} />}
 						/>
-						<Route
+						<this.PrivateRoute
 							exact
 							path="/admin/items"
 							component={() => <AdminContainer items={this.state.items} />}
 						/>
-						<Route
+						<this.PrivateRoute
 							path="/admin/new"
 							component={() => <AdminContainer items={this.state.items} />}
 						/>
-						<Route
+						<this.PrivateRoute
 							path="/account"
 							component={() => <ShopContainer items={this.state.items} />}
 						/>
-						<Route
+						<this.PrivateRoute
 							path="/admin/orders"
-							component={() => <ShopContainer items={this.state.items} />}
+							component={() => <AdminContainer items={this.state.items} />}
 						/>
+
+						<this.PrivateRoute 
+							path="/orders" 
+							component={() => <ShopContainer />} 
+						/>
+
 						<Route
 							path="/log-in" 
 							component={() => <ShopContainer 

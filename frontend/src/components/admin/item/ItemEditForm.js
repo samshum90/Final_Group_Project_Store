@@ -24,6 +24,7 @@ class ItemEditFrom extends Component {
 			buyPrice: 0,
 			imgUrl: '',
 			description: '',
+			stock: ''
 		};
 	}
 
@@ -85,14 +86,16 @@ class ItemEditFrom extends Component {
 			buyPrice: this.state.buyPrice,
 			imgUrl: this.state.imgUrl,
 			description: this.state.description,
+			stock: this.state.stock
 		};
 		const url = 'http://localhost:8080/items/' + this.state.id;
 		const request = new Request();
-		request.patch(url, editItem).then((window.location = '/admin/items'));
+		request.patch(url, editItem)
+		.then((window.location = '/admin/items'));
 	};
 
 	render() {
-		if (!this.state.name) {
+		if (!this.state.name && !this.state.noItemFound) {
 			return (
 				<Dimmer active inverted>
 					<Loader inverted content="Loading" />
