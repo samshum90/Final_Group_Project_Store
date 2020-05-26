@@ -8,10 +8,10 @@ const StoreNavBar = (props) => {
 
  function basketTotalCost() {
   // let total = 0
-  if(!props.basket ){
+  if(props.basket && !props.basket.items ){
     return 0
-  }else{
-  let tempArray = props.basket.map(item => 
+  }else if(props.basket){
+  let tempArray = props.basket.items.map(item => 
     item.currentSellPrice)
   return tempArray.reduce(function (total, item) {
     return total += item
@@ -20,10 +20,10 @@ const StoreNavBar = (props) => {
  }
  
  function totalItems(){
-  if(!props.basket ){
+  if(props.basket && !props.basket.items ){
     return 0
-  }else{
-    return props.basket.length
+  }else if(props.basket){
+    return props.basket.items.length
   }
 
  }
@@ -36,6 +36,7 @@ const StoreNavBar = (props) => {
               </li>
               <li>
                 <SearchBar 
+                  sendSearch={props.sendSearch}
                   items={props.items}
                 />
               </li>

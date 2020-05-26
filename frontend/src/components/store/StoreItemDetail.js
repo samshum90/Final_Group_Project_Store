@@ -25,8 +25,8 @@ class StoreItemDetail extends Component {
 			.catch((err) => console.log(err));
 	}
 
-	handleClick(){
-		this.props.addToBasket(this.state.item)
+	handleClick(item){
+		this.props.addToBasket(item)
 	}
 
 	render() {
@@ -73,7 +73,7 @@ class StoreItemDetail extends Component {
 								<Button primary compact 
 									className='button'
 									floated="right"
-									onClick={this.handleClick}
+									onClick={this.handleClick(this.state.item)}
 								>
 									Add To Cart
 								</Button>

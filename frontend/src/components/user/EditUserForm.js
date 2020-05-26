@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Form, Container, Checkbox } from 'semantic-ui-react';
+import { Button, Form, Container, Checkbox, Segment } from 'semantic-ui-react';
+import Request from '../../helpers/request';
 
 class EditUserForm extends Component {
 	constructor(props) {
@@ -23,18 +24,20 @@ class EditUserForm extends Component {
 		this.onChange = this.onChange.bind(this);
     }
 
-    // componentDidMount() {
-	// 	var userId = /[^/]*$/.exec(window.location.href)[0];
-	// 	const url = 'http://localhost:8080/items/' + itemId;
-	// 	const request = new Request();
-	// 	request
-	// 		.get(url)
-	// 		.then((data) => {
-	// 			this.setState(data);
-	// 		})
+    componentDidMount() {
+		const url = 'http://localhost:8080/users/' + sessionStorage.getItem('UserId');
+        const request = new Request();
+        console.log('useredit:', url)
+		request
+			.get(url)
+			.then((data) => {
+                this.setState(data);
+            })
+            .then(this.setState({password: ''}))
+			.catch((err) => console.log(err));
+    }
 
-	// 		.catch((err) => console.log(err));
-    // }
+    handleChange = (e, { name, value }) => this.setState({ [name]: value });
     
     onChange(e) { 
 		const { address } = { ...this.state };
@@ -72,129 +75,120 @@ class EditUserForm extends Component {
     return (
 
     <Container fluid className="item-container">
-    <Form onSubmit={this.handleSubmit} className="form-container">
-    
-            <Form.Input
-                width={6}
-                required
-                label="Username:"
-                type="text"
-                name="username"
-                value={username}
-                onChange={this.handleChange}
-            />
+        <Segment raised>    
+            <Form onSubmit={this.handleSubmit}>
+            
+                    <Form.Input
+                        required
+                        label="Username:"
+                        type="text"
+                        name="username"
+                        value={this.state.username}
+                        onChange={this.handleChange}
+                    />
 
-            <Form.Input
-            width={6}
-                required
-                label="Password:"
-                type="password"
-                name="password"
-                value={password}
-                onChange={this.handleChange}
-            />
-        
+                    <Form.Input
+                        required
+                        label="Password:"
+                        type="password"
+                        name="password"
+                        // value={this.state.password}
+                        onChange={this.handleChange}
+                    />
+                
 
-        <Form.Input
-        width={6}
-            required
-            label="Email:"
-            type="email"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-        />
+                <Form.Input
+                    required
+                    label="Email:"
+                    type="email"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                />
 
 
-            <Form.Input
-                width={6}
-                label="Title:"
-                type="text"
-                name="title"
-                value={title}
-                onChange={this.onChange}
-            />
+                    <Form.Input
+                        label="Title:"
+                        type="text"
+                        name="title"
+                        value={this.state.title}
+                        onChange={this.onChange}
+                    />
 
-            <Form.Input
-                required
-                width={6}
-                label="First Name:"
-                type="text"
-                name="firstName"
-                value={firstName}
-                onChange={this.onChange}
-            />
+                    <Form.Input
+                        required
+                        label="First Name:"
+                        type="text"
+                        name="firstName"
+                        value={this.state.firstName}
+                        onChange={this.onChange}
+                    />
 
-            <Form.Input
-                required
-                width={6}
-                label="Last Name:"
-                type="text"
-                name="lastName"
-                value={lastName}
-                onChange={this.onChange}
-            />
+                    <Form.Input
+                        required
+                        label="Last Name:"
+                        type="text"
+                        name="lastName"
+                        value={this.state.lastName}
+                        onChange={this.onChange}
+                    />
 
-        <label> Address:</label>
-    
-        <Form.Input
-            width={6}
-            required
-            label="First Line:"
-            type="text"
-            name="firstLine"
-            value={firstLine}
-            onChange={this.onChange}
-        />
+                <label> Address:</label>
+            
+                <Form.Input
+                    required
+                    label="First Line:"
+                    type="text"
+                    name="firstLine"
+                    value={this.state.address.firstLine}
+                    onChange={this.onChange}
+                />
 
-        <Form.Input
-            width={6}
-            label="Second Line:"
-            type="text"
-            name="secondLine"
-            value={secondLine}
-            onChange={this.onChange}
-        />
+                <Form.Input
+                    label="Second Line:"
+                    type="text"
+                    name="secondLine"
+                    value={this.state.address.secondLine}
+                    onChange={this.onChange}
+                />
 
 
 
-        <Form.Input
-            width={6}
-            label="City:"
-            type="text"
-            name="townCity"
-            value={townCity}
-            onChange={this.onChange}
-        />
+                <Form.Input
+                    label="City:"
+                    type="text"
+                    name="townCity"
+                    value={this.state.address.townCity}
+                    onChange={this.onChange}
+                />
 
-        <Form.Input
-            width={6}
-            label="County:"
-            type="text"
-            name="county"
-            value={county}
-            onChange={this.onChange}
-        />
+                <Form.Input
+                    label="County:"
+                    type="text"
+                    name="county"
+                    value={this.state.address.county}
+                    onChange={this.onChange}
+                />
 
-        <Form.Input
-            width={6}
-            required
-            label="Post Code:"
-            type="text"
-            name="postCode"
-            value={postCode}
-            onChange={this.onChange}
-        />
+                <Form.Input
+                    required
+                    label="Post Code:"
+                    type="text"
+                    name="postCode"
+                    value={this.state.address.postCode}
+                    onChange={this.onChange}
+                />
 
-        <Form.Field required>
-              <Checkbox label='I agree to the Terms and Conditions' />
-        </Form.Field>
-        <Button primary type="update">
-            Update
-        </Button>
-    </Form>
-</Container>
-);
+                <Form.Field required>
+                    <Checkbox label='I agree to the Terms and Conditions' />
+                </Form.Field>
+                <Button primary type="update">
+                    Update
+                </Button>
+            </Form>
+        </Segment>  
+    </Container>
+    );
 }
 
 }

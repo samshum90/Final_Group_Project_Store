@@ -22,22 +22,79 @@ class SiteContainer extends Component {
 			filteredItems: [],
 			user: null,
 			loggedIn: false,
-			basket: [],
+			orders: '',
+			basket: '',
 			input: ''
 		};
 		this.getItems = this.getItems.bind(this);
+		this.getBasket = this.getBasket.bind(this);
+		this.checkBasketInDatabase = this.checkBasketInDatabase.bind(this);
 		// this.checkLoginStatus = this.checkLoginStatus.bind(this);
 
 	}
 
+	getBasket(){
+		if(!this.state.basket){
+			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('UserId');
+			const request = new Request();
+	
+			request.get(URL).then((data) => {
+				console.log("created orders/basket", data)
+				this.setState({orders: data})			
+			}).then(this.checkBasketInDatabase());
+		
+		}else{
+			console.log("no sending :(")
+		}
+	}
+
+	checkBasketInDatabase(){
+		
+		if(this.state.orders){
+			// (item => item.name.includes(`${input.input}`)
+			const basket = this.state.orders.filter(order => order.status.includes("basket"))
+			this.setState({basket: basket})
+
+		}else if(!this.state.orders || this.state.basket){
+			const payload ={
+				user: sessionStorage.getItem('UserId'),
+				items: [],
+				status: "basket",
+				date: Date.now.toString
+			}
+			const URL = "http://localhost:8080/orders"
+			const request = new Request();
+
+			request.post(URL, payload)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log("created basket", data)
+				this.setState({basket: data})	
+			})
+		}else{
+			console.log("no sending two :(")
+		}
+	}
+
 	componentDidMount() {
 		this.getItems();
-		this.checkLoginStatus()
+		this.checkLoginStatus();
+	
+		if(sessionStorage.getItem('UserId') != null){
+			this.getBasket();
+		}
 	}
 
 	sendSearch = (input) => {
-    this.setState({input: input.input})
-  }
+		this.setState({input: input.input})
+		this.filterItems(input)
+	}
+	
+	filterItems = (input) => {
+		const itemList = this.state.items.filter(item => item.name.includes(`${input.input}`))
+		console.log(input.input)
+		this.setState({filteredItems: itemList})
+	}
 
 	getItems() {
 		const url = 'http://localhost:8080/items';
@@ -57,21 +114,30 @@ class SiteContainer extends Component {
 	}
 
 	addToBasket = (item) => {
-		this.setState(state => {
-			const basket = [...state.basket, item];
-			return {
-				basket
-			  };
-		})
+
+		const basket = this.state.basket;
+		if(basket.items.contains(item)){
+
+		}else{
+			basket.items.push(item)
+			this.setState({basket: basket})
+		}
+
 	}
 
 	removeFromBasket = (id) => {
-		this.setState(state => {
-			  const basket = state.basket.filter(item => item.id !== id);
-			  return {
-				basket,
-			  };
-			});
+
+		const basket = this.state.basket;
+		basket.items.filter(item => item.id !== id)
+		this.setState({basket: basket})
+
+
+		// this.setState(state => {
+		// 	  const basket = state.basket.items.filter(item => item.id !== id);
+		// 	  return {
+		// 		basket,
+		// 	  };
+		// 	});
 		  };
 
 	
@@ -108,6 +174,7 @@ class SiteContainer extends Component {
 								basket={this.state.basket}
 								addToBasket={this.addToBasket}
 								sendSearch={this.sendSearch}
+								input={this.state.input}
 								/>}
 						/>
 						<Route

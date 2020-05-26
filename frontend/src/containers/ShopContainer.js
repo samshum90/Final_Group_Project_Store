@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Request from '../helpers/request';
 import StoreNavBar from '../components/store/StoreNavBar';
 import StoreItemList from '../components/store/StoreItemList';
-import UserDetail from '../components/user/UserDetail';
+import EditUserForm from '../components/user/EditUserForm';
 import UserOrderList from '../components/user/UserOrderList';
 
 import About from '../components/footer/About';
@@ -49,6 +49,7 @@ class ShopContainer extends Component {
 							items={this.props.items}
 							basket={this.props.basket}
 							addToBasket={this.props.addToBasket}
+							input={this.props.input}
 							/>}
 					/>
 					<Route 
@@ -67,7 +68,10 @@ class ShopContainer extends Component {
 						/>}
 					/>		
 
-					<Route path="/account" component={() => <UserDetail />} />
+					<Route 
+						path="/account" 
+						component={() => <EditUserForm />} 
+					/>
 					
 					<Route path="/orders" component={() => <UserOrderList />} />
 

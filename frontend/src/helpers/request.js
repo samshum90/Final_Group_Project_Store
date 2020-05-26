@@ -4,9 +4,16 @@ const auth = sessionStorage.getItem('JWT')
 class Request {
 
 	get(url) {
+		if(auth === null){
 		return fetch(url)
 			.then((res) => res.json())
 			.catch((err) => console.log(err));
+		}else{
+			return fetch(url, {
+				headers: { 'Content-Type': 'application/json', 'Authorization': auth },
+			}).then((res) => res.json())
+			.catch((err) => console.log(err));
+		}
 	}
 
 	delete(url) {
