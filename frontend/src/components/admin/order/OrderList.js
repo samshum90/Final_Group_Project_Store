@@ -1,5 +1,8 @@
 import React from 'react';
-import { Dimmer, Loader, Container } from 'semantic-ui-react'
+import { 
+	// Dimmer, 
+	// Loader, 
+	Container } from 'semantic-ui-react'
 import OrderDetail from './OrderDetail'
 
 const OrderList = (props) => {

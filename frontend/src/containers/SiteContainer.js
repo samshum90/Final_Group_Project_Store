@@ -3,9 +3,7 @@ import {
 	 BrowserRouter as Router,
 	 Switch, 
 	 Route,
-	 Redirect,
-	 useHistory,
-	 useLocation 
+	 Redirect
 	} from 'react-router-dom';
 import Request from '../helpers/request';
 import NavBar from '../components/NavBar';
@@ -23,56 +21,132 @@ class SiteContainer extends Component {
 			filteredItems: [],
 			user: null,
 			loggedIn: false,
-			basket: [],
+			orders: '',
+			basket: '',
 			input: ''
 		};
 		this.getItems = this.getItems.bind(this);
-		// this.checkLoginStatus = this.checkLoginStatus.bind(this);
+		this.getBasket = this.getBasket.bind(this);
+		this.checkBasketInDatabase = this.checkBasketInDatabase.bind(this);
+		this.checkLoginStatus = this.checkLoginStatus.bind(this);
 
+	}
+
+	getBasket(){
+		if(!this.state.basket){
+			
+			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('UserId');
+			const request = new Request();
+	
+			request.get(URL)
+			.then((data) => {
+				console.log("created orders/basket", data)
+				this.setState({orders: data})			
+			})
+			.then(this.checkBasketInDatabase());
+		
+		}else{
+			console.log("no sending :(")
+		}
+	}
+
+	checkBasketInDatabase(){
+		console.log("orders exist?????", this.state)
+		if(this.state.orders){
+			console.log("orders exist", this.state.orders)
+			// (item => item.name.includes(`${input.input}`)
+			const basket = this.state.orders.filter(order => order.status.includes("basket"), () => {this.setState({basket: basket})})
+
+		}else if(!this.state.orders && !this.state.basket){
+			
+			console.log("state is a thing", this.state);
+
+			const payload ={
+				user: sessionStorage.getItem('UserId'),
+				items: [],
+				status: "basket",
+				date: "date"
+			}
+			const URL = "http://localhost:8080/orders"
+			const request = new Request();
+
+			request.post(URL, payload)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log("created basket", data)
+				this.setState({basket: data})	
+			})
+		}else{
+			console.log("no sending two :(")
+		}
 	}
 
 	componentDidMount() {
 		this.getItems();
-		this.checkLoginStatus()
+		this.checkLoginStatus();
+
 	}
 
 	sendSearch = (input) => {
-    this.setState({input: input.input})
-  }
+		this.setState({input: input.input})
+		this.filterItems(input)
+	}
+	
+	filterItems = (input) => {
+		const itemList = this.state.items.filter(item => item.name.toLowerCase().includes(`${input.input.toLowerCase()}`))
+		console.log(input.input)
+		this.setState({filteredItems: itemList})
+	}
 
 	getItems() {
 		const url = 'http://localhost:8080/items';
 		const request = new Request();
 
-		request.get(url).then((data) => {
+		request.get(url)
+		.then((data) => {
 			this.setState({ items: data, filteredItems: data });
 		});
 	}
 
 	checkLoginStatus = ( ) => {
 		if(AuthenticationService.isUserLoggedIn()){
-			this.setState({loggedIn: true})
+			this.setState({loggedIn: true}, () => {this.getBasket()})
 		}else{
 			this.setState({loggedIn: false})
 		}
 	}
 
 	addToBasket = (item) => {
-		this.setState(state => {
-			const basket = [...state.basket, item];
-			return {
-				basket
-			  };
-		})
+		if(this.state.loggedIn){
+			item.quantity ++;
+			const basket = this.state.basket;
+			if(basket.items.contains(item)){
+				
+				basket.items.remove(item)
+				basket.items.push(item)
+				this.setState({basket: basket})
+			}else{
+
+				basket.items.push(item)
+				this.setState({basket: basket})
+			}
+		}
+
 	}
 
 	removeFromBasket = (id) => {
-		this.setState(state => {
-			  const basket = state.basket.filter(item => item.id !== id);
-			  return {
-				basket,
-			  };
-			});
+
+		const basket = this.state.basket;
+		basket.items.filter(item => item.id !== id)
+		this.setState({basket: basket})
+
+
+		// this.setState(state => {
+		// 	  const basket = state.basket.items.filter(item => item.id !== id);
+		// 	  return {
+		// 		basket,
+		// 	  };
+		// 	});
 		  };
 
 	
@@ -109,6 +183,7 @@ class SiteContainer extends Component {
 								basket={this.state.basket}
 								addToBasket={this.addToBasket}
 								sendSearch={this.sendSearch}
+								input={this.state.input}
 								/>}
 						/>
 						<Route
@@ -122,6 +197,7 @@ class SiteContainer extends Component {
 						<Route
 							path="/cart"
 							render={() => <ShopContainer 
+								handleBasketClick ={this.getBasket}
 								basket={this.state.basket}
 								removeFromBasket={this.removeFromBasket}
 								/>}
@@ -133,7 +209,7 @@ class SiteContainer extends Component {
 						<this.PrivateRoute
 							exact
 							path="/admin/items"
-							render={() => <AdminContainer items={this.state.items} />}
+							component={() => <AdminContainer items={this.state.items} />}
 						/>
 						<this.PrivateRoute
 							path="/admin/new"

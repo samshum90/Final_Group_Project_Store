@@ -9,10 +9,10 @@ class SearchBar extends Component {
 	}
 
 	handleSearchChange = (e) => {
-		// this.setState({ input: e.target.value }, () => {
-		// 	this.props.sendSearch({ input: this.state.input });
-    // });
-    this.setState({input: e.target.value})
+		this.setState({ input: e.target.value }, () => {
+			this.props.sendSearch({ input: this.state.input });
+    });
+    // this.setState({input: e.target.value})
 	};
 
 	render() {

@@ -11,13 +11,7 @@ axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded'
 
 
 class AuthenticationService {
-    constructor(){
-        this.state = {
-            counter: 0
-        }
 
-        // this.counterPlusone = this.counterPlusone.bind(this)
-    }
 
     // executeBasicAuthenticationService(username, password) {
     //     return axios.get(`${API_URL}/basicauth`,
@@ -42,8 +36,8 @@ class AuthenticationService {
         // this.setupAxiosInterceptors(this.createJWTToken(token))
         sessionStorage.setItem('JWT', this.createJWTToken(token))
         this.getUsersID(username, sessionStorage.getItem('JWT'))
-        console.log(sessionStorage)
-        console.log(this.isUserLoggedIn());
+        // console.log(sessionStorage)
+        // console.log(this.isUserLoggedIn());
     }
 
     getUsersID(username, token){
@@ -64,7 +58,8 @@ class AuthenticationService {
 
     logout() {
         sessionStorage.clear();
-        console.log(sessionStorage)
+        window.location.replace('/') 
+        // console.log(sessionStorage)
     }
 
     isUserLoggedIn() {

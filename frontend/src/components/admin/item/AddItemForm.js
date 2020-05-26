@@ -20,7 +20,11 @@ class AddItemForm extends Component {
 			maxSellPrice: 0,
 			currentSellPrice: 0,
 			buyPrice: 0,
-			imgUrl: '',
+			imgUrl: {
+				url1:'',
+				url2:'',
+				url3:'',
+			},
 			description: '',
 		};
 	}
@@ -65,7 +69,11 @@ class AddItemForm extends Component {
 			maxSellPrice: this.state.maxSellPrice,
 			currentSellPrice: this.state.currentSellPrice,
 			buyPrice: this.state.buyPrice,
-			imgUrl: this.state.imgUrl,
+			imgUrl: {
+				url1: this.state.imgUrl.url1,
+				url2: this.state.imgUrl.url2,
+				url3: this.state.imgUrl.url3,
+			},
 			description: this.state.description,
 		};
 		this.props.onFormSubmit(newItem);
