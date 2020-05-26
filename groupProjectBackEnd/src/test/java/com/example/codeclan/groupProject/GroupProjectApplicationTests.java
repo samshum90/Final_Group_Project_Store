@@ -144,7 +144,7 @@ class GroupProjectApplicationTests {
 				31, 35, imgUrl7, description3, tempStock4);
 		item7 = itemRepository.save(item7);
 
-		imgUrl8 = new ImgUrl( "/images/navy-hoodie-pull-1.jpg", "navy-hoodie-pull-2.jpg", null);
+		imgUrl8 = new ImgUrl( "/images/navy-hoodie-pull-1.jpg", "/images/navy-hoodie-pull-2.jpg", null);
 
 		item8 = new Item(false, "Zip Hoodie", "Code Clan", "Clothing",
 				31, 35, imgUrl8, description3, tempStock2);
@@ -234,7 +234,7 @@ class GroupProjectApplicationTests {
 		item.setOption(option1);
 		item = itemRepository.save(item);
 		assertEquals(16, itemRepository.findByBrand("Code Clan").size());
-		assertEquals(15, itemRepository.findByHighlighted(false).size());
+		assertEquals(14, itemRepository.findByHighlighted(false).size());
 
 		orderRepository.deleteAll();
 		orderBasket = new Order(user.getId(), "basket", "23/05/2020 12:00:00");
