@@ -12,6 +12,7 @@ const options = [
 ];
 
 class ItemEditFrom extends Component {
+	_isMounted = false;
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -29,17 +30,22 @@ class ItemEditFrom extends Component {
 	}
 
 	componentDidMount() {
+		this._isMounted = true;
 		var itemId = /[^/]*$/.exec(window.location.href)[0];
 		const url = 'http://localhost:8080/items/' + itemId;
 		const request = new Request();
 		request
 			.get(url)
 			.then((data) => {
+				if (this._isMounted) {
 				this.setState(data);
-			})
-
+			}})
 			.catch((err) => console.log(err));
 	}
+
+	componentWillUnmount() {
+		this._isMounted = false;
+	  }
 
 	handleNameChange = (event) => {
 		this.name = this.setState({ name: event.target.value });

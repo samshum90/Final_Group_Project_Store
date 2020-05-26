@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { Dimmer, Loader, Container, Segment, Grid, Image, Rating, Button } from 'semantic-ui-react';
 import Request from '../../helpers/request';
 import './StoreItemDetail.css'
+import FeedContainer from './FeedContainer'
 
 class StoreItemDetail extends Component {
+	_isMounted = false;
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -12,20 +14,26 @@ class StoreItemDetail extends Component {
 	}
 	
 	componentDidMount() {
+		this._isMounted = true;
 		var itemId = /[^/]*$/.exec(window.location.href)[0];
 		const url = 'http://localhost:8080/items/' + itemId;
 		const request = new Request();
 		request
 			.get(url)
 			.then((data) => {
-				this.setState({ item: data });
-			})
+				if (this._isMounted) {
+				this.setState({ item:data });
+			}})
 			.catch((err) => console.log(err));
 	}
 
 	handleClick(item){
 		this.props.addToBasket(item)
 	}
+
+	componentWillUnmount() {
+		this._isMounted = false;
+	  }
 
 
 	render() {
@@ -89,8 +97,7 @@ class StoreItemDetail extends Component {
 						</Segment.Group>
 					</Grid.Column>
 					</Grid.Row>
-					<Grid.row>
-					</Grid.row>
+					<FeedContainer />
 				</Grid>
 
 			</Container>
