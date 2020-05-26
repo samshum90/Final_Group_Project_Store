@@ -3,9 +3,7 @@ import {
 	 BrowserRouter as Router,
 	 Switch, 
 	 Route,
-	 Redirect,
-	 useHistory,
-	 useLocation 
+	 Redirect
 	} from 'react-router-dom';
 import Request from '../helpers/request';
 import NavBar from '../components/NavBar';
@@ -30,19 +28,22 @@ class SiteContainer extends Component {
 		this.getItems = this.getItems.bind(this);
 		this.getBasket = this.getBasket.bind(this);
 		this.checkBasketInDatabase = this.checkBasketInDatabase.bind(this);
-		// this.checkLoginStatus = this.checkLoginStatus.bind(this);
+		this.checkLoginStatus = this.checkLoginStatus.bind(this);
 
 	}
 
 	getBasket(){
 		if(!this.state.basket){
+			
 			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('UserId');
 			const request = new Request();
 	
-			request.get(URL).then((data) => {
+			request.get(URL)
+			.then((data) => {
 				console.log("created orders/basket", data)
 				this.setState({orders: data})			
-			}).then(this.checkBasketInDatabase());
+			})
+			.then(this.checkBasketInDatabase());
 		
 		}else{
 			console.log("no sending :(")
@@ -50,18 +51,21 @@ class SiteContainer extends Component {
 	}
 
 	checkBasketInDatabase(){
-		
+		console.log("orders exist?????", this.state)
 		if(this.state.orders){
+			console.log("orders exist", this.state.orders)
 			// (item => item.name.includes(`${input.input}`)
-			const basket = this.state.orders.filter(order => order.status.includes("basket"))
-			this.setState({basket: basket})
+			const basket = this.state.orders.filter(order => order.status.includes("basket"), () => {this.setState({basket: basket})})
 
-		}else if(!this.state.orders || this.state.basket){
+		}else if(!this.state.orders && !this.state.basket){
+			
+			console.log("state is a thing", this.state);
+
 			const payload ={
 				user: sessionStorage.getItem('UserId'),
 				items: [],
 				status: "basket",
-				date: Date.now.toString
+				date: "date"
 			}
 			const URL = "http://localhost:8080/orders"
 			const request = new Request();
@@ -80,10 +84,7 @@ class SiteContainer extends Component {
 	componentDidMount() {
 		this.getItems();
 		this.checkLoginStatus();
-	
-		if(sessionStorage.getItem('UserId') != null){
-			this.getBasket();
-		}
+
 	}
 
 	sendSearch = (input) => {
@@ -92,7 +93,7 @@ class SiteContainer extends Component {
 	}
 	
 	filterItems = (input) => {
-		const itemList = this.state.items.filter(item => item.name.includes(`${input.input}`))
+		const itemList = this.state.items.filter(item => item.name.toLowerCase().includes(`${input.input.toLowerCase()}`))
 		console.log(input.input)
 		this.setState({filteredItems: itemList})
 	}
@@ -101,32 +102,34 @@ class SiteContainer extends Component {
 		const url = 'http://localhost:8080/items';
 		const request = new Request();
 
-		request.get(url).then((data) => {
+		request.get(url)
+		.then((data) => {
 			this.setState({ items: data, filteredItems: data });
 		});
 	}
 
 	checkLoginStatus = ( ) => {
 		if(AuthenticationService.isUserLoggedIn()){
-			this.setState({loggedIn: true})
+			this.setState({loggedIn: true}, () => {this.getBasket()})
 		}else{
 			this.setState({loggedIn: false})
 		}
 	}
 
 	addToBasket = (item) => {
+		if(this.state.loggedIn){
+			item.quantity ++;
+			const basket = this.state.basket;
+			if(basket.items.contains(item)){
+				
+				basket.items.remove(item)
+				basket.items.push(item)
+				this.setState({basket: basket})
+			}else{
 
-		item.quantity ++;
-		const basket = this.state.basket;
-		if(basket.items.contains(item)){
-			
-			basket.items.remove(item)
-			basket.items.push(item)
-			this.setState({basket: basket})
-		}else{
-
-			basket.items.push(item)
-			this.setState({basket: basket})
+				basket.items.push(item)
+				this.setState({basket: basket})
+			}
 		}
 
 	}
@@ -194,6 +197,7 @@ class SiteContainer extends Component {
 						<Route
 							path="/cart"
 							render={() => <ShopContainer 
+								handleBasketClick ={this.getBasket}
 								basket={this.state.basket}
 								removeFromBasket={this.removeFromBasket}
 								/>}
@@ -205,7 +209,7 @@ class SiteContainer extends Component {
 						<this.PrivateRoute
 							exact
 							path="/admin/items"
-							render={() => <AdminContainer items={this.state.items} />}
+							component={() => <AdminContainer items={this.state.items} />}
 						/>
 						<this.PrivateRoute
 							path="/admin/new"

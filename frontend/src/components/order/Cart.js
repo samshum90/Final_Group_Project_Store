@@ -93,7 +93,7 @@ const Cart = (props) => {
           </Container >
       )
   }else{
-    window.location.replace('/') 
+    props.handleBasketClick();
     return (null)
   }
 }

@@ -30,7 +30,7 @@ render(){
 		<Segment>
 			<Grid columns={2} >
       			<Grid.Column>
-					<Image src={this.props.item.imgUrl} alt={this.props.item.name} size='medium'/>
+					<Image src={this.props.item.imgUrl[0]} alt={this.props.item.name} size='medium'/>
 					</Grid.Column>
 				<Grid.Column>
 					<h3>{this.props.item.name}</h3>

@@ -17,14 +17,15 @@ public class Item {
     private int maxSellPrice;
     private int currentSellPrice;
     private int buyPrice;
-    private ImgUrl imgUrl;
+    private ArrayList imgUrl;
     private String description;
     private ArrayList<HashMap> options;
     private HashMap<String, String> option;
     private Stock stock;
     private boolean highlighted;
+    private int quantity;
 
-    public Item(boolean highlighted,String name, String brand, String type, int maxSellPrice, int buyPrice, ImgUrl imgUrl, String description, Stock stock) {
+    public Item(boolean highlighted,String name, String brand, String type, int maxSellPrice, int buyPrice, ArrayList imgUrl, String description, Stock stock) {
         this.highlighted = highlighted;
         this.name = name;
         this.brand = brand;
@@ -37,6 +38,15 @@ public class Item {
         this.stock = stock;
         this.option = new HashMap<>();
         this.options = new ArrayList<>();
+        this.quantity = 0;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public Item() {
@@ -47,9 +57,9 @@ public class Item {
         return String.format(
                 "Item[id=%s, highlighted='%s', name='%s', brand='%s', type='%s', maxSellPrice='%s', " +
                         "currentSellPrice='%s', buyPrice='%s', imgUrl='%s', description='%s', " +
-                        "stock='%s', options='%s']",
+                        "stock='%s', options='%s', quantity='%s']",
                 id, highlighted, name, brand, type, maxSellPrice, currentSellPrice,
-                buyPrice, imgUrl, description, stock, options);
+                buyPrice, imgUrl, description, stock, options, quantity);
     }
 
     public ArrayList<HashMap> getOptions(){
@@ -104,11 +114,11 @@ public class Item {
         this.buyPrice = buyPrice;
     }
 
-    public ImgUrl getImgUrl() {
+    public ArrayList<String> getImgUrl() {
         return imgUrl;
     }
 
-    public void setImgUrl(ImgUrl imgUrl) {
+    public void setImgUrl(ArrayList imgUrl) {
         this.imgUrl = imgUrl;
     }
 

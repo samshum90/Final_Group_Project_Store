@@ -10,6 +10,16 @@ class StoreItemDetail extends Component {
 			item: '',
 		};
 	}
+	
+	// const images = this.state.item.imageUrl.map((image) => {
+	// 	return <Image
+	// 		src="image.url"
+
+	// 	/>;
+	// }
+	// )
+
+
 
 	componentDidMount() {
 		console.log(this.props)
@@ -26,11 +36,13 @@ class StoreItemDetail extends Component {
 			.catch((err) => console.log(err));
 	}
 
-	// handleClick(item){
-	// 	this.props.addToBasket(item)
-	// }
+	handleClick(item){
+		this.props.addToBasket(item)
+	}
+
 
 	render() {
+	
 		if (!this.state.item) {
 			return (
 				<Dimmer active inverted>
@@ -54,6 +66,8 @@ class StoreItemDetail extends Component {
 								alt={this.state.item.name} 
 								size='large' 
 							/>
+						{/* {image2} */}
+						{/* {image3} */}
 						</Segment>
 					</Grid.Column>
 					<Grid.Column width={11}>
@@ -74,7 +88,7 @@ class StoreItemDetail extends Component {
 								<Button primary compact 
 									className='button'
 									floated="right"
-									// onClick={this.handleClick}
+									onClick={this.handleClick(this.state.item)}
 								>
 									Add To Cart
 								</Button>
