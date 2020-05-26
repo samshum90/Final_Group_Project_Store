@@ -36,11 +36,15 @@ const StoreItemList = (props) => {
 
 		return (
 			<Container fluid className="item-container">
-				<Grid columns={5}>
+				<Grid relaxed>
 					<Grid.Row columns={5} only='large screen'>
 						{StoreItems}
 					</Grid.Row>
-					<Grid.Row columns={2} only='widescreen'>
+					<Grid.Row columns={4} only='computer'>
+						{StoreItems}
+					</Grid.Row>
+
+					<Grid.Row columns={2} only='tablet'>
 						{StoreItems}
 					</Grid.Row>
 					<Grid.Row columns={1} only='mobile'>

@@ -206,7 +206,7 @@ class GroupProjectApplicationTests {
 		UrlList15.add("/images/umbrella-non-telescopic-2.jpg");
 
 		item15 = new Item(false, "Umbrella Non-Telescopic", "Code Clan", "Other",
-				21, 25, UrlList, description3, tempStock4);
+				21, 25, UrlList15, description3, tempStock4);
 		item15 = itemRepository.save(item15);
 
 		ArrayList<String> UrlList16 = new ArrayList<>();

@@ -120,19 +120,19 @@ class SiteContainer extends Component {
 		if(this.state.loggedIn){
 			item.quantity ++;
 			const basket = this.state.basket;
-			if(basket.items.contains(item)){
+			// if(basket.items.contains(item)){
 				
-				basket.items.remove(item)
-				basket.items.push(item)
-				this.setState({basket: basket})
+			// 	basket.items.remove(item)
+			// 	basket.items.push(item)
+			// 	this.setState({basket: basket})
 			}else{
 
-				basket.items.push(item)
-				this.setState({basket: basket})
+				// basket.items.push(item)
+				// this.setState({basket: basket})
 			}
 		}
 
-	}
+	
 
 	removeFromBasket = (id) => {
 
