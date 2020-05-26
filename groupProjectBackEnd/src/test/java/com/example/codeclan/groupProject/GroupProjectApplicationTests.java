@@ -23,7 +23,6 @@ class GroupProjectApplicationTests {
 	Item item;
 	Item item2;
 	Item item3;
-	Item item4;
 	Item item5;
 	Item item6;
 	Item item7;
@@ -116,13 +115,6 @@ class GroupProjectApplicationTests {
 				16, 20, UrlList3, description, tempStock3);
 		item3 = itemRepository.save(item3);
 
-		ArrayList<String> UrlList4 = new ArrayList<>();
-		UrlList4.add("/images/Grey-Beanie-1.jpg");
-
-		item4 = new Item(true, "Grey Beanie", "Code Clan", "Clothing",
-				16, 20, UrlList4, description, tempStock4);
-		item4 = itemRepository.save(item4);
-
 		ArrayList<String> UrlList5 = new ArrayList<>();
 		UrlList5.add("/images/black-pull-hoodie_1.jpg");
 
@@ -142,18 +134,13 @@ class GroupProjectApplicationTests {
 
 		ArrayList<String> UrlList7 = new ArrayList<>();
 
-		UrlList7.add("/images/navy-hoodie-pull-1.jpg");
-		UrlList7.add("navy-hoodie-pull-2.jpg");
+		UrlList7.add("/images/navy-hoodie-1.jpg");
 
 		item7 = new Item(false, "Zip Hoodie", "Code Clan", "Clothing",
 				31, 35, UrlList7, description3, tempStock2);
 		item7 = itemRepository.save(item7);
 
-<<<<<<< HEAD
-		imgUrl8 = new ImgUrl( "/images/navy-hoodie-pull-1.jpg", "/images/navy-hoodie-pull-2.jpg", null);
-=======
 		ArrayList<String> UrlList8 = new ArrayList<>();
->>>>>>> 812f1308c6b546f15a3f288bbc4f614707b6ce24
 
 		UrlList8.add("/images/navy-marl-beanie-1024x684.jpg");
 
@@ -244,7 +231,6 @@ class GroupProjectApplicationTests {
 		item = itemRepository.save(item);
 		item2 = itemRepository.save(item2);
 		item3 = itemRepository.save(item3);
-		item4 = itemRepository.save(item4);
 		item5 = itemRepository.save(item5);
 		item7 = itemRepository.save(item7);
 		item8 = itemRepository.save(item8);
@@ -270,7 +256,7 @@ class GroupProjectApplicationTests {
 
 		item.setOption(option1);
 		item = itemRepository.save(item);
-		assertEquals(16, itemRepository.findByBrand("Code Clan").size());
+		assertEquals(15, itemRepository.findByBrand("Code Clan").size());
 		assertEquals(14, itemRepository.findByHighlighted(false).size());
 
 		orderRepository.deleteAll();
