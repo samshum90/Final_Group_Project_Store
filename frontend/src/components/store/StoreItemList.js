@@ -7,7 +7,7 @@ const StoreItemList = (props) => {
 
 
 	if (!props.items || !props.items.length) {
-		console.log(props.items);
+		console.log(props);
 		return (
 			<Dimmer active inverted>
 				<Loader inverted content="Loading" />

@@ -50,7 +50,7 @@ class StoreItemDetail extends Component {
 					<Grid.Column width={5}>
 						<Segment>
 							<Image 
-								src={this.state.item.imgUrl} 
+								src={this.state.item.imgUrl.url1} 
 								alt={this.state.item.name} 
 								size='large' 
 							/>

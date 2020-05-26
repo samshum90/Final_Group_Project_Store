@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/orders")
 public class OrderController {
@@ -29,7 +29,7 @@ public class OrderController {
             return new ResponseEntity<>(orderRepository.findByDate(date), HttpStatus.OK);
         }
         if(userId != null){
-        return new ResponseEntity<>(orderRepository.findByUserId(userId), HttpStatus.OK);
+        return new ResponseEntity<>(orderRepository.findByUser(userId), HttpStatus.OK);
         }
         return new ResponseEntity<>(orderRepository.findAll(), HttpStatus.OK);
     }

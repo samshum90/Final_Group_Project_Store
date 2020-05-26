@@ -237,7 +237,7 @@ class GroupProjectApplicationTests {
 		assertEquals(15, itemRepository.findByHighlighted(false).size());
 
 		orderRepository.deleteAll();
-		orderBasket = new Order(user, "basket", "23/05/2020 12:00:00");
+		orderBasket = new Order(user.getId(), "basket", "23/05/2020 12:00:00");
 		orderBasket = orderRepository.save(orderBasket);
 
 		orderBasket.addItem(item);
@@ -252,8 +252,9 @@ class GroupProjectApplicationTests {
 
 		System.out.println(user.getId());
 		System.out.println(user2.getId());
+		String testId = user.getId();
 
-		assertEquals(1, orderRepository.findByUserId(user.getId()).size());
+		assertEquals(1, orderRepository.findByUser(testId).size());
 		assertEquals(item.getId(), orderRepository.findByStatus("basket").get(0).getItems().get(0).getId());
 		assertEquals(1, userRepository.findById(user.getId()).get().getOrders().size());
 	}

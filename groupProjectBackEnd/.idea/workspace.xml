@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8963e1bc-578b-41a9-9ccb-6153590dc65e" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/ImgUrl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/public/images/007-1024x682.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/public/images/Grey-Beanie-1-1024x683.jpg" beforeDir="false" />
@@ -33,6 +34,20 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../frontend/src/service/AuthenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/service/AuthenticationService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JWTWebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JWTWebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/jwt/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/repositories/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/codeclan/groupProject/repositories/UserRepository.class" afterDir="false" />
+>>>>>>> 33e08555b22d764a16e93f7324d3c3efafc91846
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,6 +147,7 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="533" y="173" key="#com.intellij.ide.util.MemberChooser" timestamp="1590505256154">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -161,5 +177,71 @@
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590506605267" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.23.1920.1057@0.0.1440.900" timestamp="1590482679192" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590505719197" />
+=======
+    <state width="1238" height="223" key="GridCell.Tab.0.bottom" timestamp="1590492487234">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="223" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590492487234" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590426239338" />
+    <state width="1238" height="223" key="GridCell.Tab.0.bottom/0.23.1280.704@0.23.1280.704" timestamp="1590488633223" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590424706957" />
+    <state width="1238" height="223" key="GridCell.Tab.0.center" timestamp="1590492487231">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="223" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1590492487231" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590426239334" />
+    <state width="1238" height="223" key="GridCell.Tab.0.center/0.23.1280.704@0.23.1280.704" timestamp="1590488633195" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590424706950" />
+    <state width="1238" height="223" key="GridCell.Tab.0.left" timestamp="1590492487226">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="223" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1590492487226" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590426239329" />
+    <state width="1238" height="223" key="GridCell.Tab.0.left/0.23.1280.704@0.23.1280.704" timestamp="1590488633193" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590424706945" />
+    <state width="1238" height="223" key="GridCell.Tab.0.right" timestamp="1590492487232">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="223" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1590492487232" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590426239336" />
+    <state width="1238" height="223" key="GridCell.Tab.0.right/0.23.1280.704@0.23.1280.704" timestamp="1590488633220" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590424706954" />
+    <state width="1238" height="223" key="GridCell.Tab.1.bottom" timestamp="1590493012868">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state width="1238" height="223" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1590492486848" />
+    <state width="1238" height="223" key="GridCell.Tab.1.bottom/0.23.1280.704@0.23.1280.704" timestamp="1590493012868" />
+    <state width="1238" height="223" key="GridCell.Tab.1.center" timestamp="1590493012864">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state width="1238" height="223" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1590492486846" />
+    <state width="1238" height="223" key="GridCell.Tab.1.center/0.23.1280.704@0.23.1280.704" timestamp="1590493012864" />
+    <state width="1238" height="223" key="GridCell.Tab.1.left" timestamp="1590493012847">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state width="1238" height="223" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1590492486845" />
+    <state width="1238" height="223" key="GridCell.Tab.1.left/0.23.1280.704@0.23.1280.704" timestamp="1590493012847" />
+    <state width="1238" height="223" key="GridCell.Tab.1.right" timestamp="1590493012866">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state width="1238" height="223" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1590492486847" />
+    <state width="1238" height="223" key="GridCell.Tab.1.right/0.23.1280.704@0.23.1280.704" timestamp="1590493012866" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/controllers/ItemController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> 33e08555b22d764a16e93f7324d3c3efafc91846
   </component>
 </project>

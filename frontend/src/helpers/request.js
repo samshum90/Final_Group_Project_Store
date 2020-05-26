@@ -1,4 +1,5 @@
-// import AuthenticationService from '../service/AuthenticationService';
+import AuthenticationService from '../service/AuthenticationService';
+const auth = sessionStorage.getItem('JWT')
 
 class Request {
 
@@ -11,17 +12,17 @@ class Request {
 	delete(url) {
 		return fetch(url, {
 			method: 'DELETE',
-			headers: { 'Content-Type': 'application/json' },
+			headers: { 'Content-Type': 'application/json', 'Authorization': auth },
 		}).catch((err) => console.log(err));
 	}
 
 	post(url, payload) {
-		console.log(payload);
+		// console.log(config);
+		// console.log('auth: ', auth)
 		return fetch(url, {
-			
 			method: 'POST',
-			headers: { 
-				'Content-Type': 'application/json' },
+			headers: {
+				'Content-Type': 'application/json', 'Authorization': auth, },
 			body: JSON.stringify(payload),
 		}).catch((err) => console.log(err));
 	}
@@ -29,7 +30,7 @@ class Request {
 	patch(url, payload) {
 		return fetch(url, {
 			method: 'PATCH',
-			headers: { 'Content-Type': 'application/json' },
+			headers: { 'Content-Type': 'application/json', 'Authorization': auth, },
 			body: JSON.stringify(payload),
 		}).catch((err) => console.log(err));
 	}

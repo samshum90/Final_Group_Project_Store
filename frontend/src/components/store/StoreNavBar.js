@@ -35,7 +35,9 @@ const StoreNavBar = (props) => {
                 <h3>Welcome {AuthenticationService.getLoggedInUserName()}</h3>
               </li>
               <li>
-                <SearchBar />
+                <SearchBar 
+                  items={props.items}
+                />
               </li>
               <li>
                   <p>Items: {totalItems()}</p>

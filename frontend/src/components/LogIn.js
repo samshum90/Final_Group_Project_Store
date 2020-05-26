@@ -37,6 +37,7 @@ class LogIn extends Component {
 				this.setState({ hasLoginFailed: false })
 				if(AuthenticationService.isUserLoggedIn()){
 					this.props.checkLoginStatus();
+					// window.location.replace('/') 
 				}
             }).catch(() => {
                 this.setState({ showSuccessMessage: false })

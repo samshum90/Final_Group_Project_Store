@@ -36,13 +36,17 @@ class ShopContainer extends Component {
 	render() {
 		return (
 			<>
-				<StoreNavBar basket={this.props.basket}/>
+				<StoreNavBar 
+					basket={this.props.basket}
+					items={this.props.items}
+					sendSearch={this.props.sendSearch}
+				/>
 				<Switch>
 					<Route
 						exact
 						path="/"
 						component={() => <StoreItemList 
-							items={this.props.items} 
+							items={this.props.items}
 							basket={this.props.basket}
 							addToBasket={this.props.addToBasket}
 							/>}

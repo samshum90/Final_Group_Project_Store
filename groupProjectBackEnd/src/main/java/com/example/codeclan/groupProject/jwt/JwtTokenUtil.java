@@ -1,5 +1,6 @@
 package com.example.codeclan.groupProject.jwt;
 
+import com.example.codeclan.groupProject.models.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Clock;
 import io.jsonwebtoken.Jwts;
@@ -89,7 +90,7 @@ public class JwtTokenUtil implements Serializable {
   }
 
   public Boolean validateToken(String token, UserDetails userDetails) {
-    JwtUserDetails user = (JwtUserDetails) userDetails;
+    User user = (User) userDetails;
     final String username = getUsernameFromToken(token);
     return (username.equals(user.getUsername()) && !isTokenExpired(token));
   }

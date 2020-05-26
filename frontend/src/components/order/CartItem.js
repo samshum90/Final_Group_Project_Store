@@ -23,14 +23,14 @@ const CartItem = (props) => {
                         verticalAlign="middle"
                         width={2}
                     >
-                    <h3>Price</h3>
+                    <h3>{props.item.currentSellPrice}</h3>
                     </Grid.Column>
                     
                     <Grid.Column 
                         verticalAlign="middle"
                         width={2}
                     >
-                    <h3>Quantity</h3>
+                    <h3>1</h3>
                     </Grid.Column>
                     <Grid.Column 
                         verticalAlign="middle"

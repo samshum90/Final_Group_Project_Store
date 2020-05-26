@@ -48,7 +48,7 @@ public class User implements UserDetails {
         this.address = address;
         this.orders = new ArrayList<>();
         List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
-        authorities.add(new SimpleGrantedAuthority("admin"));
+        authorities.add(new SimpleGrantedAuthority("user"));
 
         this.authorities = authorities;
     }

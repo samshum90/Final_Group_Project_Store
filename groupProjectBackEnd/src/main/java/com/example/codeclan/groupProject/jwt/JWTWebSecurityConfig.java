@@ -81,13 +81,6 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 HttpMethod.POST,
                 authenticationPath
             )
-//                .antMatchers(HttpMethod.OPTIONS, "/**")
-//                .and()
-//
-//                .antMatchers(
-//                        HttpMethod.POST,
-//                        "/items" //Other Stuff You want to Ignore
-//                )
             .antMatchers(HttpMethod.OPTIONS, "/**")
             .and()
             .ignoring()
@@ -106,6 +99,13 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
                         HttpMethod.GET,
 
                         "/users" //Other Stuff You want to Ignore
+                )
+                .and()
+                .ignoring()
+                .antMatchers(
+                        HttpMethod.GET,
+
+                        "/orders" //Other Stuff You want to Ignore
                 )
                 .and()
                 .ignoring()
