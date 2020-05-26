@@ -6,6 +6,7 @@ const StoreItem = (props) => {
 	const URL = '/items/' + props.item.id;
 
 function handleClick(){
+
 	props.addToBasket(props.item)
 }
 

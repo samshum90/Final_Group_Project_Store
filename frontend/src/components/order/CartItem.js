@@ -9,7 +9,7 @@ const CartItem = (props) => {
         >
               <Grid fluid>
                     <Grid.Column width={5}>
-                        <Image src={props.item.imgUrl} alt={props.item.name} size='medium'/>
+                        <Image src={props.item.imgUrl[0]} alt={props.item.name} size='medium'/>
                     </Grid.Column>
                     
                     <Grid.Column 
@@ -30,7 +30,7 @@ const CartItem = (props) => {
                         verticalAlign="middle"
                         width={2}
                     >
-                    <h3>1</h3>
+                    <h3>{props.item.quantity}</h3>
                     </Grid.Column>
                     <Grid.Column 
                         verticalAlign="middle"
@@ -39,7 +39,7 @@ const CartItem = (props) => {
                     <Button
 						negative
                         // value=
-						onClick={() => props.removeFromBasket(props.item.id)}
+						onClick={() => props.removeFromBasket(props.item)}
 					>
 						Remove Item
 					</Button>

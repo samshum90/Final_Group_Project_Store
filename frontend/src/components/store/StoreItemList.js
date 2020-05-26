@@ -6,13 +6,12 @@ import './StoreItem.css';
 const StoreItemList = (props) => {
 
 	// if(props.item){
-		if (props.items.length == 0 && props.input.length > 0) {
+		if (props.items.length === 0 && props.input.length > 0) {
 			return <h1>No items found, please check filter</h1>
 		}
 
 
 		if (!props.items || !props.items.length) {
-			console.log(props);
 			return (
 				<Dimmer active inverted>
 					<Loader inverted content="Loading" />

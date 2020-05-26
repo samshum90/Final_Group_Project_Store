@@ -23,7 +23,11 @@ const StoreNavBar = (props) => {
   if(props.basket && !props.basket.items ){
     return 0
   }else if(props.basket){
-    return props.basket.items.length
+    let tempArray = props.basket.items.map(item => 
+      item.quantity)
+    return tempArray.reduce(function (total, item) {
+      return total += item
+    }, 0)
   }
 
  }

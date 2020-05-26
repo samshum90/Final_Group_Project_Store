@@ -8,6 +8,7 @@ import AuthenticationService from '../service/AuthenticationService'
 
 function accountButton() {
 	if(AuthenticationService.isUserLoggedIn()){
+		
 		return 'Account'
 	}
 }
@@ -18,8 +19,9 @@ function adminButton(){
 	}
 }
 
-function ordersButton() {
+function ordersButton(props) {
 	if(AuthenticationService.isUserLoggedIn()){
+		props.loadOrders()
 		return 'Orders'
 	}
 }
@@ -41,7 +43,7 @@ const NavBar = (props) => {
 					<Link to="/account">{accountButton()}</Link>
 				</li>
 				<li>
-					<Link to="/orders">{ordersButton()}</Link>
+					<Link to="/orders">{ordersButton(props) }</Link>
 				</li>
 				<li>
 					<LogInButton 
