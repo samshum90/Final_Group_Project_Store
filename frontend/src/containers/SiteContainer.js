@@ -14,6 +14,7 @@ import AdminContainer from '../containers/AdminContainer';
 import ShopContainer from '../containers/ShopContainer';
 import AuthenticationService from '../service/AuthenticationService';
 
+
 class SiteContainer extends Component {
 	constructor(props) {
 		super(props);
@@ -204,7 +205,7 @@ class SiteContainer extends Component {
 						<this.PrivateRoute
 							exact
 							path="/admin/items"
-							component={() => <AdminContainer items={this.state.items} />}
+							render={() => <AdminContainer items={this.state.items} />}
 						/>
 						<this.PrivateRoute
 							path="/admin/new"

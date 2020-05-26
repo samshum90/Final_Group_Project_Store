@@ -12,6 +12,7 @@ class StoreItemDetail extends Component {
 	}
 
 	componentDidMount() {
+		console.log(this.props)
 		var itemId = /[^/]*$/.exec(window.location.href)[0];
 
 		const url = 'http://localhost:8080/items/' + itemId;
@@ -25,9 +26,15 @@ class StoreItemDetail extends Component {
 			.catch((err) => console.log(err));
 	}
 
+<<<<<<< HEAD
 	handleClick(item){
 		this.props.addToBasket(item)
 	}
+=======
+	// handleClick(item){
+	// 	this.props.addToBasket(item)
+	// }
+>>>>>>> development
 
 	render() {
 		if (!this.state.item) {
@@ -49,7 +56,7 @@ class StoreItemDetail extends Component {
 					<Grid.Column width={5}>
 						<Segment>
 							<Image 
-								src={this.state.item.imgUrl} 
+								src={this.state.item.imgUrl.url1} 
 								alt={this.state.item.name} 
 								size='large' 
 							/>
@@ -73,7 +80,11 @@ class StoreItemDetail extends Component {
 								<Button primary compact 
 									className='button'
 									floated="right"
+<<<<<<< HEAD
 									onClick={this.handleClick(this.state.item)}
+=======
+									// onClick={this.handleClick}
+>>>>>>> development
 								>
 									Add To Cart
 								</Button>
