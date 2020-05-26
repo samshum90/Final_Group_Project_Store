@@ -17,14 +17,14 @@ public class Item {
     private int maxSellPrice;
     private int currentSellPrice;
     private int buyPrice;
-    private String imgUrl;
+    private ImgUrl imgUrl;
     private String description;
     private ArrayList<HashMap> options;
     private HashMap<String, String> option;
     private Stock stock;
     private boolean highlighted;
 
-    public Item(boolean highlighted,String name, String brand, String type, int maxSellPrice, int buyPrice, String imgUrl, String description, Stock stock) {
+    public Item(boolean highlighted,String name, String brand, String type, int maxSellPrice, int buyPrice, ImgUrl imgUrl, String description, Stock stock) {
         this.highlighted = highlighted;
         this.name = name;
         this.brand = brand;
@@ -104,11 +104,11 @@ public class Item {
         this.buyPrice = buyPrice;
     }
 
-    public String getImgUrl() {
+    public ImgUrl getImgUrl() {
         return imgUrl;
     }
 
-    public void setImgUrl(String imgUrl) {
+    public void setImgUrl(ImgUrl imgUrl) {
         this.imgUrl = imgUrl;
     }
 

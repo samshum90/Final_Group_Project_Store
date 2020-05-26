@@ -2,10 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8963e1bc-578b-41a9-9ccb-6153590dc65e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/order/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/order/Cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/store/StoreItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/store/StoreItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/store/StoreItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/store/StoreItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/ImgUrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/007-1024x682.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/Grey-Beanie-1-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/IMG_0105-1024x768.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/IMG_0113-copy-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/IMG_0118-1024x768.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/IMG_0205-1024x768.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/IMG_0206-1024x768.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/IMG_0252-copy-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/IMG_0680-1024x768.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/IMG_8097-1024x768.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/Water-Bottle-1024x682.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/black-pull-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/campus-t-shirt-black-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/logo-t-back-1024x768.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/logo-t-front-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/navy-beanie-patter-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/navy-hoodie-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/navy-hoodie-pull-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/navy-pattern-beanie-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/powerbank-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/pull-over-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/umbrella-non-telescopic-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/umbrella-telescopic-1-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/public/images/umbrella-telescopic-1024x683.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/store/StoreItemDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/store/StoreItemDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/SiteContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/service/AuthenticationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/service/AuthenticationService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/codeclan/groupProject/models/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/codeclan/groupProject/GroupProjectApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/codeclan/groupProject/GroupProjectApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +42,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -39,7 +74,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
-  <component name="RunManager" selected="Application.GroupProjectApplication">
+  <component name="RunManager" selected="JUnit.GroupProjectApplicationTests">
     <configuration name="GroupProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.codeclan.groupProject.GroupProjectApplication" />
       <module name="groupProject" />
@@ -78,8 +113,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GroupProjectApplication" />
         <item itemvalue="JUnit.GroupProjectApplicationTests" />
+        <item itemvalue="Application.GroupProjectApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -97,25 +132,34 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590426239338">
+    <state x="533" y="173" key="#com.intellij.ide.util.MemberChooser" timestamp="1590505256154">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590426239338" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590424706957" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590426239334">
+    <state x="533" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/1440.0.1360.768@0.0.1440.900" timestamp="1590501425650" />
+    <state x="533" y="173" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590505256154" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1590506605269">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590426239334" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590424706950" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590426239329">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590506605269" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.23.1920.1057@0.0.1440.900" timestamp="1590482679195" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590505719201" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1590506605265">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590426239329" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590424706945" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590426239336">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590506605265" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.23.1920.1057@0.0.1440.900" timestamp="1590482679189" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590505719186" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1590506605263">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590426239336" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590424706954" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590506605263" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.23.1920.1057@0.0.1440.900" timestamp="1590482679188" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590505719181" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1590506605267">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1590506605267" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.23.1920.1057@0.0.1440.900" timestamp="1590482679192" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.793/1440.23.1920.1057@0.23.1440.793" timestamp="1590505719197" />
   </component>
 </project>

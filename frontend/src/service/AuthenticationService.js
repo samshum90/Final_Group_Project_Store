@@ -40,7 +40,8 @@ class AuthenticationService {
 
         sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
         this.setupAxiosInterceptors(this.createJWTToken(token))
-        
+        sessionStorage.setItem('JWT', this.createJWTToken(token))
+        console.log(sessionStorage)
     }
 
     createJWTToken(token) {

@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Request from '../helpers/request';
+import { 
+	BrowserRouter as Router,
+	Switch, 
+	Route,
+	Redirect,
+   } from 'react-router-dom';import Request from '../helpers/request';
 import NavBar from '../components/NavBar';
 import Footer from '../components/footer/Footer';
 import AdminContainer from '../containers/AdminContainer';
 import ShopContainer from '../containers/ShopContainer';
 import AuthenticationService from '../service/AuthenticationService';
+
 
 class SiteContainer extends Component {
 	constructor(props) {
@@ -59,6 +64,16 @@ class SiteContainer extends Component {
 			  };
 			});
 		  };
+
+		PrivateRoute = ({component: Component, ...rest}) => {
+			return (
+				<Route {...rest} render={props => (
+					AuthenticationService.isUserLoggedIn() ?
+						<Component {...props} />
+					: <Redirect to="/log-in" />
+				)} />
+			);
+		};
 	
 
 	
@@ -100,14 +115,14 @@ class SiteContainer extends Component {
 								removeFromBasket={this.removeFromBasket}
 								/>}
 						/>
-						<Route
+						<this.PrivateRoute
 							path="/admin/items/edit/:itemId"
 							render={() => <AdminContainer items={this.state.items} />}
 						/>
-						<Route
+						<this.PrivateRoute
 							exact
 							path="/admin/items"
-							component={() => <AdminContainer items={this.state.items} />}
+							render={() => <AdminContainer items={this.state.items} />}
 						/>
 						<Route
 							path="/admin/new"

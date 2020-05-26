@@ -12,6 +12,7 @@ class StoreItemDetail extends Component {
 	}
 
 	componentDidMount() {
+		console.log(this.props)
 		var itemId = /[^/]*$/.exec(window.location.href)[0];
 
 		const url = 'http://localhost:8080/items/' + itemId;
@@ -25,9 +26,9 @@ class StoreItemDetail extends Component {
 			.catch((err) => console.log(err));
 	}
 
-	handleClick(){
-		this.props.addToBasket(this.state.item)
-	}
+	// handleClick(item){
+	// 	this.props.addToBasket(item)
+	// }
 
 	render() {
 		if (!this.state.item) {
@@ -73,7 +74,7 @@ class StoreItemDetail extends Component {
 								<Button primary compact 
 									className='button'
 									floated="right"
-									onClick={this.handleClick}
+									// onClick={this.handleClick}
 								>
 									Add To Cart
 								</Button>

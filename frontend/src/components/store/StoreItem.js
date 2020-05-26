@@ -63,7 +63,7 @@ function checkStock(){
 				id="card"
 			>
 				<Image 
-					src={props.item.imgUrl} 
+					src={props.item.imgUrl.url1} 
 					href={URL}
 				/>
 
