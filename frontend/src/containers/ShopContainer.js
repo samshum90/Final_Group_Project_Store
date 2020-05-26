@@ -28,8 +28,7 @@ class ShopContainer extends Component {
 		const url = 'http://localhost:8080/users';
 
 		request.post(url, user).then(() => {
-			console.log(user)
-			// window.location = '/';
+			window.location = '/';
 		});
 	}
 

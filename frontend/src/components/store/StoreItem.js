@@ -49,7 +49,7 @@ function checkStock(){
 						floated="right"
 						onClick={handleClick}
 					>
-						Low Stock<br />
+						Low Stock
 						Add to Cart
 					</Button>
 		)
@@ -60,7 +60,6 @@ function checkStock(){
 		<Grid.Column>
 			<Card 
 				raised
-				fluid 
 				id="card"
 			>
 				<Image 

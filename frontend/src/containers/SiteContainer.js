@@ -89,7 +89,6 @@ class SiteContainer extends Component {
 	
 	filterItems = (input) => {
 		const itemList = this.state.items.filter(item => item.name.toLowerCase().includes(`${input.input.toLowerCase()}`))
-		console.log(input.input)
 		this.setState({filteredItems: itemList})
 	}
 
@@ -128,8 +127,8 @@ class SiteContainer extends Component {
 				this.setState({basket: basket})
 			}
 		}
-
 	}
+	
 
 	removeFromBasket = (item) => {
 		item.quantity --;
@@ -270,5 +269,6 @@ class SiteContainer extends Component {
 		);
 	}
 }
+
 
 export default SiteContainer;

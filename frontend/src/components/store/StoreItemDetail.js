@@ -11,28 +11,15 @@ class StoreItemDetail extends Component {
 		};
 	}
 	
-	// const images = this.state.item.imageUrl.map((image) => {
-	// 	return <Image
-	// 		src="image.url"
-
-	// 	/>;
-	// }
-	// )
-
-
-
 	componentDidMount() {
-		console.log(this.props)
 		var itemId = /[^/]*$/.exec(window.location.href)[0];
-
 		const url = 'http://localhost:8080/items/' + itemId;
 		const request = new Request();
 		request
 			.get(url)
 			.then((data) => {
-				this.setState({ item: data }, () => console.log(this.state));
+				this.setState({ item: data });
 			})
-
 			.catch((err) => console.log(err));
 	}
 
@@ -54,23 +41,27 @@ class StoreItemDetail extends Component {
 		if (this.state.item.noItemFound) {
 			return (window.location = '/*');
 		}
+		
+		const images = this.state.item.imgUrl.map((url) => {
+			return <Image
+				key={url}
+				src={url}
+				alt={url}
+				size='large' 
+			/>;
+		}
+		)
 
 		return (
 			<Container fluid className="item-container">
 				<Grid>
 					<Grid.Row>
-					<Grid.Column width={5}>
+					<Grid.Column width={6}>
 						<Segment>
-							<Image 
-								src={this.state.item.imgUrl.url1} 
-								alt={this.state.item.name} 
-								size='large' 
-							/>
-						{/* {image2} */}
-						{/* {image3} */}
+							{images}
 						</Segment>
 					</Grid.Column>
-					<Grid.Column width={11}>
+					<Grid.Column width={10}>
 						<Segment.Group>
 							<Segment id='segment'>
 								<h4>{this.state.item.brand} </h4>
@@ -98,6 +89,8 @@ class StoreItemDetail extends Component {
 						</Segment.Group>
 					</Grid.Column>
 					</Grid.Row>
+					<Grid.row>
+					</Grid.row>
 				</Grid>
 
 			</Container>

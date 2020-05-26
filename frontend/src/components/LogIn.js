@@ -92,7 +92,7 @@ class LogIn extends Component {
 
 
 					{this.state.hasLoginFailed && <div>Invalid Credentials</div>}
-                    {this.state.showSuccessMessage && <div>Login Sucessful</div>}
+                    {this.state.showSuccessMessage && <div>Login Successful</div>}
 					</Grid.Column>
 
 					<Grid.Column verticalAlign="middle">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Input} from 'semantic-ui-react';
 
 class SearchBar extends Component {
 	constructor(props) {
@@ -16,16 +17,21 @@ class SearchBar extends Component {
 	};
 
 	render() {
+
 		return (
-			<div class="search">
-				<label value="filter">Filter: </label>
-				<input
-					type="text"
+			<>
+				<Input
+					action={{
+					color: 'yellow',
+					icon: 'search',
+					}}
+					placeholder='Search...'
 					id="filter"
 					value={this.state.input}
 					onChange={this.handleSearchChange}
 				/>
-			</div>
+
+			</>
 		);
 	}
 }
