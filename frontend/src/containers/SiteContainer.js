@@ -23,61 +23,56 @@ class SiteContainer extends Component {
 			loggedIn: false,
 			orders: '',
 			basket: '',
-			input: ''
+			input: '',
+			fetch: false
 		};
 		this.getItems = this.getItems.bind(this);
-		this.getBasket = this.getBasket.bind(this);
+		this.loadOrders = this.loadOrders.bind(this);
 		this.checkBasketInDatabase = this.checkBasketInDatabase.bind(this);
 		this.checkLoginStatus = this.checkLoginStatus.bind(this);
 
 	}
 
-	getBasket(){
-		if(!this.state.basket){
-			
+	loadOrders(){
+		if(sessionStorage.getItem('UserId') != null && !this.state.basket  && !this.state.fetch){
+			this.setState({fetch: true})
 			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('UserId');
 			const request = new Request();
 	
 			request.get(URL)
 			.then((data) => {
-				console.log("created orders/basket", data)
-				this.setState({orders: data})			
+				this.setState({orders: data})
+				this.checkBasketInDatabase()			
 			})
-			.then(this.checkBasketInDatabase());
 		
 		}else{
-			console.log("no sending :(")
+			return false;			
 		}
 	}
 
 	checkBasketInDatabase(){
-		console.log("orders exist?????", this.state)
-		if(this.state.orders){
-			console.log("orders exist", this.state.orders)
-			// (item => item.name.includes(`${input.input}`)
-			const basket = this.state.orders.filter(order => order.status.includes("basket"), () => {this.setState({basket: basket})})
+		if(this.state.fetch && this.state.orders.length > 0){
+			const basketArray = this.state.orders.filter(order => order.status.includes("basket"));
+			const basket = basketArray.pop();
+			this.setState({basket: basket})
+		}else if(this.state.fetch && !this.state.orders.length  && !this.state.basket){
+			if (sessionStorage.getItem('UserId') != null) {
 
-		}else if(!this.state.orders && !this.state.basket){
-			
-			console.log("state is a thing", this.state);
+				const payload ={
+					user: sessionStorage.getItem('UserId'),
+					items: [],
+					status: "basket",
+					date: "date"
+				}
+				const URL = "http://localhost:8080/orders"
+				const request = new Request();
 
-			const payload ={
-				user: sessionStorage.getItem('UserId'),
-				items: [],
-				status: "basket",
-				date: "date"
-			}
-			const URL = "http://localhost:8080/orders"
-			const request = new Request();
-
-			request.post(URL, payload)
-			.then((res) => res.json())
-			.then((data) => {
-				console.log("created basket", data)
+				request.post(URL, payload)
+				.then((res) => res.json())
+				.then((data) => {
 				this.setState({basket: data})	
-			})
-		}else{
-			console.log("no sending two :(")
+				})
+			}
 		}
 	}
 
@@ -110,7 +105,7 @@ class SiteContainer extends Component {
 
 	checkLoginStatus = ( ) => {
 		if(AuthenticationService.isUserLoggedIn()){
-			this.setState({loggedIn: true}, () => {this.getBasket()})
+			this.setState({loggedIn: true})
 		}else{
 			this.setState({loggedIn: false})
 		}
@@ -118,27 +113,38 @@ class SiteContainer extends Component {
 
 	addToBasket = (item) => {
 		if(this.state.loggedIn){
-			item.quantity ++;
+			
 			const basket = this.state.basket;
-			// if(basket.items.contains(item)){
-				
-			// 	basket.items.remove(item)
-			// 	basket.items.push(item)
-			// 	this.setState({basket: basket})
+			if(basket.items.includes(item)){
+				console.log("item in basket not increased" + item)
+				basket.items.pop(item)
+				item.quantity ++;
+				basket.items.push(item)
+				console.log("item in basket Has increased" + item)
+				this.setState({basket: basket})
 			}else{
-
-				// basket.items.push(item)
-				// this.setState({basket: basket})
+				item.quantity ++;
+				basket.items.push(item)
+				this.setState({basket: basket})
 			}
 		}
-
+	}
 	
 
-	removeFromBasket = (id) => {
-
+	removeFromBasket = (item) => {
+		item.quantity --;
 		const basket = this.state.basket;
-		basket.items.filter(item => item.id !== id)
-		this.setState({basket: basket})
+		if(item.quantity > 0){
+			basket.items.pop(item)
+			basket.items.push(item)
+			this.setState({basket: basket})
+		}else{
+			basket.items.pop(item)
+
+			this.setState({basket: basket})
+		}
+		
+		
 
 
 		// this.setState(state => {
@@ -171,7 +177,8 @@ class SiteContainer extends Component {
 			<Router>
 				<>
 					<NavBar 
-						checkLoginStatus={this.checkLoginStatus} 
+						checkLoginStatus={this.checkLoginStatus}
+						loadOrders={this.loadOrders}
 						loggedIn={this.state.loggedIn}
 					/> 
 					<Switch>
@@ -197,7 +204,6 @@ class SiteContainer extends Component {
 						<Route
 							path="/cart"
 							render={() => <ShopContainer 
-								handleBasketClick ={this.getBasket}
 								basket={this.state.basket}
 								removeFromBasket={this.removeFromBasket}
 								/>}
@@ -264,5 +270,6 @@ class SiteContainer extends Component {
 		);
 	}
 }
+
 
 export default SiteContainer;

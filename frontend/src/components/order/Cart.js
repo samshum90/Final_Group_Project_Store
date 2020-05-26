@@ -32,7 +32,11 @@ const Cart = (props) => {
           if(!props.basket ){
             return 0
           }else{
-            return props.basket.length
+            let tempArray = props.basket.items.map(item => 
+            item.quantity)
+          return tempArray.reduce(function (total, item) {
+            return total += item
+          }, 0)
           }
       }
           
@@ -93,7 +97,7 @@ const Cart = (props) => {
           </Container >
       )
   }else{
-    props.handleBasketClick();
+    
     return (null)
   }
 }
