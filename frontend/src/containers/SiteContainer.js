@@ -89,7 +89,6 @@ class SiteContainer extends Component {
 	
 	filterItems = (input) => {
 		const itemList = this.state.items.filter(item => item.name.toLowerCase().includes(`${input.input.toLowerCase()}`))
-		console.log(input.input)
 		this.setState({filteredItems: itemList})
 	}
 

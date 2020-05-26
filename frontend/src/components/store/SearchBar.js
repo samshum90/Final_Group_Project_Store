@@ -20,14 +20,11 @@ class SearchBar extends Component {
 
 		return (
 			<>
-
-
 				<Input
 					action={{
 					color: 'yellow',
 					icon: 'search',
 					}}
-					actionPosition='right'
 					placeholder='Search...'
 					id="filter"
 					value={this.state.input}
