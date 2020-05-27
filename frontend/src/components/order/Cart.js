@@ -97,8 +97,6 @@ const Cart = (props) => {
             </Grid.Column>
             </Grid.Row>
           </Grid>
-
-              
           </Container >
       )
   }else{

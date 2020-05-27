@@ -33,9 +33,9 @@ public class StockController {
         return new ResponseEntity<>(stock, HttpStatus.CREATED);
     }
 
-    @PutMapping("{id}")
+    @PatchMapping("{id}")
     public ResponseEntity<Stock> putStocks(@RequestBody Stock stock, @PathVariable String id) {
-        if (!stock.getId().equals(id)){
+        if (!stockRepository.findById(id).isPresent()){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         stockRepository.save(stock);

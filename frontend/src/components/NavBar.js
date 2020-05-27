@@ -8,26 +8,48 @@ import AuthenticationService from '../service/AuthenticationService'
 
 function accountButton() {
 	if(AuthenticationService.isUserLoggedIn()){
-		
-		return 'Account'
+		return (
+				<li>
+					<Link to="/account">Account</Link>
+				</li>
+		)
 	}
 }
 
 function adminButton(){
 	if(AuthenticationService.getLoggedInUserName() === 'admin'){
-		return 'Admin'
+		return(
+		<li>
+					<Link to="/admin/items">Admin</Link>
+		</li>
+		)}
+}
+
+function showOrderButton() { 
+	if(AuthenticationService.isUserLoggedIn()){
+	return(
+			<li>
+				<Link to="/orders">Orders</Link>
+			</li>
+	)
 	}
 }
 
-function ordersButton(props) {
+function showCart(){
 	if(AuthenticationService.isUserLoggedIn()){
-		props.loadOrders()
-		return 'Orders'
-	}
+	return(
+			<li>
+					<Link to="/cart">
+						<Icon name="shopping cart" 
+						size="large" 
+						/>
+					</Link>
+			</li>
+	)
+}
 }
 
 const NavBar = (props) => {
-	
 	return (
 		<nav className="nav-bar">
 			<ul>
@@ -36,28 +58,16 @@ const NavBar = (props) => {
 						<img src={Logo} alt="Code Clan Logo" />
 					</Link>
 				</li>
-				<li>
-					<Link to="/admin/items">{adminButton()}</Link>
-				</li>
-				<li>
-					<Link to="/account">{accountButton()}</Link>
-				</li>
-				<li>
-					<Link to="/orders">{ordersButton(props) }</Link>
-				</li>
+				{adminButton()}
+				{accountButton()}
+				{showOrderButton()}
 				<li>
 					<LogInButton 
-					checkLoginStatus = {props.checkLoginStatus} 
-					loggedIn = {props.loggedIn}
+					checkLoginStatus={props.checkLoginStatus} 
+					loggedIn={props.loggedIn}
 					/>
 				</li>
-				<li>
-					<Link to="/cart">
-						<Icon name="shopping cart" 
-						size="large" 
-						/>
-					</Link>
-				</li>
+				{showCart()}
 			</ul>
 		</nav>
 	);

@@ -54,7 +54,7 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
-    @PutMapping("{id}")
+    @PatchMapping("{id}")
     public ResponseEntity<User> putUsers(@RequestBody User user, @PathVariable String id) {
         if (!userRepository.findById(id).isPresent()){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

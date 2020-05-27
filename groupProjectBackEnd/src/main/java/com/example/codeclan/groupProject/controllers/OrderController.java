@@ -45,9 +45,9 @@ public class OrderController {
         return new ResponseEntity<>(order, HttpStatus.CREATED);
     }
 
-    @PutMapping("{id}")
+    @PatchMapping("{id}")
     public ResponseEntity<Order> putOrders(@RequestBody Order order, @PathVariable String id) {
-        if (order.getId() != id){
+        if (!orderRepository.findById(id).isPresent()){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         orderRepository.save(order);

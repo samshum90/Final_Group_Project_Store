@@ -24,26 +24,26 @@ class SiteContainer extends Component {
 			orders: '',
 			basket: '',
 			input: '',
-			fetch: false
+			fetch: false,
+			filter: 'Alphabetical'
 		};
 		this.getItems = this.getItems.bind(this);
 		this.loadOrders = this.loadOrders.bind(this);
 		this.checkBasketInDatabase = this.checkBasketInDatabase.bind(this);
 		this.checkLoginStatus = this.checkLoginStatus.bind(this);
+		this.saveOrder = this.saveOrder.bind(this);
 
 	}
 
 	loadOrders(){
 		
 		if(this.state.user != null && !this.state.basket  && !this.state.fetch){
-			this.setState({fetch: true})
+			console.log("triggered babeh! ")
 			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('UserId');
 			const request = new Request();
-	
 			request.get(URL)
 			.then((data) => {
-				this.setState({orders: data})
-				this.checkBasketInDatabase()			
+				this.setState({orders: data, fetch: true}, () =>{this.checkBasketInDatabase()	})		
 			})
 		
 		}else{
@@ -53,10 +53,13 @@ class SiteContainer extends Component {
 
 	checkBasketInDatabase(){
 		if(this.state.fetch && this.state.orders.length > 0){
+
+			
 			const basketArray = this.state.orders.filter(order => order.status.includes("basket"));
-			const basket = basketArray.pop();
-			this.setState({basket: basket})
-		}else if(this.state.fetch && !this.state.orders.length  && !this.state.basket){
+			this.setState({basket: basketArray[0]})
+
+
+		}else if(this.state.fetch && !this.state.orders.length && !this.state.basket){
 			if (this.state.user != null) {
 
 				const payload ={
@@ -80,33 +83,99 @@ class SiteContainer extends Component {
 	componentDidMount() {
 		this.getItems();
 		this.checkLoginStatus();
+	}
 
+	saveOrder(){
+
+		const order = this.state.basket;
+		order.status = "payment pending"
+		this.saveBasketToDB(order)
+		this.setState({basket:''})
 	}
 
 	sendSearch = (input) => {
-		this.setState({input: input.input})
-		this.filterItems(input)
+		this.setState({input: input.input}, () => {this.filterItems(this.state.input)})
 	}
 	
 	filterItems = (input) => {
-		const itemList = this.state.items.filter(item => item.name.toLowerCase().includes(`${input.input.toLowerCase()}`))
+		const itemList = this.state.items.filter(item => item.name.toLowerCase().includes(`${input.toLowerCase()}`))
 		this.setState({filteredItems: itemList})
 	}
 
+	sendFilter = (filter) => {
+		this.setState({filter: filter.filter}, () =>{this.arrangeItems(this.state.filter)})
+
+	}
+
+	arrangeItems = (filter) => {
+		
+		console.log("filter is: " + filter)
+		if(filter === 'Alphabetical'){
+			const sortedItems = this.state.items.sort(function(item1, item2){
+				var x = item1.name.toLowerCase();
+				var y = item2.name.toLowerCase();
+				if(x < y) {return -1;}
+				if(x > y) {return 1;}
+				return 0;
+			});
+			this.setState({filteredItems: sortedItems})
+		}
+		if(filter === 'LowToHigh'){
+			const sortedItems = this.state.items.sort(function(item1, item2){
+				var x = item1.currentSellPrice
+				var y = item2.currentSellPrice
+				if(x < y) {return -1;}
+				if(x > y) {return 1;}
+				return 0;
+			});
+			
+			this.setState({filteredItems: sortedItems})
+		}
+
+		if(filter === 'HighToLow'){
+			const sortedItems = this.state.items.sort(function(item1, item2){
+				var x = item1.currentSellPrice
+				var y = item2.currentSellPrice
+				if(x < y) {return 1;}
+				if(x > y) {return -1;}
+				return 0;
+			});
+			this.setState({filteredItems: sortedItems})
+
+		}
+		if(filter ==='Recommended'){
+			const sortedItems = this.state.items.filter(item => item.highlighted === true);
+			this.setState({filteredItems: sortedItems})
+
+		}
+		if(filter === 'Clothing'){
+			const sortedItems = this.state.items.filter(item => item.type === 'Clothing');
+			this.setState({filteredItems: sortedItems})
+		}
+		if(filter === 'Home'){
+			const sortedItems = this.state.items.filter(item => item.type === 'Home');
+			this.setState({filteredItems: sortedItems})
+		}
+		if(filter === 'Courses'){
+			const sortedItems = this.state.items.filter(item => item.type === 'Courses');
+			this.setState({filteredItems: sortedItems})
+		}
+		
+	}
+	
 	getItems() {
 		const url = 'http://localhost:8080/items';
 		const request = new Request();
 
 		request.get(url)
 		.then((data) => {
-			this.setState({ items: data, filteredItems: data });
-		});
+			this.setState({ items: data, filteredItems: data}, () => {this.arrangeItems('Alphabetical')})
+		})
 	}
 
 	checkLoginStatus = ( ) => {
 		if(AuthenticationService.isUserLoggedIn()){
-			this.setState({loggedIn: true})
-			this.setState({user: sessionStorage.getItem('UserId')})
+			this.setState({loggedIn: true, user: sessionStorage.getItem('UserId')}, () => {this.loadOrders()})
 		}else{
 			this.setState({loggedIn: false})
 		}
@@ -115,6 +184,7 @@ class SiteContainer extends Component {
 	saveBasketToDB = (basket) => {
 		const URL = 'http://localhost:8080/orders/' + basket.id
 		const request = new Request()
+		
 		request.patch(URL, basket)
 	}
 
@@ -195,6 +265,7 @@ class SiteContainer extends Component {
 								items={this.state.filteredItems} 
 								basket={this.state.basket}
 								addToBasket={this.addToBasket}
+								sendFilter={this.sendFilter}
 								sendSearch={this.sendSearch}
 								input={this.state.input}
 								/>}
@@ -219,6 +290,7 @@ class SiteContainer extends Component {
 						<Route
 							path="/check-out"
 							component={() => <ShopContainer 
+								saveOrder={this.saveOrder}
 								basket={this.state.basket}
 								/>}
 						/>

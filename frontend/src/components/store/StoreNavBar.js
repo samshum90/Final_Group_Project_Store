@@ -41,6 +41,7 @@ const StoreNavBar = (props) => {
               <li>
                 <SearchBar 
                   sendSearch={props.sendSearch}
+                  sendFilter={props.sendFilter}
                   items={props.items}
                 />
               </li>

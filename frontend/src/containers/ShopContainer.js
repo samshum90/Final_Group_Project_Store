@@ -40,6 +40,7 @@ class ShopContainer extends Component {
 					basket={this.props.basket}
 					items={this.props.items}
 					sendSearch={this.props.sendSearch}
+					sendFilter={this.props.sendFilter}
 				/>
 				<Switch>
 					<Route
@@ -71,7 +72,9 @@ class ShopContainer extends Component {
 					<Route
 							path="/check-out"
 							component={() => <CheckOut
-								basket={this.state.basket}
+							saveOrder={this.props.saveOrder}
+							basket={this.props.basket}
+							
 								/>}
 						/>
 
@@ -85,6 +88,7 @@ class ShopContainer extends Component {
 					<Route  
 						path="/log-in" 
 						component={() => <LogIn 
+							
 								checkLoginStatus = {this.props.checkLoginStatus} 
 								loggedIn={this.props.loggedIn}
 								/>} 
