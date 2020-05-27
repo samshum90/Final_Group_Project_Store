@@ -35,6 +35,7 @@ class GroupProjectApplicationTests {
 	Item item14;
 	Item item15;
 	Item item16;
+	Item item17;
 	Order orderBasket;
 	Order newOrder;
 
@@ -91,6 +92,7 @@ class GroupProjectApplicationTests {
 		String description = "This is a description of an Item";
 		String description2 = "Black";
 		String description3 = "Navy";
+		String description5 = "Become a full stack Software developer today for only a low low cost of £750(deposit)";
 
 //		imgUrlString ="/images/black-zip-hoodie_1.jpg";
 		ArrayList<String> UrlList = new ArrayList<>();
@@ -128,7 +130,7 @@ class GroupProjectApplicationTests {
 		UrlList6.add("/images/navy-hoodie-pull-2.jpg");
 
 
-		item6 = new Item(false, "Pull-Over Hoodie", "Code Clan", "Clothing",
+		item6 = new Item(true, "Pull-Over Hoodie", "Code Clan", "Clothing",
 				31, 35, UrlList6, description3, tempStock4);
 		item6 = itemRepository.save(item6);
 
@@ -162,14 +164,14 @@ class GroupProjectApplicationTests {
 		UrlList10.add("/images/powerbank-1.jpg");
 		UrlList10.add("/images/powerbank-2.jpg");
 
-		item10 = new Item(false, "Powerbank", "Code Clan", "Electronics",
+		item10 = new Item(true, "Powerbank", "Code Clan", "Home",
 				16, 20, UrlList10, description, tempStock4);
 		item10 = itemRepository.save(item10);
 
 		ArrayList<String> UrlList11 = new ArrayList<>();
 		UrlList11.add("/images/notebook-1.jpg");
 
-		item11 = new Item(false, "Eco Notebook", "Code Clan", "Stationary",
+		item11 = new Item(false, "Eco Notebook", "Code Clan", "Home",
 				5, 8, UrlList11, description, tempStock4);
 		item11 = itemRepository.save(item11);
 
@@ -187,7 +189,7 @@ class GroupProjectApplicationTests {
 		UrlList13.add("/images/t-shirt-navy-1.jpg");
 		UrlList13.add("/images/t-shirt-navy-2.jpg");
 
-		item13 = new Item(false, "T Shirt", "Code Clan", "Clothing",
+		item13 = new Item(true, "T Shirt", "Code Clan", "Clothing",
 				16, 20, UrlList13, description3, tempStock4);
 		item13 = itemRepository.save(item13);
 
@@ -196,7 +198,7 @@ class GroupProjectApplicationTests {
 		UrlList14.add("/images/umbrella-1.jpg");
 		UrlList14.add("/images/umbrella-2.jpg");
 
-		item14 = new Item(false, "Umbrella", "Code Clan", "Other",
+		item14 = new Item(false, "Umbrella", "Code Clan", "Home",
 				21, 25, UrlList14, description3, tempStock3);
 		item14 = itemRepository.save(item14);
 
@@ -205,7 +207,7 @@ class GroupProjectApplicationTests {
 		UrlList15.add("/images/umbrella-non-telescopic-1.jpg");
 		UrlList15.add("/images/umbrella-non-telescopic-2.jpg");
 
-		item15 = new Item(false, "Umbrella Non-Telescopic", "Code Clan", "Other",
+		item15 = new Item(false, "Umbrella Non-Telescopic", "Code Clan", "Home",
 				21, 25, UrlList15, description3, tempStock4);
 		item15 = itemRepository.save(item15);
 
@@ -213,9 +215,18 @@ class GroupProjectApplicationTests {
 		UrlList16.add("/images/water-bottle-1.jpg");
 		UrlList16.add("/images/water-bottle-2.jpg");
 
-		item16 = new Item(false, "Water Bottle", "Code Clan", "Other",
+		item16 = new Item(true, "Water Bottle", "Code Clan", "Home",
 				13, 15, UrlList16, description2, tempStock4);
 		item16 = itemRepository.save(item16);
+
+		ArrayList<String> UrlList17 = new ArrayList<>();
+		UrlList17.add("/images/cert1.png");
+		UrlList17.add("/images/cert2.png");
+		UrlList17.add("/images/cert3.png");
+
+		item17 = new Item(true, "Certificate", "Code Clan", "Courses",
+				6251, 1, UrlList17, description5, tempStock4);
+		item17 = itemRepository.save(item17);
 
 		tempStock.setTotalBought(1);
 		tempStock2.setTotalBought(1);
@@ -250,14 +261,15 @@ class GroupProjectApplicationTests {
 		item14 = itemRepository.save(item14);
 		item15 = itemRepository.save(item15);
 		item16 = itemRepository.save(item16);
+		item17 = itemRepository.save(item17);
 
 		HashMap<String, String> option1 = new HashMap<>();
 		option1.put("Size","Large");
 
 		item.setOption(option1);
 		item = itemRepository.save(item);
-		assertEquals(15, itemRepository.findByBrand("Code Clan").size());
-		assertEquals(14, itemRepository.findByHighlighted(false).size());
+		assertEquals(16, itemRepository.findByBrand("Code Clan").size());
+		assertEquals(10, itemRepository.findByHighlighted(false).size());
 
 		orderRepository.deleteAll();
 		orderBasket = new Order(user.getId(), "basket", "23/05/2020 12:00:00");
@@ -271,9 +283,7 @@ class GroupProjectApplicationTests {
 		orderBasket = orderRepository.save(orderBasket);
 		user.addOrder(orderBasket.getId());
 		user = userRepository.save(user);
-
-		User user2 = new User();
-		userRepository.save(user2);
+		user2 = userRepository.save(user2);
 
 		System.out.println(user.getId());
 		System.out.println(user2.getId());

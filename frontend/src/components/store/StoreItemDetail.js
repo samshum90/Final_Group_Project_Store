@@ -63,6 +63,7 @@ class StoreItemDetail extends Component {
 		
 		const images = this.state.item.imgUrl.map((url) => {
 			return <Image
+			centered
 				key={url}
 				src={url}
 				alt={url}
@@ -106,11 +107,13 @@ class StoreItemDetail extends Component {
 								</Button>
 
 							</Segment>
-				
+							
+						</Segment.Group>
+						<Segment.Group>
+							<FeedContainer />
 						</Segment.Group>
 					</Grid.Column>
 					</Grid.Row>
-					<FeedContainer />
 				</Grid>
 
 			</Container>

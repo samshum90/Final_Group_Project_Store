@@ -1,5 +1,10 @@
 import React from 'react';
-import { Dimmer, Loader, Grid, Container } from 'semantic-ui-react';
+import { 
+	// Dimmer, 
+	// Loader, 
+	Grid, 
+	Container 
+} from 'semantic-ui-react';
 import StoreItem from './StoreItem';
 import './StoreItem.css';
 
