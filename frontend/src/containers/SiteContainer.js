@@ -19,7 +19,7 @@ class SiteContainer extends Component {
 		this.state = {
 			items: [],
 			filteredItems: [],
-			user: '',
+			user: null,
 			loggedIn: false,
 			orders: '',
 			basket: '',
@@ -121,7 +121,7 @@ class SiteContainer extends Component {
 		order.status = "payment pending"
 		this.saveBasketToDB(order)
 		this.setState({basket:''}, () =>{this.checkBasketInDatabase()})
-		
+		window.location.replace("/")
 	}
 
 	sendSearch = (input) => {
@@ -210,7 +210,7 @@ class SiteContainer extends Component {
 
 	checkLoginStatus = ( ) => {
 		if(AuthenticationService.isUserLoggedIn()){
-			this.setState({loggedIn: true, user: sessionStorage.getItem('authenticatedUser')}, () => {this.loadOrders()})
+			this.setState({loggedIn: true, user: sessionStorage.getItem('userId')}, () => {this.loadOrders()})
 		}else{
 			this.setState({loggedIn: false})
 		}

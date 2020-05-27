@@ -1,8 +1,9 @@
 import React from 'react'
 import { Feed, Segment, Rating } from 'semantic-ui-react'
+import './FeedContainer.css'
 
 const FeedContainer = () => (
-  <Segment>
+  <Segment className='segment'>
     <Feed>
       <Feed.Event>
         <Feed.Content>

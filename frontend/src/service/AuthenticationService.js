@@ -6,18 +6,19 @@ const API_URL = 'http://localhost:8080'
 
 
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
-export const UserId = 'userId'
+export const USER_ID = 'userId';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 
 
 class AuthenticationService {
 
-
-    // executeBasicAuthenticationService(username, password) {
-    //     return axios.get(`${API_URL}/basicauth`,
-    //         { headers: { authorization: this.createBasicAuthToken(username, password) } })
-    // }
+    constructor(){
+        this.registerSuccessfulLoginForJwt = this.registerSuccessfulLoginForJwt.bind(this);
+        this.createJWTToken = this.createJWTToken.bind(this);
+        this.getUsersID = this.getUsersID.bind(this);
+    }
+   
 
     executeJwtAuthenticationService(username, password) {
        
@@ -26,28 +27,39 @@ class AuthenticationService {
             password
         }).then(
            (data) => this.registerSuccessfulLoginForJwt(username, data.data.token )
-        )
+        ).then(token => this.setJWTInSession(token))
+        .then(token => this.getUsersID(username, token))
 
     }
 
 
     registerSuccessfulLoginForJwt(username, token) {
-
+        console.log(username + token)
         sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
+        return token
+        // sessionStorage.setItem('JWT', this.createJWTToken(token))
+        // this.getUsersID(username, sessionStorage.getItem('JWT'))
+    //    Promise.resolve(sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username).promise()).then(function(){ 
+    //        return Promise.resolve(sessionStorage.setItem('JWT', AuthenticationService.createJWTToken(token)).promise())}).then(function() { 
+    //            return Promise.resolve(AuthenticationService.getUsersID(username, sessionStorage.getItem('JWT')).promise())})
+    }
+
+    setJWTInSession(token){
         sessionStorage.setItem('JWT', this.createJWTToken(token))
-        this.getUsersID(username, sessionStorage.getItem('JWT'))
+        return token
     }
 
     getUsersID(username, token){
-        
-        const URL = API_URL + '/users/?username=' + username
-        fetch(URL, {
-         headers: { 'Content-Type': 'application/json', 'Authorization': token }})
-        .then((res) => res.json())
-        .then((data) => sessionStorage.setItem(UserId, data[0].id))
-        // .then(id => sessionStorage.setItem('UserId', id))
+        console.log(username + token + " getUserId")
+        const URL = API_URL + '/users?username=' + username
+        console.log(URL);
+        fetch(URL)
+        .then(res => res.json())
+        .then(data => data[0].id)
+        .then(id => sessionStorage.setItem(USER_ID, id))
+        .then(window.location.replace('/'))
         .catch((err) => console.log(err));
-    
+            
     }
 
     createJWTToken(token) {
