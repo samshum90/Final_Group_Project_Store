@@ -24,7 +24,8 @@ class SiteContainer extends Component {
 			orders: '',
 			basket: '',
 			input: '',
-			fetch: false,
+			fetchItems: false,
+			fetchOrders: false,
 			filter: 'Alphabetical'
 		};
 		this.getItems = this.getItems.bind(this);
@@ -37,7 +38,8 @@ class SiteContainer extends Component {
 
 	loadOrders(){
 		console.log("loading orders start point")
-		if(this.state.user != null && !this.state.basket  && !this.state.fetch){
+		if(this.state.user != null && !this.state.basket  && !this.state.fetchOrders){
+			this.setState({fetchOrders: true})
 			console.log("triggered 1st fetch request ")
 			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('userId');
 			const request = new Request();
@@ -48,19 +50,19 @@ class SiteContainer extends Component {
 		
 		}else{
 			console.log("triggered fail state! Because User: " + this.state.user + " Basket: " + this.state.basket
-			+" Fetch: " + this.state.fetch)
+			+" Fetch: " + this.state.fetchOrders)
 			return false;			
 		}
 	}
 
 	checkBasketInDatabase(){
 		console.log("checking orders in state start point")
-		if(this.state.fetch && this.state.orders.length > 0){
+		if(this.state.fetchOrders && this.state.orders.length > 0){
 			console.log("has fetched & state has orders greater than zero")
 			
 			const basketArray = this.state.orders.filter(order => order.status.includes("basket"));
-			if(basketArray.length === 0){
-				console.log("no basket in orders")
+			if(basketArray.length === 0 && sessionStorage.getItem('userId') != null){
+				console.log("no basket in orders user is " + this.state.user)
 
 				const payload ={
 					user: sessionStorage.getItem('userId'),
@@ -82,10 +84,10 @@ class SiteContainer extends Component {
 			}
 
 
-		}else if(this.state.fetch && !this.state.orders.length && !this.state.basket){
+		}else if(this.state.fetchOrders && !this.state.orders.length && !this.state.basket){
 			console.log("has fetched no orders is an empty array no basket in state ")
-			if (this.state.user != null) {
-				console.log("state has a User")
+			if (sessionStorage.getItem('userId') != null) {
+				console.log("state has a User:" + sessionStorage.getItem('userId'))
 				const payload ={
 					user: sessionStorage.getItem('userId'),
 					items: [],
@@ -197,10 +199,13 @@ class SiteContainer extends Component {
 		const url = 'http://localhost:8080/items';
 		const request = new Request();
 
-		request.get(url)
-		.then((data) => {
-			this.setState({ items: data, filteredItems: data}, () => {this.arrangeItems('Alphabetical')})
-		})
+		if(!this.state.fetchItems){
+			this.setState({fetchItems: true})
+			request.get(url)
+			.then((data) => {
+				this.setState({ items: data, filteredItems: data}, () => {this.arrangeItems('Alphabetical')})
+			})
+		}
 	}
 
 	checkLoginStatus = ( ) => {
