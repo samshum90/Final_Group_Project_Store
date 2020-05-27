@@ -39,7 +39,7 @@ class SiteContainer extends Component {
 		console.log("loading orders start point")
 		if(this.state.user != null && !this.state.basket  && !this.state.fetch){
 			console.log("triggered 1st fetch request ")
-			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('UserId');
+			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('userId');
 			const request = new Request();
 			request.get(URL)
 			.then((data) => {
@@ -63,7 +63,7 @@ class SiteContainer extends Component {
 				console.log("no basket in orders")
 
 				const payload ={
-					user: sessionStorage.getItem('UserId'),
+					user: sessionStorage.getItem('userId'),
 					items: [],
 					status: "basket",
 					date: "date"
@@ -87,7 +87,7 @@ class SiteContainer extends Component {
 			if (this.state.user != null) {
 				console.log("state has a User")
 				const payload ={
-					user: sessionStorage.getItem('UserId'),
+					user: sessionStorage.getItem('userId'),
 					items: [],
 					status: "basket",
 					date: "date"

@@ -6,6 +6,7 @@ const API_URL = 'http://localhost:8080'
 
 
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
+export const UserId = 'userId'
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 
@@ -43,7 +44,7 @@ class AuthenticationService {
         fetch(URL, {
          headers: { 'Content-Type': 'application/json', 'Authorization': token }})
         .then((res) => res.json())
-        .then((data) => sessionStorage.setItem('UserId', data[0].id))
+        .then((data) => sessionStorage.setItem(UserId, data[0].id))
         // .then(id => sessionStorage.setItem('UserId', id))
         .catch((err) => console.log(err));
     

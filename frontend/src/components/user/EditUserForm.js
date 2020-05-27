@@ -25,7 +25,7 @@ class EditUserForm extends Component {
     }
 
     componentDidMount() {
-		const url = 'http://localhost:8080/users/' + sessionStorage.getItem('UserId');
+		const url = 'http://localhost:8080/users/' + sessionStorage.getItem('userId');
         const request = new Request();
 		request
 			.get(url)
