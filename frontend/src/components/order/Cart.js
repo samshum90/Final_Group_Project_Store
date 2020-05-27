@@ -1,5 +1,8 @@
 import React  from 'react';
 import { Container, Segment, Grid, Button, Header } from 'semantic-ui-react'
+import { 
+  Link
+ } from 'react-router-dom';
 import CartItem from './CartItem'
 import './Cart.css'
 
@@ -21,7 +24,7 @@ const Cart = (props) => {
             return 0
           }else{
           let tempArray = props.basket.items.map(item => 
-            item.currentSellPrice)
+            item.currentSellPrice * item.quantity)
           return tempArray.reduce(function (total, item) {
             return total += item
           }, 0)
@@ -82,11 +85,13 @@ const Cart = (props) => {
                 <Segment className="checkout-segment">
                   <Header as='h3'>Items: {totalItems()}</Header>
                   <Header as='h3'>Total: £{basketTotalCost()}.00</Header>
-                  <Button primary compact 
-                    className='button'
-                    floated="right">
-                    Proceed to Checkout
-                  </Button>
+                  <Link to="check-out">
+                    <Button primary compact 
+                      className='button'
+                      floated="right">
+                      Proceed to Checkout
+                    </Button>
+                  </Link>
                 </Segment>
               </Segment.Group>
             </Grid.Column>

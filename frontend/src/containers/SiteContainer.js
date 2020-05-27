@@ -34,7 +34,8 @@ class SiteContainer extends Component {
 	}
 
 	loadOrders(){
-		if(sessionStorage.getItem('UserId') != null && !this.state.basket  && !this.state.fetch){
+		
+		if(this.state.user != null && !this.state.basket  && !this.state.fetch){
 			this.setState({fetch: true})
 			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('UserId');
 			const request = new Request();
@@ -56,7 +57,7 @@ class SiteContainer extends Component {
 			const basket = basketArray.pop();
 			this.setState({basket: basket})
 		}else if(this.state.fetch && !this.state.orders.length  && !this.state.basket){
-			if (sessionStorage.getItem('UserId') != null) {
+			if (this.state.user != null) {
 
 				const payload ={
 					user: sessionStorage.getItem('UserId'),
@@ -105,54 +106,60 @@ class SiteContainer extends Component {
 	checkLoginStatus = ( ) => {
 		if(AuthenticationService.isUserLoggedIn()){
 			this.setState({loggedIn: true})
+			this.setState({user: sessionStorage.getItem('UserId')})
 		}else{
 			this.setState({loggedIn: false})
 		}
 	}
 
+	saveBasketToDB = (basket) => {
+		const URL = 'http://localhost:8080/orders/' + basket.id
+		const request = new Request()
+		request.patch(URL, basket)
+	}
+
 	addToBasket = (item) => {
 		if(this.state.loggedIn){
-			
+
 			const basket = this.state.basket;
+			
 			if(basket.items.includes(item)){
-				console.log("item in basket not increased" + item)
-				basket.items.pop(item)
+
+				const index = basket.items.indexOf(item)
+				basket.items.splice(index, 1)
 				item.quantity ++;
 				basket.items.push(item)
-				console.log("item in basket Has increased" + item)
 				this.setState({basket: basket})
 			}else{
 				item.quantity ++;
 				basket.items.push(item)
 				this.setState({basket: basket})
 			}
+
+			this.saveBasketToDB(basket)
 		}
 	}
 	
 
 	removeFromBasket = (item) => {
-		item.quantity --;
-		const basket = this.state.basket;
-		if(item.quantity > 0){
-			basket.items.pop(item)
-			basket.items.push(item)
-			this.setState({basket: basket})
-		}else{
-			basket.items.pop(item)
 
+		const basket = this.state.basket;
+		console.log("i'm true or false: ", basket.items.includes(item))
+		if(basket.items.includes(item)){
+			const index = basket.items.indexOf(item)
+			basket.items.splice(index, 1)
+			item.quantity --;
+			if(item.quantity > 0){
+				basket.items.push(item)
+				this.setState({basket: basket})
+
+			}
 			this.setState({basket: basket})
 		}
-		
-		
 
+		this.saveBasketToDB(basket)
 
-		// this.setState(state => {
-		// 	  const basket = state.basket.items.filter(item => item.id !== id);
-		// 	  return {
-		// 		basket,
-		// 	  };
-		// 	});
-		  };
+	};
 
 	
 		PrivateRoute = ({component: Component, ...rest}) => {
@@ -207,6 +214,15 @@ class SiteContainer extends Component {
 								removeFromBasket={this.removeFromBasket}
 								/>}
 						/>
+
+
+						<Route
+							path="/check-out"
+							component={() => <ShopContainer 
+								basket={this.state.basket}
+								/>}
+						/>
+
 						<this.PrivateRoute
 							path="/admin/items/edit/:itemId"
 							component={() => <AdminContainer items={this.state.items} />}
@@ -241,6 +257,7 @@ class SiteContainer extends Component {
 								loggedIn={this.state.loggedIn} items={this.state.items} 
 								/>}
 						/>
+
 						<Route
 							path="/sign-up"
 							component={() => <ShopContainer items={this.state.items} />}

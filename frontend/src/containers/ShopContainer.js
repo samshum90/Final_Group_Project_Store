@@ -14,6 +14,7 @@ import NoMatch from '../components/NoMatch';
 import LogIn from '../components/LogIn';
 import AddUser from '../components/user/AddUser';
 import Cart from '../components/order/Cart'
+import CheckOut from '../components/order/CheckOut'
 
 class ShopContainer extends Component {
 	constructor(props) {
@@ -66,6 +67,13 @@ class ShopContainer extends Component {
 						removeFromBasket={this.props.removeFromBasket}
 						/>}
 					/>		
+
+					<Route
+							path="/check-out"
+							component={() => <CheckOut
+								basket={this.state.basket}
+								/>}
+						/>
 
 					<Route 
 						path="/account" 

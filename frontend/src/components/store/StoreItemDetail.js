@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Dimmer, Loader, Container, Segment, Grid, Image, Rating, Button } from 'semantic-ui-react';
+import { Dimmer, 
+	Loader, 
+	Container, 
+	Segment, 
+	Grid, 
+	Image, 
+	Rating, 
+	Button } from 'semantic-ui-react';
 import Request from '../../helpers/request';
 import './StoreItemDetail.css'
 import FeedContainer from './FeedContainer'
@@ -11,6 +18,8 @@ class StoreItemDetail extends Component {
 		this.state = {
 			item: '',
 		};
+
+		this.handleClick = this.handleClick.bind(this)
 	}
 	
 	componentDidMount() {
@@ -23,11 +32,13 @@ class StoreItemDetail extends Component {
 			.then((data) => {
 				if (this._isMounted) {
 				this.setState({ item:data });
-			}})
+			}
+		})
 			.catch((err) => console.log(err));
 	}
 
 	handleClick(item){
+
 		this.props.addToBasket(item)
 	}
 
@@ -84,10 +95,12 @@ class StoreItemDetail extends Component {
 								<h3>Price:  £{this.state.item.currentSellPrice} </h3>
 								<p>{this.state.item.description}</p>
 
-								<Button primary compact 
+								<Button 
+									primary 
+									compact 
 									className='button'
 									floated="right"
-									onClick={this.handleClick(this.state.item)}
+									onClick={()=>{this.handleClick(this.state.item)}}
 								>
 									Add To Cart
 								</Button>

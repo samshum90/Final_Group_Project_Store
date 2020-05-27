@@ -12,7 +12,7 @@ const StoreNavBar = (props) => {
     return 0
   }else if(props.basket){
   let tempArray = props.basket.items.map(item => 
-    item.currentSellPrice)
+    item.currentSellPrice * item.quantity)
   return tempArray.reduce(function (total, item) {
     return total += item
   }, 0)

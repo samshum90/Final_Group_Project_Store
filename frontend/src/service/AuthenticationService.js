@@ -41,13 +41,15 @@ class AuthenticationService {
     }
 
     getUsersID(username, token){
+        
         const URL = API_URL + '/users/?username=' + username
         fetch(URL, {
          headers: { 'Content-Type': 'application/json', 'Authorization': token }})
         .then((res) => res.json())
         .then((data) => data[0].id)
         .then(id => sessionStorage.setItem('UserId', id))
-		.catch((err) => console.log(err));
+        .catch((err) => console.log(err));
+    
     }
 
     createJWTToken(token) {
