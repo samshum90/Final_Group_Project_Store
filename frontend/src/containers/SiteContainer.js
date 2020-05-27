@@ -38,7 +38,7 @@ class SiteContainer extends Component {
 	loadOrders(){
 		
 		if(this.state.user != null && !this.state.basket  && !this.state.fetch){
-			console.log("triggered babeh! ")
+			// console.log("triggered babeh! ")
 			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('UserId');
 			const request = new Request();
 			request.get(URL)
@@ -56,7 +56,24 @@ class SiteContainer extends Component {
 
 			
 			const basketArray = this.state.orders.filter(order => order.status.includes("basket"));
-			this.setState({basket: basketArray[0]})
+			if(basketArray.length === 0){
+				const payload ={
+					user: sessionStorage.getItem('UserId'),
+					items: [],
+					status: "basket",
+					date: "date"
+				}
+				const URL = "http://localhost:8080/orders"
+				const request = new Request();
+
+				request.post(URL, payload)
+				.then((res) => res.json())
+				.then((data) =>{
+				this.setState({basket: data})	
+				})
+			}else{
+				this.setState({basket: basketArray[0]})
+			}
 
 
 		}else if(this.state.fetch && !this.state.orders.length && !this.state.basket){
@@ -90,7 +107,8 @@ class SiteContainer extends Component {
 		const order = this.state.basket;
 		order.status = "payment pending"
 		this.saveBasketToDB(order)
-		this.setState({basket:''})
+		this.setState({basket:''}, () =>{this.checkBasketInDatabase()})
+		
 	}
 
 	sendSearch = (input) => {
@@ -109,56 +127,57 @@ class SiteContainer extends Component {
 
 	arrangeItems = (filter) => {
 		
-		console.log("filter is: " + filter)
-		if(filter === 'Alphabetical'){
-			const sortedItems = this.state.items.sort(function(item1, item2){
-				var x = item1.name.toLowerCase();
-				var y = item2.name.toLowerCase();
-				if(x < y) {return -1;}
-				if(x > y) {return 1;}
-				return 0;
-			});
-			this.setState({filteredItems: sortedItems})
-		}
-		if(filter === 'LowToHigh'){
-			const sortedItems = this.state.items.sort(function(item1, item2){
-				var x = item1.currentSellPrice
-				var y = item2.currentSellPrice
-				if(x < y) {return -1;}
-				if(x > y) {return 1;}
-				return 0;
-			});
-			
-			this.setState({filteredItems: sortedItems})
-		}
+		if(this.state.items){
+			if(filter === 'Alphabetical'){
+				const sortedItems = this.state.items.sort(function(item1, item2){
+					var x = item1.name.toLowerCase();
+					var y = item2.name.toLowerCase();
+					if(x < y) {return -1;}
+					if(x > y) {return 1;}
+					return 0;
+				});
+				this.setState({filteredItems: sortedItems})
+			}
+			if(filter === 'LowToHigh'){
+				const sortedItems = this.state.items.sort(function(item1, item2){
+					var x = item1.currentSellPrice
+					var y = item2.currentSellPrice
+					if(x < y) {return -1;}
+					if(x > y) {return 1;}
+					return 0;
+				});
+				
+				this.setState({filteredItems: sortedItems})
+			}
 
-		if(filter === 'HighToLow'){
-			const sortedItems = this.state.items.sort(function(item1, item2){
-				var x = item1.currentSellPrice
-				var y = item2.currentSellPrice
-				if(x < y) {return 1;}
-				if(x > y) {return -1;}
-				return 0;
-			});
-			this.setState({filteredItems: sortedItems})
+			if(filter === 'HighToLow'){
+				const sortedItems = this.state.items.sort(function(item1, item2){
+					var x = item1.currentSellPrice
+					var y = item2.currentSellPrice
+					if(x < y) {return 1;}
+					if(x > y) {return -1;}
+					return 0;
+				});
+				this.setState({filteredItems: sortedItems})
 
-		}
-		if(filter ==='Recommended'){
-			const sortedItems = this.state.items.filter(item => item.highlighted === true);
-			this.setState({filteredItems: sortedItems})
+			}
+			if(filter ==='Recommended'){
+				const sortedItems = this.state.items.filter(item => item.highlighted === true);
+				this.setState({filteredItems: sortedItems})
 
-		}
-		if(filter === 'Clothing'){
-			const sortedItems = this.state.items.filter(item => item.type === 'Clothing');
-			this.setState({filteredItems: sortedItems})
-		}
-		if(filter === 'Home'){
-			const sortedItems = this.state.items.filter(item => item.type === 'Home');
-			this.setState({filteredItems: sortedItems})
-		}
-		if(filter === 'Courses'){
-			const sortedItems = this.state.items.filter(item => item.type === 'Courses');
-			this.setState({filteredItems: sortedItems})
+			}
+			if(filter === 'Clothing'){
+				const sortedItems = this.state.items.filter(item => item.type === 'Clothing');
+				this.setState({filteredItems: sortedItems})
+			}
+			if(filter === 'Home'){
+				const sortedItems = this.state.items.filter(item => item.type === 'Home');
+				this.setState({filteredItems: sortedItems})
+			}
+			if(filter === 'Courses'){
+				const sortedItems = this.state.items.filter(item => item.type === 'Courses');
+				this.setState({filteredItems: sortedItems})
+			}
 		}
 		
 	}
@@ -214,7 +233,7 @@ class SiteContainer extends Component {
 	removeFromBasket = (item) => {
 
 		const basket = this.state.basket;
-		console.log("i'm true or false: ", basket.items.includes(item))
+		// console.log("i'm true or false: ", basket.items.includes(item))
 		if(basket.items.includes(item)){
 			const index = basket.items.indexOf(item)
 			basket.items.splice(index, 1)
@@ -241,12 +260,6 @@ class SiteContainer extends Component {
 				)} />
 			);
 		};
-
-	
-	// handleClick = (event) => {
-	// 		AuthenticationService.logout()
-	// 		this.setState({loggedIn: false})
-	// }
 
 	render() {
 		return (
@@ -285,7 +298,6 @@ class SiteContainer extends Component {
 								removeFromBasket={this.removeFromBasket}
 								/>}
 						/>
-
 
 						<Route
 							path="/check-out"

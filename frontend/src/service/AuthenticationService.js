@@ -33,11 +33,8 @@ class AuthenticationService {
     registerSuccessfulLoginForJwt(username, token) {
 
         sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
-        // this.setupAxiosInterceptors(this.createJWTToken(token))
         sessionStorage.setItem('JWT', this.createJWTToken(token))
         this.getUsersID(username, sessionStorage.getItem('JWT'))
-        // console.log(sessionStorage)
-        // console.log(this.isUserLoggedIn());
     }
 
     getUsersID(username, token){
