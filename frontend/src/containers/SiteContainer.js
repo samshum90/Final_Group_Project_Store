@@ -19,7 +19,7 @@ class SiteContainer extends Component {
 		this.state = {
 			items: [],
 			filteredItems: [],
-			user: null,
+			user: '',
 			loggedIn: false,
 			orders: '',
 			basket: '',
@@ -36,9 +36,9 @@ class SiteContainer extends Component {
 	}
 
 	loadOrders(){
-		
+		console.log("loading orders start point")
 		if(this.state.user != null && !this.state.basket  && !this.state.fetch){
-			// console.log("triggered babeh! ")
+			console.log("triggered 1st fetch request ")
 			const URL = 'http://localhost:8080/orders?userId='+sessionStorage.getItem('UserId');
 			const request = new Request();
 			request.get(URL)
@@ -47,16 +47,21 @@ class SiteContainer extends Component {
 			})
 		
 		}else{
+			console.log("triggered fail state! Because User: " + this.state.user + " Basket: " + this.state.basket
+			+" Fetch: " + this.state.fetch)
 			return false;			
 		}
 	}
 
 	checkBasketInDatabase(){
+		console.log("checking orders in state start point")
 		if(this.state.fetch && this.state.orders.length > 0){
-
+			console.log("has fetched & state has orders greater than zero")
 			
 			const basketArray = this.state.orders.filter(order => order.status.includes("basket"));
 			if(basketArray.length === 0){
+				console.log("no basket in orders")
+
 				const payload ={
 					user: sessionStorage.getItem('UserId'),
 					items: [],
@@ -72,13 +77,15 @@ class SiteContainer extends Component {
 				this.setState({basket: data})	
 				})
 			}else{
+				console.log("basket in orders")
 				this.setState({basket: basketArray[0]})
 			}
 
 
 		}else if(this.state.fetch && !this.state.orders.length && !this.state.basket){
+			console.log("has fetched no orders is an empty array no basket in state ")
 			if (this.state.user != null) {
-
+				console.log("state has a User")
 				const payload ={
 					user: sessionStorage.getItem('UserId'),
 					items: [],
@@ -93,7 +100,11 @@ class SiteContainer extends Component {
 				.then((data) => {
 				this.setState({basket: data})	
 				})
+			}else{
+				console.log("state has no user")
 			}
+		}else{
+			console.log("checking orders in state failed")
 		}
 	}
 
@@ -194,7 +205,7 @@ class SiteContainer extends Component {
 
 	checkLoginStatus = ( ) => {
 		if(AuthenticationService.isUserLoggedIn()){
-			this.setState({loggedIn: true, user: sessionStorage.getItem('UserId')}, () => {this.loadOrders()})
+			this.setState({loggedIn: true, user: sessionStorage.getItem('authenticatedUser')}, () => {this.loadOrders()})
 		}else{
 			this.setState({loggedIn: false})
 		}

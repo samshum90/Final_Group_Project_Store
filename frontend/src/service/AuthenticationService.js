@@ -43,8 +43,8 @@ class AuthenticationService {
         fetch(URL, {
          headers: { 'Content-Type': 'application/json', 'Authorization': token }})
         .then((res) => res.json())
-        .then((data) => data[0].id)
-        .then(id => sessionStorage.setItem('UserId', id))
+        .then((data) => sessionStorage.setItem('UserId', data[0].id))
+        // .then(id => sessionStorage.setItem('UserId', id))
         .catch((err) => console.log(err));
     
     }

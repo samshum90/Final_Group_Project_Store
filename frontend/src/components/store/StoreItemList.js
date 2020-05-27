@@ -11,13 +11,13 @@ const StoreItemList = (props) => {
 		}
 
 
-		if (!props.items || !props.items.length) {
-			return (
-				<Dimmer active inverted>
-					<Loader inverted content="Loading" />
-				</Dimmer>
-			);
-		}
+		// if (!props.items || !props.items.length) {
+		// 	return (
+		// 		<Dimmer active inverted>
+		// 			<Loader inverted content="Loading" />
+		// 		</Dimmer>
+		// 	);
+		// }
 
 		
 		if (props.items.noItemFound) {
