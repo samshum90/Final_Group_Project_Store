@@ -92,7 +92,7 @@ class GroupProjectApplicationTests {
 		String description = "This is a description of an Item";
 		String description2 = "Black";
 		String description3 = "Navy";
-		String description5 = "Become a full stack Software developer today for only a low low cost of £750(deposit)";
+		String description5 = "Become a full stack Software developer today for only a low low cost of £750(deposit). 16-weeks, full-time Professional Software Development Learn to code through our immersive software development course. Get the skills to change career through hands-on, interactive learning, career support and more.";
 
 //		imgUrlString ="/images/black-zip-hoodie_1.jpg";
 		ArrayList<String> UrlList = new ArrayList<>();
