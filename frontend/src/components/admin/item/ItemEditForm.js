@@ -101,7 +101,7 @@ class ItemEditFrom extends Component {
 	};
 
 	render() {
-		if (!this.state.name && !this.state.noItemFound) {
+		if (!this.state.id && !this.state.noItemFound) {
 			return (
 				<Dimmer active inverted>
 					<Loader inverted content="Loading" />

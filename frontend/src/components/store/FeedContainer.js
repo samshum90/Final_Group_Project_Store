@@ -5,6 +5,28 @@ import './FeedContainer.css'
 const FeedContainer = () => (
   <Segment className='segment'>
     <Feed>
+    <Feed.Event>
+        <Feed.Content>
+          <Feed.Summary>
+          <Feed.User>Kirsty, CodeClan graduate & Software Developer</Feed.User> Posted a Review
+            <Feed.Date>3 seconds ago</Feed.Date>
+          </Feed.Summary>
+          <Feed.Like>
+            <Rating 
+									className='rating'
+									icon="star" 
+									defaultRating={5} 
+									maxRating={5} 
+								/>
+            </Feed.Like>
+          <Feed.Extra text>
+          It’s a brilliant rush for me when I’m able to do a piece of work, and I get it checked in and I can see it working. And I can say ‘I did that’.
+          </Feed.Extra>
+          <Feed.Meta>
+          </Feed.Meta>
+        </Feed.Content>
+      </Feed.Event>
+      
       <Feed.Event>
         <Feed.Content>
           <Feed.Summary>
