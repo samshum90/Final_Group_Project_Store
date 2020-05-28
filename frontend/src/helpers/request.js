@@ -1,4 +1,4 @@
-// import AuthenticationService from '../service/AuthenticationService';
+
 const auth = sessionStorage.getItem('JWT')
 
 class Request {

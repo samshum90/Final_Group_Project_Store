@@ -22,13 +22,15 @@ class AuthenticationService {
 
     executeJwtAuthenticationService(username, password) {
        
-        return axios.post(`${API_URL}/authenticate`, {
+        return (axios.post(`${API_URL}/authenticate`, {
             username,
             password
         }).then(
            (data) => this.registerSuccessfulLoginForJwt(username, data.data.token )
         ).then(token => this.setJWTInSession(token))
-        .then(token => this.getUsersID(username, token))
+        .then(token => this.getUsersID(username, token)))
+            
+        // .then(window.location.replace('http://localhost:3000/'))
 
     }
 
@@ -55,9 +57,7 @@ class AuthenticationService {
         console.log(URL);
         fetch(URL)
         .then(res => res.json())
-        .then(data => data[0].id)
-        .then(id => sessionStorage.setItem(USER_ID, id))
-        .then(window.location.replace('/'))
+        .then(data => sessionStorage.setItem(USER_ID, data[0].id))
         .catch((err) => console.log(err));
             
     }
@@ -76,8 +76,16 @@ class AuthenticationService {
 
     isUserLoggedIn() {
         let user = sessionStorage.getItem(USER_NAME_SESSION_ATTRIBUTE_NAME)
-        if (user === null) return false
-        return true
+        let id = sessionStorage.getItem(USER_ID)
+       
+        if (user && id) {
+            console.log("true" + user + id)
+            return true
+        }else{
+            console.log("false" + user + id)
+            return false
+        }
+        
     }
 
     getLoggedInUserName() {

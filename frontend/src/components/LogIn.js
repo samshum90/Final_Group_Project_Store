@@ -24,26 +24,28 @@ class LogIn extends Component {
 		}
 		this.handleUsernameChange = this.handleUsernameChange.bind(this)
 		this.handlePasswordChange = this.handlePasswordChange.bind(this)
-   		this.loginClicked = this.loginClicked.bind(this)
+		this.loginClicked = this.loginClicked.bind(this)
+		this.updateLogin = this.updateLogin.bind(this)
 	}
 
 	loginClicked() {
-	
-	AuthenticationService
-			.executeJwtAuthenticationService(this.state.username, this.state.password)
-            .then(() => {
-
-				this.setState({ showSuccessMessage: true })
-				this.setState({ hasLoginFailed: false })
-				if(AuthenticationService.isUserLoggedIn()){
-					this.props.checkLoginStatus();
-					// window.location.replace('/') 
-				}
-            }).catch(() => {
-                this.setState({ showSuccessMessage: false })
-                this.setState({ hasLoginFailed: true })
-            })
+		console.log(AuthenticationService.executeJwtAuthenticationService(this.state.username, this.state.password))
+		AuthenticationService.executeJwtAuthenticationService(this.state.username, this.state.password)
+		.then(this.updateLogin)
 	}
+	updateLogin(){
+				if(this.props.checkLoginStatus()){
+					this.setState({ showSuccessMessage: true, hasLoginFailed: false  })
+					
+					window.location.replace('/') 
+				}
+				else{
+					window.location.reload('/') 
+					// this.props.checkLoginStatus();
+					this.setState({ showSuccessMessage: false, hasLoginFailed: true  })
+				}
+	};
+	
 
     handleUsernameChange(event) {
         this.setState(

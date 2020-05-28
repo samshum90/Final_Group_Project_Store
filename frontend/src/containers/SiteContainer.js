@@ -45,7 +45,7 @@ class SiteContainer extends Component {
 			const request = new Request();
 			request.get(URL)
 			.then((data) => {
-				this.setState({orders: data, fetch: true}, () =>{this.checkBasketInDatabase()	})		
+				this.setState({orders: data, fetchOrders: true}, () =>{this.checkBasketInDatabase()	})		
 			})
 		
 		}else{
@@ -76,7 +76,7 @@ class SiteContainer extends Component {
 				request.post(URL, payload)
 				.then((res) => res.json())
 				.then((data) =>{
-				this.setState({basket: data})	
+				this.setState({basket: data, fetchOrders: true})	
 				})
 			}else{
 				console.log("basket in orders")
@@ -203,15 +203,18 @@ class SiteContainer extends Component {
 			this.setState({fetchItems: true})
 			request.get(url)
 			.then((data) => {
-				this.setState({ items: data, filteredItems: data}, () => {this.arrangeItems('Alphabetical')})
+				this.setState({ items: data, filteredItems: data, fetchItems: true}, () => {this.arrangeItems('Alphabetical')})
 			})
 		}
 	}
 
 	checkLoginStatus = ( ) => {
 		if(AuthenticationService.isUserLoggedIn()){
+			console.log(sessionStorage.getItem('userId'));
 			this.setState({loggedIn: true, user: sessionStorage.getItem('userId')}, () => {this.loadOrders()})
+
 		}else{
+			
 			this.setState({loggedIn: false})
 		}
 	}
