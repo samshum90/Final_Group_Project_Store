@@ -1,8 +1,15 @@
 ### Store
 
+[Live App](https://codeclan-shop.web.app/)
+
 A store owner has approached us to create a web app to have greater market access.
 
 For a prototype we built the Code Clan store.
+
+![alt text](https://github.com/samshum90/Final_Group_Project_Store/raw/master/shop.gif "shop App Gif")
+
+#### Inspired By
+Amazon and CodeClan
 
 #### MVP
 
@@ -12,9 +19,6 @@ For a prototype we built the Code Clan store.
 - Ability to sort store items by price, alphabetical or recommended
 - The shop can process dummy payments
 - Store owner view  
-
-#### Inspired By
-Amazon and CodeClan
 
 #### Extensions
 
@@ -65,3 +69,16 @@ Amazon and CodeClan
 - Trello (planning)
 - Draw.io (UML diagrams)
 - Google Slides (project presentation)
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm start
+```
+Runs the app in the development mode.
+
+Open http://localhost:3000 to view it in the browser.
