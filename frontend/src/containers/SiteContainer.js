@@ -307,6 +307,8 @@ class SiteContainer extends Component {
 							render={() => <ShopContainer
 								items={this.state.items}
 								basket={this.state.basket}
+								sendFilter={this.sendFilter}
+								sendSearch={this.sendSearch}
 								addToBasket={this.addToBasket}
 							/>}
 						/>
@@ -314,6 +316,8 @@ class SiteContainer extends Component {
 							path="/cart"
 							render={() => <ShopContainer
 								basket={this.state.basket}
+								sendFilter={this.sendFilter}
+								sendSearch={this.sendSearch}
 								removeFromBasket={this.removeFromBasket}
 							/>}
 						/>
@@ -322,6 +326,8 @@ class SiteContainer extends Component {
 							path="/check-out"
 							component={() => <ShopContainer
 								saveOrder={this.saveOrder}
+								sendFilter={this.sendFilter}
+								sendSearch={this.sendSearch}
 								basket={this.state.basket}
 							/>}
 						/>
@@ -341,46 +347,59 @@ class SiteContainer extends Component {
 						/>
 						<this.PrivateRoute
 							path="/account"
-							component={() => <ShopContainer items={this.state.items} />}
+							component={() => <ShopContainer 
+								items={this.state.items} 
+								basket={this.state.basket}
+							/>}
 						/>
 						<this.PrivateRoute
 							path="/admin/orders"
-							component={() => <AdminContainer items={this.state.items} />}
+							component={() => <AdminContainer items={this.state.items} basket={this.state.basket} sendFilter={this.sendFilter}
+							sendSearch={this.sendSearch}/>}
 						/>
 
 						<this.PrivateRoute
 							path="/orders"
-							component={() => <ShopContainer />}
+							component={() => <ShopContainer basket={this.state.basket} sendFilter={this.sendFilter}
+							sendSearch={this.sendSearch}/>}
 						/>
 
 						<Route
 							path="/log-in"
 							component={() => <ShopContainer
 								checkLoginStatus={this.checkLoginStatus}
-								loggedIn={this.state.loggedIn} items={this.state.items}
+								loggedIn={this.state.loggedIn} 
+								items={this.state.items}
+								basket={this.state.basket}
+								sendFilter={this.sendFilter}
+								sendSearch={this.sendSearch}
 							/>}
 						/>
 
 						<Route
 							path="/sign-up"
-							component={() => <ShopContainer items={this.state.items} />}
+							component={() => <ShopContainer
+								items={this.state.items}
+								basket={this.state.basket}
+								sendFilter={this.sendFilter}
+								sendSearch={this.sendSearch}/>}
 						/>
 
 						<Route
 							path="/about"
-							component={() => <ShopContainer items={this.state.items} />}
+							component={() => <ShopContainer items={this.state.items} basket={this.state.basket}/>}
 						/>
 						<Route
 							path="/where"
-							component={() => <ShopContainer items={this.state.items} />}
+							component={() => <ShopContainer items={this.state.items} basket={this.state.basket}/>}
 						/>
 						<Route
 							path="/customer-service"
-							component={() => <ShopContainer items={this.state.items} />}
+							component={() => <ShopContainer items={this.state.items} basket={this.state.basket}/>}
 						/>
 						<Route
 							path="*"
-							component={() => <ShopContainer items={this.state.items} />}
+							component={() => <ShopContainer items={this.state.items} basket={this.state.basket}/>}
 						/>
 					</Switch>
 					<Footer />

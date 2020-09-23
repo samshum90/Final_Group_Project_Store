@@ -58,6 +58,8 @@ class ShopContainer extends Component {
 						component={() => <StoreItemDetail 
 							basket={this.props.basket}
 							addToBasket={this.props.addToBasket}
+							sendSearch={this.props.sendSearch}
+							sendFilter={this.props.sendFilter}
 							/>} 
 					/>
 
@@ -80,7 +82,7 @@ class ShopContainer extends Component {
 
 					<Route 
 						path="/account" 
-						component={() => <EditUserForm />} 
+						component={() => <EditUserForm/>} 
 					/>
 					
 					<Route path="/orders" component={() => <UserOrderList />} />
