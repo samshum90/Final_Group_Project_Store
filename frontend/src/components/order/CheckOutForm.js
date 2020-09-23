@@ -46,6 +46,7 @@ const CheckoutForm = (props) => {
     
         if (error) {
           console.log('[error]', error);
+          alert(error)
         } else {
           
           console.log('[PaymentMethod]', paymentMethod);

@@ -20,11 +20,7 @@ class AddItemForm extends Component {
 			maxSellPrice: 0,
 			currentSellPrice: 0,
 			buyPrice: 0,
-			imgUrl: {
-				url1:'',
-				url2:'',
-				url3:'',
-			},
+			imgUrl: "",
 			description: '',
 		};
 	}

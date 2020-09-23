@@ -120,8 +120,10 @@ class SiteContainer extends Component {
 		const order = this.state.basket;
 		order.status = "payment pending"
 		this.saveBasketToDB(order)
+		alert(`Your order ${this.state.basket.id} has been completed`) 
 		this.setState({ basket: '' }, () => { this.checkBasketInDatabase() })
 		window.location.replace("/")
+		
 	}
 
 	sendSearch = (input) => {

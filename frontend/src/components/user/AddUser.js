@@ -141,7 +141,7 @@ class AddUser extends Component {
 	
 				
 
-					<label> Address:</label>
+					<label> <b>Address</b></label>
 				
 					<Form.Input
 						width={6}
